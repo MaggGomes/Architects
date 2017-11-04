@@ -1,0 +1,43 @@
+:root {
+  --main-color: #7f0000;
+}
+
+#main-screen-display {
+  display: table;
+  position: absolute;
+  background: white;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 500;
+}
+
+#main-screen-display .main-screen-center {
+  padding: 0;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#main-screen-display .main-screen-name {
+  color: var(--main-color);
+  font-size: 100px;
+}
+
+.arquitectos, .associados {
+  font-size: 34px;
+}
+
+#main-screen-display .arquitectos {
+  letter-spacing: 33px;
+  text-indent: 34px;
+}
+
+#main-screen-display .associados {
+  letter-spacing: 37px;
+  text-indent: 38px;
+}
+
+
+

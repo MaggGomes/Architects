@@ -9,19 +9,21 @@ var db = require('./db')
 // Connect to MySQL on start
 db.connect(db.MODE_PRODUCTION, function(err) {
   if (err) {
-    console.log('Unable to connect to MySQL.')
-    process.exit(1)
+    console.log('Unable to connect to MySQL.');
+    process.exit(1);
   } else {
-	  var project = require('./models/project')
+	  var project = require('./models/project');
 	  project.getAll(function(err, projects){
 		  if(err) console.log(err);
 		  else console.log(projects);
 		  
 	  });
+
       console.log('Connected to MySQL successfully');
       console.log(db.get());
   }
-})
+});
+
 var index = require('./routes/index');
 
 var app = express();

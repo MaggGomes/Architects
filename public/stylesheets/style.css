@@ -4,7 +4,7 @@
 
 #main-screen-display {
   display: table;
-  position: absolute;
+  position: fixed;
   background: white;
   top: 0;
   left: 0;
@@ -37,6 +37,10 @@
 #main-screen-display .associados {
   letter-spacing: 37px;
   text-indent: 38px;
+}
+
+.main-container {
+  display: none;
 }
 
 

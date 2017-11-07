@@ -1,10 +1,25 @@
 :root {
-  --main-color: #7f0000;
+  --main-color: rgba(127,0,0,1);
   --menu-color: #999999;
 }
 
 .navbar {
   background: white;
+  height: 60px;
+  display: table;
+}
+
+.main-container {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.navbar .navbar-main {
+  position: relative;
+  top: 50%;
+  -webkit-transform: perspective(1px) translateY(-50%);
+  -ms-transform: perspective(1px) translateY(-50%);
+  transform: perspective(1px) translateY(-50%);
 }
 
 .nav-menu {
@@ -12,23 +27,23 @@
   text-align: center;
 }
 
-.nav-menu li {
+.navbar-main li {
   width: 200px;
 }
 
-.nav-menu a {
+.navbar-nav a {
   color: var(--menu-color);
 }
 
 #main-screen-display {
   display: table;
-  position: fixed;
+  position: absolute;
   background: white;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: 500;
+  z-index: 5;
 }
 
 #main-screen-display .main-screen-center {
@@ -57,20 +72,34 @@
   text-indent: 38px;
 }
 
-.hidden-container {
-  display: none;
+#main-screen-display .navbar {
+
 }
 
-.main-container {
-  margin-top: 80px;
-  margin-bottom: 80px;
+.hidden-container {
+  display: none;
 }
 
 .main-container .project-portfolio-row:not(:last-child) {
   margin-bottom: 20px;
 }
 
+.project-portfolio-row .img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
 .project-portfolio-row img {
   width: 100%;
+  height: 100px;
 }
 
+.project-portfolio-row .img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(127,0,0,0.65);
+  z-index: 2;
+  width: 100%;
+  height: 100px;
+}

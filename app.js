@@ -12,19 +12,13 @@ db.connect(db.MODE_PRODUCTION, function(err) {
     console.log('Unable to connect to MySQL.');
     process.exit(1);
   } else {
-	  var project = require('./models/project');
-	  project.getAll(function(err, projects){
-		  if(err) console.log(err);
-		  else console.log(projects);
-		  
-	  });
-
       console.log('Connected to MySQL successfully');
       console.log(db.get());
   }
 });
 
 var index = require('./routes/index');
+var api = require('./routes/api');
 
 var app = express();
 
@@ -40,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use('/', index);
+app.use('/api/', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

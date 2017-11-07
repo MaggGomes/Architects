@@ -15,3 +15,10 @@ exports.getAll = function(done) {
     done(null, rows)
   })
 };
+
+exports.getById = function(id, done) {
+    db.get().query('SELECT * FROM projects WHERE id = ?', [id], function (err, row) {
+        if (err) return done(err);
+        done(null, row)
+    })
+};

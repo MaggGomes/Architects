@@ -66,4 +66,11 @@
   margin-bottom: 80px;
 }
 
+.main-container .project-portfolio-row:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.project-portfolio-row img {
+  width: 100%;
+}
 

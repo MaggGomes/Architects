@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var db = require('./db')
+var db = require('./db');
 
 // Connect to MySQL on start
 db.connect(db.MODE_PRODUCTION, function(err) {

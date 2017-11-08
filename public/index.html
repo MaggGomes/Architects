@@ -26,27 +26,9 @@
 </head>
 <body ng-app="rochaleiteApp">
 
-<header>
-    <!-- Navigation -->
-    <nav class="hidden-container navbar navbar-expand-lg fixed-top">
-        <div class="container navbar-main">
-            <ul class="nav-menu navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#!projects">projectos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#!team">equipa</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#!contact">contactos</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
+<header ng-include="'header.htm'"></header>
 
 <!-- Page content -->
-
 <div id="main-screen-display">
     <div class="main-screen-center container" >
         <p class="main-screen-name">Rocha Leite</p>
@@ -64,6 +46,8 @@
 </div>
 
 <div ng-view></div>
+
+<footer ng-include="'footer.htm'"></footer>
 
 <!-- Popper -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>

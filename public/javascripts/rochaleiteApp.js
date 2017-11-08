@@ -1,8 +1,10 @@
 var app = angular.module("rochaleiteApp", ["ngRoute"]);
+
 app.config(function($routeProvider) {
     $routeProvider
         .when("/", {
-            templateUrl : "main.htm"
+            templateUrl : "main.htm",
+            controller : "mainCtrl"
         })
         .when("/projects", {
             templateUrl : "projects.htm",
@@ -20,10 +22,16 @@ app.config(function($routeProvider) {
         });
 });
 
+app.controller('mainCtrl', function($scope, $http) {
+    $http.get("/api/projects")
+        .then(function(response) {
+            $scope.projects = response.data;
+        });
+});
+
 app.controller('projectsCtrl', function($scope, $http) {
     $http.get("/api/projects")
         .then(function(response) {
-            console.log(response.data);
             $scope.projects = response.data;
         });
 });
@@ -31,7 +39,6 @@ app.controller('projectsCtrl', function($scope, $http) {
 app.controller('projectCtrl', function($scope, $routeParams, $http) {
     $http.get("/api/projects/" + $routeParams.projectId)
         .then(function(response) {
-            console.log(response.data);
             $scope.project = response.data[0];
         });
 });

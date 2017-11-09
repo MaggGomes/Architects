@@ -1,0 +1,23 @@
+<div class="container main-container">
+    <div class="row justify-content-md-center d-flex align-items-center contact-form">
+        <div class="col-md-5">
+            <!-- <form> --> <!-- TODO o angular estraga o bootstrap -->
+            <div class="row contact-input">
+                <input type="text" class="form-control" id="name" placeholder="{{ 'NOME' | translate }}">
+            </div>
+            <div class="row contact-input">
+                <input type="email" class="form-control" id="email" placeholder="{{ 'E-MAIL' | translate }}">
+            </div>
+            <div class="row contact-input">
+                <input type="text" class="form-control" id="subject" placeholder="{{ 'ASSUNTO' | translate }}">
+            </div>
+            <div class="row contact-input">
+                <textarea class="form-control" id="message" rows="3" placeholder="{{ 'MENSAGEM' | translate }}"></textarea>
+            </div>
+            <div class="row contact-input">
+                <button type="submit" class="btn btn-secondary btn-block">{{ 'ENVIAR' | translate }}</button>
+            </div>
+            <!-- </form> -->
+        </div>
+    </div>
+</div>

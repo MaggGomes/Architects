@@ -1,7 +1,7 @@
 <section class="git container main-container">
     <div class="row project-portfolio-row">
-        <div class="col-md-2" ng-repeat="project in projects">
-            <a href="#!projects/{{project.id}}">
+        <div class="col-md-2 project" ng-repeat="project in projects">
+            <a href="/projects/{{project.id}}">
                 <div class="img-wrapper">
                     <div class="img-overlay"></div>
                     <img src="/images/exemplo.jpg">
@@ -10,3 +10,5 @@
         </div>
     </div>
 </section>
+
+<footer ng-include="'footer.htm'"></footer>

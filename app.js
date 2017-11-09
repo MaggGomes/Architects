@@ -34,20 +34,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use('/api/', api);
-app.use('/', index);
+//app.use('/', index);
 
-//app.all('/*', function(req, res, next) {
+app.all('/*', function(req, res, next) {
     // Just send the index.html for other files to support HTML5Mode
-    //res.sendfile('./public/index.html', { root: __dirname });
-//});
+    res.sendfile('./public/index.html', { root: __dirname });
+});
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-    res.redirect('/');
+//app.use(function(req, res, next) {
+    //res.redirect('/');
   /*var err = new Error('Not Found');
   err.status = 404;
   next(err);*/
-});
+//});
 
 
 // error handler

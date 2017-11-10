@@ -1,23 +1,34 @@
 <div class="container main-container">
     <div class="row justify-content-md-center d-flex align-items-center contact-form">
         <div class="col-md-5">
-            <!-- <form> --> <!-- TODO o angular estraga o bootstrap -->
-            <div class="row contact-input">
-                <input type="text" class="form-control" id="name" placeholder="{{ 'NOME' | translate }}">
+            <form ng-submit="contactForm()"> <!-- TODO o angular estraga o bootstrap -->
+                <div class="row contact-input">
+                    <input type="text" class="form-control" ng-class="{ 'is-invalid' : errors.name }"id="name" placeholder="{{ 'NOME' | translate }}" ng-model="formData.name">
+                    <div ng-show="errors.name"><small class="text-danger">{{ errors.name | translate }}</small></div>
+                </div>
+                <div class="row contact-input">
+                    <input type="email" class="form-control" id="email" placeholder="{{ 'E-MAIL' | translate }}" ng-model="formData.email">
+                    <div ng-show="errors.email"><small class="text-danger">{{ errors.email | translate }}</small></div>
+
+                </div>
+                <div class="row contact-input">
+                    <input type="text" class="form-control" id="subject" placeholder="{{ 'ASSUNTO' | translate }}"  ng-model="formData.subject">
+                    <div ng-show="errors.subject"><small class="text-danger">{{ errors.subject | translate }}</small></div>
+                </div>
+                <div class="row contact-input">
+                    <textarea class="form-control" id="message" rows="3" placeholder="{{ 'MENSAGEM' | translate }}"  ng-model="formData.message"></textarea>
+                    <div ng-show="errors.message"><small class="text-danger">{{ errors.message | translate }}</small></div>
+                </div>
+                <div class="row contact-input">
+                    <button type="submit" class="btn btn-secondary btn-block">{{ 'ENVIAR' | translate }}</button>
+                </div>
+            </form>
+            <div class="row alert alert-success text-center" ng-show="success_message">
+                {{ success_message | translate }}
             </div>
-            <div class="row contact-input">
-                <input type="email" class="form-control" id="email" placeholder="{{ 'E-MAIL' | translate }}">
+            <div class="row alert alert-danger text-center" ng-show="error_message">
+                {{ error_message | translate }}
             </div>
-            <div class="row contact-input">
-                <input type="text" class="form-control" id="subject" placeholder="{{ 'ASSUNTO' | translate }}">
-            </div>
-            <div class="row contact-input">
-                <textarea class="form-control" id="message" rows="3" placeholder="{{ 'MENSAGEM' | translate }}"></textarea>
-            </div>
-            <div class="row contact-input">
-                <button type="submit" class="btn btn-secondary btn-block">{{ 'ENVIAR' | translate }}</button>
-            </div>
-            <!-- </form> -->
         </div>
     </div>
 </div>

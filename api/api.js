@@ -31,9 +31,7 @@ router.post('/contact', function(req, res, next) {
     req.checkBody('subject', 'ASSUNTO_GRANDE').isLength({max: 70});
     req.checkBody('message', 'MENSAGEM_VAZIO').notEmpty();
 
-
     var errors = req.validationErrors();
-
 
     if(errors) {
         res.status(400).send({errors: errors});

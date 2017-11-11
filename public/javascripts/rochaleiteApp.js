@@ -69,22 +69,22 @@ app.controller('translateCtrl', function($scope, $translate) {
 app.config(function($routeProvider,$locationProvider) {
     $routeProvider
         .when("/", {
-            templateUrl : "projects.htm",
+            templateUrl : "views/partials/projects.htm",
             controller : "projectsCtrl"
         })
         .when("/projects", {
-            templateUrl : "projects.htm",
+            templateUrl : "views/partials/projects.htm",
             controller : "projectsCtrl"
         })
         .when("/projects/:projectId", {
-            templateUrl : "project.htm",
+            templateUrl : "views/partials/project.htm",
             controller : "projectCtrl"
         })
         .when("/team", {
-            templateUrl : "team.htm"
+            templateUrl : "views/partials/team.htm"
         })
         .when("/contacts", {
-            templateUrl : "contacts.htm",
+            templateUrl : "views/partials/contacts.htm",
             controller : "contactsCtrl"
         })
         .otherwise({

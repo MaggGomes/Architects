@@ -1,4 +1,4 @@
-var db = require('../db.js');
+var db = require('../config/config.js');
 
 exports.create = function(title, description, address, done) {
   var values = [title, description, address]

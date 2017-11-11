@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 
-var db = require('./db');
+var db = require('./config/config');
 
 // Connect to MySQL on start
 db.connect(db.MODE_PRODUCTION, function(err) {
@@ -19,13 +19,9 @@ db.connect(db.MODE_PRODUCTION, function(err) {
   }
 });
 
-var api = require('./api/api');
+var api = require('./routes/api');
 
 var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -39,7 +35,7 @@ app.use('/api/', api);
 
 app.all('/*', function(req, res, next) {
     // Just send the index.html for other files to support HTML5Mode
-    res.sendFile('./public/index.html', { root: __dirname });
+    res.sendFile('./public/views/index.html', { root: __dirname });
 });
 
 /**

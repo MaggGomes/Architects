@@ -2,7 +2,7 @@ var express = require('express'),
     router = express.Router(),
     nodemailer = require('nodemailer'),
     project = require('../models/project'),
-    config = require('../config');
+    config = require('../config/config');
 
 /* GET projects listing. */
 router.get('/projects/', function(req, res, next) {

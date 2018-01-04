@@ -9,43 +9,45 @@ exports.create = function(title, description, address, done) {
   })
 };
 
+var projects = [
+        {id:"casa-murtinheira", thumbnail:"/thumbnails/casa-murtinheira.jpg", title: "Casa Murtinheira", description: "description teste", address: "address teste"},
+        {id:"palacete-av-boavista", thumbnail:"/thumbnails/palacete-av-boavista.jpg", title: "Palacete Av. Boavista", description: "description teste", address: "address teste"},
+        {id:"edificio-sede-espaco-agros", thumbnail:"/thumbnails/edificio-sede-espaco-agros.jpg", title: "Edifício Sede, Espaço Agros", description: "description teste", address: "address teste"},
+        {id:"entrada-eventos-espaco-agros", thumbnail:"/thumbnails/entrada-eventos-espaco-agros.jpg", title: "Entrada Eventos, Espaço Agros", description: "description teste", address: "address teste"},
+        {id:"casa-cadoucos", thumbnail:"/thumbnails/casa-cadoucos.jpg", title: "Casa Cadouços", description: "description teste", address: "address teste"},
+        {id:"empatias", thumbnail:"/thumbnails/empatias.jpg", title: "Empatias", description: "description teste", address: "address teste"},
+        {id:"jazigo-afife", thumbnail:"/thumbnails/jazigo-afife.jpg", title: "Jazigo Afife", description: "description teste", address: "address teste"},
+        {id:"casa-dos-loios", thumbnail:"/thumbnails/casa-dos-loios.jpg", title: "Casa dos Lóios", description: "description teste", address: "address teste"},
+        {id:"casa-jovim", thumbnail:"/thumbnails/casa-jovim.jpg", title: "Casa Jovim", description: "description teste", address: "address teste"},
+        {id:"casa-da-baixa", thumbnail:"/thumbnails/casa-da-baixa.jpg", title: "Casa da Baixa", description: "description teste", address: "address teste"},
+        {id:"pizza-&-drinks", thumbnail:"/thumbnails/pizza-&-drinks.jpg", title: "Pizza & Drinks", description: "description teste", address: "address teste"},
+        {id:"casa-fvd", thumbnail:"/thumbnails/casa-fvd.jpg", title: "Casa FVD", description: "description teste", address: "address teste"},
+        {id:"ed-s-lazaro", thumbnail:"/thumbnails/ed-s-lazaro.jpg", title: "Ed. S. Lázaro", description: "description teste", address: "address teste"},
+        {id:"pizzaria-presto-cedofeita", thumbnail:"/thumbnails/pizzaria-presto-cedofeita.jpg", title: "Pizzaria Presto Cedofeita", description: "description teste", address: "address teste"},
+        {id:"casa-rua-das-flores", thumbnail:"/thumbnails/casa-rua-das-flores.jpg", title: "Casa Rua das Flores", description: "description teste", address: "address teste"},
+        {id:"ed-cedofeita-i", thumbnail:"/thumbnails/ed-cedofeita-i.jpg", title: "Ed. Cedofeita I", description: "description teste", address: "address teste"},
+        {id:"casa-no-douro", thumbnail:"/thumbnails/casa-no-douro.jpg", title: "Casa no Douro", description: "description teste", address: "address teste"},
+        {id:"restaurante-pateo-de-tanger", thumbnail:"/thumbnails/restaurante-pateo-de-tanger.jpg", title: "Restaurante Páteo de Tânger", description: "description teste", address: "address teste"},
+        {id:"casa-guerra-junqueiro", thumbnail:"/thumbnails/casa-guerra-junqueiro.jpg", title: "Casa Guerra Junqueiro", description: "description teste", address: "address teste"},
+        {id:"casa-nelas", thumbnail:"/thumbnails/casa-nelas.jpg", title: "Casa nelas", description: "description teste", address: "address teste"},
+        {id:"ed-cedofeita-ii", thumbnail:"/thumbnails/ed-cedofeita-ii.jpg", title: "Ed. Cedofeita II", description: "description teste", address: "address teste"},
+        {id:"ed-belomonte", thumbnail:"/thumbnails/ed-belomonte.jpg", title: "Ed. Belomonte", description: "description teste", address: "address teste"},
+        {id:"casa-caldeireiros", thumbnail:"/thumbnails/casa-caldeireiros.jpg", title: "Casa Caldeireiros", description: "description teste", address: "address teste"},
+        {id:"casa-esposende", thumbnail:"/thumbnails/casa-esposende.jpg", title: "Casa Esposende", description: "description teste", address: "address teste"},
+        {id:"casa-b-vilarinha", thumbnail:"/thumbnails/casa-b-vilarinha.jpg", title: "Casa B. Vilarinha", description: "description teste", address: "address teste"},
+        {id:"ed-clerigos", thumbnail:"/thumbnails/ed-clerigos.jpg", title: "Ed. Clérigos", description: "description teste", address: "address teste"},
+        {id:"casa-povoa", thumbnail:"/thumbnails/casa-povoa.jpg", title: "Casa Póvoa", description: "description teste", address: "address teste"},
+        {id:"restaurante-bocca", thumbnail:"/thumbnails/restaurante-bocca.jpg", title: "Restaurante Bocca", description: "description teste", address: "address teste"},
+        {id:"casa-gondarem", thumbnail:"/thumbnails/casa-gondarem.jpg", title: "Casa Gondarém", description: "description teste", address: "address teste"},
+        {id:"restaurante-cacau-wine-terrace", thumbnail:"/thumbnails/restaurante-cacau-wine-terrace.jpg", title: "Restaurante Ccau Wine Terrace", description: "description teste", address: "address teste"},
+        ];
+
 exports.getAll = function(done) {
   /*db.get().query('SELECT * FROM projects', function (err, rows) {
     if (err) return done(err);
     done(null, rows)
   })*/
-    done(null, [
-        {id:1, title: "teste1", description: "description teste", address: "address teste"},
-        {id:2, title: "teste1", description: "description teste", address: "address teste"},
-        {id:3, title: "teste1", description: "description teste", address: "address teste"},
-        {id:4, title: "teste1", description: "description teste", address: "address teste"},
-        {id:5, title: "teste1", description: "description teste", address: "address teste"},
-        {id:6, title: "teste1", description: "description teste", address: "address teste"},
-        {id:7, title: "teste1", description: "description teste", address: "address teste"},
-        {id:8, title: "teste1", description: "description teste", address: "address teste"},
-        {id:9, title: "teste1", description: "description teste", address: "address teste"},
-        {id:10, title: "teste1", description: "description teste", address: "address teste"},
-        {id:11, title: "teste1", description: "description teste", address: "address teste"},
-        {id:12, title: "teste1", description: "description teste", address: "address teste"},
-        {id:13, title: "teste1", description: "description teste", address: "address teste"},
-        {id:14, title: "teste1", description: "description teste", address: "address teste"},
-        {id:15, title: "teste1", description: "description teste", address: "address teste"},
-        {id:16, title: "teste1", description: "description teste", address: "address teste"},
-        {id:17, title: "teste1", description: "description teste", address: "address teste"},
-        {id:18, title: "teste1", description: "description teste", address: "address teste"},
-        {id:19, title: "teste1", description: "description teste", address: "address teste"},
-        {id:20, title: "teste1", description: "description teste", address: "address teste"},
-        {id:21, title: "teste1", description: "description teste", address: "address teste"},
-        {id:22, title: "teste1", description: "description teste", address: "address teste"},
-        {id:23, title: "teste1", description: "description teste", address: "address teste"},
-        {id:24, title: "teste1", description: "description teste", address: "address teste"},
-        {id:25, title: "teste1", description: "description teste", address: "address teste"},
-        {id:26, title: "teste1", description: "description teste", address: "address teste"},
-        {id:27, title: "teste1", description: "description teste", address: "address teste"},
-        {id:28, title: "teste1", description: "description teste", address: "address teste"},
-        {id:29, title: "teste1", description: "description teste", address: "address teste"},
-        {id:30, title: "teste1", description: "description teste", address: "address teste"}
-        ])
+    done(null, projects)
 };
 
 exports.getById = function(id, done) {
@@ -53,7 +55,19 @@ exports.getById = function(id, done) {
         if (err) return done(err);
         done(null, row)
     })*/
-    done(null, [{
+	projects.forEach(function(project){
+    if (id == project.id){
+		console.log(project);
+			done(null, project);
+		}
+  });
+	
+	/*for(var i = 0; i < projects.size(); i++){
+		if (id == projects[i].id){
+			done(null, projects[i]);
+		}
+	}*/
+    /*done(null, [{
         id:1,
         title: "teste1",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae volutpat est. Etiam lobortis ultricies elit sit amet ornare. Etiam imperdiet placerat ipsum, ut porta nulla congue id. Donec ut arcu iaculis, tristique dui sit amet, ornare lorem. Fusce non libero eu tellus elementum viverra eu sed felis. Praesent tellus metus, molestie at gravida sed, blandit eget leo. In sed ornare magna. Phasellus volutpat ornare pharetra. Nunc eu eros quis turpis dapibus accumsan. Vivamus fringilla, arcu id viverra pharetra, lacus erat ornare nisi, vel pretium nunc felis vitae odio. Integer semper eget augue nec ultricies. Duis efficitur, ipsum id interdum auctor, ex nunc auctor ante, et sollicitudin enim urna ut nisi. Proin ultricies tristique justo nec elementum.\n" +
@@ -62,5 +76,5 @@ exports.getById = function(id, done) {
         "\n" +
         "Sed a auctor velit. Morbi iaculis blandit enim ut auctor. Nullam velit nulla, interdum vitae interdum eu, auctor a libero. Integer eros eros, aliquam sed lacinia non, malesuada a erat. Aenean finibus, arcu et egestas euismod, nunc tortor tincidunt ex, maximus tristique eros enim facilisis massa. Sed tincidunt elementum ornare. Fusce facilisis justo nulla, sit amet mollis leo consectetur et. Vivamus tristique leo mauris, a rutrum risus ullamcorper vel. Donec laoreet pulvinar pulvinar.",
         address: "address teste"
-    }])
+    }])*/
 };

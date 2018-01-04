@@ -113,7 +113,7 @@ app.controller('projectsCtrl', function($scope, $http) {
 app.controller('projectCtrl', function($scope, $routeParams, $http) {
     $http.get("/api/projects/" + $routeParams.projectId)
         .then(function(response) {
-            $scope.project = response.data[0];
+            $scope.project = response.data;
         });
 });
 

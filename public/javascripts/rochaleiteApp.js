@@ -4,14 +4,24 @@ var app = angular.module("rochaleiteApp", ["ngRoute","pascalprecht.translate","n
 app.config(function ($translateProvider) {
     $translateProvider.translations('pt', {
         'PROJECTOS': 'projectos',
-        'EQUIPA': 'equipa',
+		'ATELIER': 'atelier',
+		'ROCHA_LEITE_ARQUITECTOS': 'rocha leite arquitectos',
+		'EQUIPA': 'equipa',
+        'CURRICULUM': 'curriculum',
+		'DISTINCOES': 'distincoes',
+		'LINKS': 'links',
         'CONTACTOS': 'contactos',
+		'DESTAQUE': 'destaque',
 
         'REABILITACAO': 'reabilitação',
-        'EQUIPAMENTOS': 'equipamentos',
+        'EQUIPAMENTOS': 'equipamentos e serviços',
         'HABITACAO': 'habitação',
-        'CONCLUIDO': 'concluído',
-        'EM_CONSTRUCAO': 'em construção',
+		'UNIFAMILIAR': 'unifamiliar',
+		'COLECTIVO': 'colectivo',
+		'TURISMO': 'turismo',
+		'INTERIORES': 'interiores',
+		'RESTAURACAO': 'restauração e comércio',
+        'ESTUDOS_URBANISTICOS': 'estudos urbanísticos',
 
         'NOME': 'nome',
         'E-MAIL': 'e-mail',
@@ -31,16 +41,27 @@ app.config(function ($translateProvider) {
     });
     $translateProvider.translations('en', {
         'PROJECTOS': 'projects',
+		'ATELIER': 'atelier',
+		'ROCHA_LEITE_ARQUITECTOS': 'rocha leite arquitects',
         'EQUIPA': 'team',
+		'CURRICULUM': 'curriculum',
+		'DISTINCOES': 'distinctions',
+		'LINKS': 'links',
         'CONTACTOS': 'contacts',
+		'DESTAQUE': 'highlights',
 
         'REABILITACAO': 'rehabilitation',
-        'EQUIPAMENTOS': 'equipments',
+        'EQUIPAMENTOS': 'equipments and services',
         'HABITACAO': 'housing',
-        'CONCLUIDO': 'completed',
-        'EM_CONSTRUCAO': 'under construction',
+        'UNIFAMILIAR': 'single-family',
+		'COLECTIVO': 'collective',
+		'TURISMO': 'tourism',
+		'INTERIORES': 'interior',
+		'RESTAURACAO': 'restoration and commerce',
+		'ESTUDOS_URBANISTICOS': 'urban studies',
 
-        'NOME': 'name',
+
+		'NOME': 'name',
         'E-MAIL': 'e-mail',
         'ASSUNTO': 'subject',
         'MENSAGEM': 'message',
@@ -107,7 +128,16 @@ app.controller('projectsCtrl', function($scope, $http) {
     $http.get("/api/projects")
         .then(function(response) {
             $scope.projects = response.data;
+			$scope.selectedTag = null;
         });
+	$scope.selectProjects = function(tag) {
+		$scope.selectedTag = tag;
+		$scope.selectedProjects = $scope.projects.filter(function(project){
+		    return project.title == "teste1"; // TODO apagar
+            //return project.tags.contains(tag); // TODO descomentar quando tags estiverem implementadas
+		});
+		alert($scope.selectedProjects);
+	};
 });
 
 app.controller('projectCtrl', function($scope, $routeParams, $http) {

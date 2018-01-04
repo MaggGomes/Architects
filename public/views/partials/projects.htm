@@ -1,6 +1,19 @@
-<section class="git container main-container">
+<section class="git container main-container" ng-show="!selectedProjects">
     <div class="row project-portfolio-row">
         <div class="col-md-2 project" ng-repeat="project in projects">
+            <a href="/projects/{{project.id}}">
+                <div class="img-wrapper">
+                    <div class="img-overlay"></div>
+                    <img src="{{project.thumbnail}}">
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="git container main-container" ng-if="selectedProjects">
+    <div class="row project-portfolio-row">
+        <div class="col-md-2 project" ng-repeat="project in selectedProjects">
             <a href="/projects/{{project.id}}">
                 <div class="img-wrapper">
                     <div class="img-overlay"></div>

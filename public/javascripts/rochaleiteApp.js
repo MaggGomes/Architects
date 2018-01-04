@@ -95,6 +95,7 @@ app.config(function($routeProvider,$locationProvider) {
         })
         .when("/projects", {
             templateUrl : "views/partials/projects.htm",
+			reloadOnSearch: false,
             controller : "projectsCtrl"
         })
         .when("/projects/:projectId", {
@@ -124,19 +125,34 @@ app.controller('mainCtrl', function($scope, $http) { //TODO apagar (copia de pro
         });
 });
 
-app.controller('projectsCtrl', function($scope, $http) {
+app.controller('projectsCtrl', function($scope, $routeParams, $http, $location) {
     $http.get("/api/projects")
         .then(function(response) {
-            $scope.projects = response.data;
-			$scope.selectedTag = null;
+			$scope.projects = response.data;
+        	if($routeParams.category){
+				$scope.selectProjects($routeParams.category);
+			} else {
+				$scope.clearSelectedProjects();
+			}
         });
-	$scope.selectProjects = function(tag) {
-		$scope.selectedTag = tag;
-		$scope.selectedProjects = $scope.projects.filter(function(project){
-		    return project.title == "teste1"; // TODO apagar
-            //return project.tags.contains(tag); // TODO descomentar quando tags estiverem implementadas
-		});
-		alert($scope.selectedProjects);
+	$scope.selectProjects = function(category) {
+		if($scope.selectedCategory == category){
+			$scope.clearSelectedProjects();
+		} else {
+			$scope.selectedCategory = category;
+			$scope.selectedProjects = $scope.projects.filter(function (project) {
+				return project.categories.indexOf(category) > -1;
+			});
+			$scope.selectedProject = $scope.selectedProjects[0];
+			$location.url('/projects?category=' + category);
+			console.log($scope.selectedProjects);
+		}
+	};
+
+	$scope.clearSelectedProjects = function() {
+		$scope.selectedCategory = null;
+		$scope.selectedProject = null;
+		$scope.selectedProjects = null;
 	};
 });
 

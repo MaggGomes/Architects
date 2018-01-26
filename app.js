@@ -29,6 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(expressValidator());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(favicon(path.join(__dirname, 'public', 'images/favicon.png')));
 app.use('/thumbnails', express.static(path.join(__dirname, 'thumbnails')));
 app.use('/images', express.static(path.join(__dirname, 'images')));
 

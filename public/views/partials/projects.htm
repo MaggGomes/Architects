@@ -1,9 +1,11 @@
-<section class="git container main-container" ng-show="!selectedProjects">
-    <div class="row project-portfolio-row">
-        <div class="col-md-2 project" ng-repeat="project in projects">
+<section class="container main-container" ng-show="!selectedProjects">
+    <div class="row project-portfolio-row" ng-repeat="rowProjects in slicedProjects">
+        <div class="col-md-2 project" ng-repeat="project in rowProjects">
             <a href="/projects/{{project.id}}">
                 <div class="img-wrapper">
-                    <div class="img-overlay"></div>
+                    <div class="imgOverlay" ng-class="{imgOverlayColor: !hover}"
+                         ng-mouseenter="hover = true"
+                         ng-mouseleave="hover = false"></div>
                     <img src="{{project.thumbnail}}">
                 </div>
             </a>
@@ -11,12 +13,14 @@
     </div>
 </section>
 
-<section class="git container main-container" ng-if="selectedProjects">
+<section class="container main-container" ng-if="selectedProjects">
     <div class="row project-portfolio-row">
         <div class="col-md-2 project" ng-repeat="project in selectedProjects">
             <a href="/projects/{{project.id}}">
                 <div class="img-wrapper">
-                    <div class="img-overlay"></div>
+                    <div class="imgOverlay" ng-class="{imgOverlayColor: !hover}"
+                         ng-mouseenter="hover = true"
+                         ng-mouseleave="hover = false"></div>
                     <img src="{{project.thumbnail}}">
                 </div>
             </a>

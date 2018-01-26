@@ -1,36 +1,42 @@
 <nav class="hidden-container navbar navbar-expand-lg fixed-bottom">
-    <div class="container navbar-main">
-        <ul class="nav-menu navbar-nav">
+    <div class="container">
+        <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link" href ng-click="selectProjects('rehabilitation')" ng-hide="selectedProject && selectedProject.categories.indexOf('rehabilitation') == -1">{{ 'REABILITACAO' | translate }}</a>
             </li>
-            |
+            <li class="divider-vertical"></li>
             <li class="nav-item">
                 <a class="nav-link" href ng-click="selectProjects('equipments_services')" ng-hide="selectedProject && selectedProject.categories.indexOf('equipments_services') == -1">{{ 'EQUIPAMENTOS' | translate }}</a>
             </li>
-            |
+            <li class="divider-vertical"></li>
             <li class="nav-item">
-                <a class="nav-link" href="#" single_family>{{ 'HABITACAO' | translate }}</a>
+                <a class="nav-link" href="#" ng-model="clickede" ng-init="cli=false" ng-click="cli=true" single_family>
+                    {{ 'HABITACAO' | translate }}
+                </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href ng-click="selectProjects('single_family')" ng-hide="selectedProject && selectedProject.categories.indexOf('single_family') == -1">{{ 'UNIFAMILIAR' | translate }}</a>
+            <li id="single-family-menu" class="sub-menu" ng-show="cli" ng-animate="fade">
+                <ul class="nav-menu navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href ng-click="selectProjects('single_family')" ng-hide="selectedProject && selectedProject.categories.indexOf('single_family') == -1">{{ 'UNIFAMILIAR' | translate }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href ng-click="selectProjects('collective')" ng-hide="selectedProject && selectedProject.categories.indexOf('collective') == -1">{{ 'COLECTIVO' | translate }}</a>
+                    </li>
+                </ul>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href ng-click="selectProjects('collective')" ng-hide="selectedProject && selectedProject.categories.indexOf('collective') == -1">{{ 'COLECTIVO' | translate }}</a>
-            </li>
-            |
+            <li class="divider-vertical"></li>
             <li class="nav-item">
                 <a class="nav-link" href ng-click="selectProjects('tourism')" ng-hide="selectedProject && selectedProject.categories.indexOf('tourism') == -1">{{ 'TURISMO' | translate }}</a>
             </li>
-            |
+            <li class="divider-vertical"></li>
             <li class="nav-item">
                 <a class="nav-link" href ng-click="selectProjects('interior')" ng-hide="selectedProject && selectedProject.categories.indexOf('interior') == -1">{{ 'INTERIORES' | translate }}</a>
             </li>
-            |
+            <li class="divider-vertical"></li>
             <li class="nav-item">
                 <a class="nav-link" href ng-click="selectProjects('restoration_commerce')" ng-hide="selectedProject && selectedProject.categories.indexOf('restoration_commerce') == -1">{{ 'RESTAURACAO' | translate }}</a>
             </li>
-            |
+            <li class="divider-vertical"></li>
             <li class="nav-item">
                 <a class="nav-link" href ng-click="selectProjects('urban_studies')" ng-hide="selectedProject && selectedProject.categories.indexOf('urban_studies') == -1">{{ 'ESTUDOS_URBANISTICOS' | translate }}</a>
             </li>

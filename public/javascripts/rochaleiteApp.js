@@ -8,7 +8,7 @@ app.config(function ($translateProvider) {
 		'ROCHA_LEITE_ARQUITECTOS': 'rocha leite arquitectos',
 		'EQUIPA': 'equipa',
         'CURRICULUM': 'curriculum',
-		'DISTINCOES': 'distincoes',
+		'DISTINCOES': 'distinções',
 		'LINKS': 'links',
         'CONTACTOS': 'contactos',
 		'DESTAQUE': 'destaque',
@@ -122,19 +122,27 @@ app.controller('mainCtrl', function($scope, $http) { //TODO apagar (copia de pro
     $http.get("/api/projects")
         .then(function(response) {
             $scope.projects = response.data;
+            console.log("mainCTRL");
         });
 });
 
 app.controller('projectsCtrl', function($scope, $routeParams, $http, $location) {
+
     $http.get("/api/projects")
         .then(function(response) {
 			$scope.projects = response.data;
+			$scope.slicedProjects = $scope.chunkArray($scope.projects, 6);
+
+            console.log($scope.projects);
+			console.log($scope.slicedProjects);
+
         	if($routeParams.category){
 				$scope.selectProjects($routeParams.category);
 			} else {
 				$scope.clearSelectedProjects();
 			}
         });
+
 	$scope.selectProjects = function(category) {
 		if($scope.selectedCategory == category){
 			$scope.clearSelectedProjects();
@@ -148,6 +156,17 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location) 
 			console.log($scope.selectedProjects);
 		}
 	};
+
+    $scope.chunkArray = function(arr, size){
+        var newArr = [];
+
+        console.log(arr.length);
+        for(var i = 0; i < arr.length; i+=size){
+            newArr.push(arr.slice(i, i+size));
+        }
+
+        return newArr;
+    };
 
 	$scope.clearSelectedProjects = function() {
 		$scope.selectedCategory = null;

@@ -227,7 +227,7 @@ main.ng-enter.ng-enter-active {
     padding-left: 30px;
   }*/
 
-  .project-portfolio-row .col-md-2 {
+  /*.project-portfolio-row .col-md-2 {
     padding-right: 0;
     padding-left: 0;
   }
@@ -238,7 +238,7 @@ main.ng-enter.ng-enter-active {
 
   .menu .navbar-nav li {
     float: left;
-  }
+  }*/
 
   /* end */
 }

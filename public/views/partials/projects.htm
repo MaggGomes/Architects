@@ -1,6 +1,6 @@
 <section class="container main-container" ng-show="!selectedProjects">
     <div class="row project-portfolio-row" ng-repeat="rowProjects in slicedProjects">
-        <div class="col-md-2 project" ng-repeat="project in rowProjects">
+        <div class="col-2 project" ng-repeat="project in rowProjects">
             <a href="/projects/{{project.id}}">
                 <div class="img-wrapper">
                     <div class="imgOverlay" ng-class="{imgOverlayColor: !hover}"

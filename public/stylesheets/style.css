@@ -51,7 +51,7 @@
 /* min-width 992 px */
 
 header .navbar {
-  padding-top: 20px;
+  padding-top: 40px;
   padding-bottom: 20px;
 }
 
@@ -221,24 +221,22 @@ main.ng-enter.ng-enter-active {
 
 @media screen and (max-width: 992px) {
   /* APAGAR - RESPONSIVO */
-  /*body .container {
-    width: 1200px !important;
-    padding-right: 30px;
-    padding-left: 30px;
-  }*/
-
-  /*.project-portfolio-row .col-md-2 {
-    padding-right: 0;
-    padding-left: 0;
-  }
-
   .menu .navbar-nav {
     display: inline-block;
   }
 
   .menu .navbar-nav li {
     float: left;
-  }*/
+  }
+
+  body {
+    width: 1200px;
+  }
+
+  .main-container {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
 
   /* end */
 }
@@ -246,6 +244,25 @@ main.ng-enter.ng-enter-active {
 /* Medium devices (desktops, 992px and up) @screen-md-min */
 @media (min-width: 992px) {
 
+  /* APAGAR - RESPONSIVO */
+  /* substituir por class fixed-top */
+  header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  }
 
+  /* substituir por class fixed-bottom */
+  footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  }
+
+  /*end */
 
 }

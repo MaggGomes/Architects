@@ -1,34 +1,69 @@
 <div class="container main-container">
-    <div class="row justify-content-md-center d-flex align-items-center contact-form bg-main-color">
-        <div class="col-md-5">
-            <form ng-submit="contactForm()"> <!-- TODO o angular estraga o bootstrap -->
-                <div class="row contact-input">
-                    <input type="text" class="form-control" ng-class="{ 'is-invalid' : errors.name }"id="name" placeholder="{{ 'NOME' | translate }}" ng-model="formData.name">
-                    <div ng-show="errors.name"><small class="text-danger">{{ errors.name | translate }}</small></div>
-                </div>
-                <div class="row contact-input">
-                    <input type="email" class="form-control" id="email" placeholder="{{ 'E-MAIL' | translate }}" ng-model="formData.email">
-                    <div ng-show="errors.email"><small class="text-danger">{{ errors.email | translate }}</small></div>
+    <div class="row">
 
+        <div class="col col-3">
+            <div class="row justify-content-md-center d-flex align-items-center contact-form bg-main-color">
+                <div class="col-12">
+                    <form ng-submit="contactForm()"> <!-- TODO o angular estraga o bootstrap -->
+                        <div class="row contact-input">
+                            <input type="text" class="form-control" ng-class="{ 'is-invalid' : errors.name }"id="name" placeholder="{{ 'NOME' | translate }}" ng-model="formData.name">
+                            <div ng-show="errors.name"><small class="text-danger">{{ errors.name | translate }}</small></div>
+                        </div>
+                        <div class="row contact-input">
+                            <input type="email" class="form-control" id="email" placeholder="{{ 'E-MAIL' | translate }}" ng-model="formData.email">
+                            <div ng-show="errors.email"><small class="text-danger">{{ errors.email | translate }}</small></div>
+
+                        </div>
+                        <div class="row contact-input">
+                            <input type="text" class="form-control" id="subject" placeholder="{{ 'ASSUNTO' | translate }}"  ng-model="formData.subject">
+                            <div ng-show="errors.subject"><small class="text-danger">{{ errors.subject | translate }}</small></div>
+                        </div>
+                        <div class="row contact-input">
+                            <textarea class="form-control" id="message" rows="3" placeholder="{{ 'MENSAGEM' | translate }}"  ng-model="formData.message"></textarea>
+                            <div ng-show="errors.message"><small class="text-danger">{{ errors.message | translate }}</small></div>
+                        </div>
+                        <div class="row contact-input">
+                            <button type="submit" class="btn btn-secondary btn-block">{{ 'ENVIAR' | translate }}</button>
+                        </div>
+                    </form>
+                    <div class="row alert alert-success text-center" ng-show="success_message">
+                        {{ success_message | translate }}
+                    </div>
+                    <div class="row alert alert-danger text-center" ng-show="error_message">
+                        {{ error_message | translate }}
+                    </div>
                 </div>
-                <div class="row contact-input">
-                    <input type="text" class="form-control" id="subject" placeholder="{{ 'ASSUNTO' | translate }}"  ng-model="formData.subject">
-                    <div ng-show="errors.subject"><small class="text-danger">{{ errors.subject | translate }}</small></div>
-                </div>
-                <div class="row contact-input">
-                    <textarea class="form-control" id="message" rows="3" placeholder="{{ 'MENSAGEM' | translate }}"  ng-model="formData.message"></textarea>
-                    <div ng-show="errors.message"><small class="text-danger">{{ errors.message | translate }}</small></div>
-                </div>
-                <div class="row contact-input">
-                    <button type="submit" class="btn btn-secondary btn-block">{{ 'ENVIAR' | translate }}</button>
-                </div>
-            </form>
-            <div class="row alert alert-success text-center" ng-show="success_message">
-                {{ success_message | translate }}
             </div>
-            <div class="row alert alert-danger text-center" ng-show="error_message">
-                {{ error_message | translate }}
+
+            <div class="row align-items-end">
+                <div class="col-12">
+                    Rua de Tânger, 1257, 1º<br>
+                    4150-732 Porto<br>
+                    22 616 4377 | 91 642 6763<br>
+                    <a href="mailto:rochaleite.arq@gmail.com">rochaleite.arq@gmail.com</a>
+                </div>
+
+                <div class="col-2">
+                    <a target="_blank" href="https://www.facebook.com/rochaleite.arq"><i class="fa fa-facebook-f fa-2x text-dark" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-2">
+                    <a target="_blank" href="https://www.instagram.com/rochaleitearquitectos/"><i class="fa fa-instagram fa-2x text-dark" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-2">
+                    <a target="_blank" href=""><i class="fa fa-linkedin fa-2x text-dark" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-2">
+                    <a target="_blank" href=""><i class="fa fa-pinterest-p fa-2x text-dark" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-2">
+                    <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=41.1611335,-8.6610866"><i class="fa fa-paper-plane-o fa-2x text-dark" aria-hidden="true"></i></a>
+                </div>
             </div>
+        </div>
+        <div class="col col-9">
+            <ng-map id="map" center="[41.1611335,-8.659]" zoom="16" map-type-id="MapTypeId.SATELLITE">
+                <marker position="[41.1611335,-8.6610866]"></marker>
+            </ng-map>
         </div>
     </div>
 </div>

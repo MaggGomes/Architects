@@ -30,6 +30,7 @@ app.use(cookieParser());
 app.use(expressValidator());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images/favicon.png')));
+app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 app.use('/thumbnails', express.static(path.join(__dirname, 'thumbnails')));
 app.use('/images', express.static(path.join(__dirname, 'images')));
 

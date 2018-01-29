@@ -1,4 +1,4 @@
-var app = angular.module("rochaleiteApp", ["ngRoute","pascalprecht.translate","ngAnimate"]);
+var app = angular.module("rochaleiteApp", ["ngRoute","pascalprecht.translate","ngAnimate","ngMap"]);
 
 // Translation configuration
 app.config(function ($translateProvider) {
@@ -196,7 +196,7 @@ app.controller('projectCtrl', function($scope, $routeParams, $http) {
         });
 });
 
-app.controller('contactsCtrl', function($scope, $http, $translate) {
+app.controller('contactsCtrl', function($scope, $http, $translate, NgMap) {
 	$("header").removeClass("hidden");
     // object to hold form information
     $scope.formData = {};
@@ -237,6 +237,12 @@ app.controller('contactsCtrl', function($scope, $http, $translate) {
                 }
             });
     };
+
+	NgMap.getMap().then(function(map) {
+		console.log(map.getCenter());
+		console.log('markers', map.markers);
+		console.log('shapes', map.shapes);
+	});
 
 });
 // Views controllers (end)

@@ -270,3 +270,7 @@ main.ng-enter.ng-enter-active {
 .hidden{
   display:none;
 }
+
+#map{
+  height:450px;
+}

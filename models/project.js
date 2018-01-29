@@ -10,36 +10,36 @@ exports.create = function(title, description, address, done) {
 };
 
 var projects = [
-        {id:"casa-murtinheira", thumbnail:"/thumbnails/casa-murtinheira.jpg", title: "Casa Murtinheira", description: "description teste", address: "address teste", categories: ["rehabilitation", "equipments_services"]},
-        {id:"palacete-av-boavista", thumbnail:"/thumbnails/palacete-av-boavista.jpg", title: "Palacete Av. Boavista", description: "description teste", address: "address teste", categories: []},
-        {id:"edificio-sede-espaco-agros", thumbnail:"/thumbnails/edificio-sede-espaco-agros.jpg", title: "Edifício Sede, Espaço Agros", description: "description teste", address: "address teste", categories: ["rehabilitation", "equipments_services"]},
-        {id:"entrada-eventos-espaco-agros", thumbnail:"/thumbnails/entrada-eventos-espaco-agros.jpg", title: "Entrada Eventos, Espaço Agros", description: "description teste", address: "address teste", categories: ["rehabilitation"]},
-        {id:"casa-cadoucos", thumbnail:"/thumbnails/casa-cadoucos.jpg", title: "Casa Cadouços", description: "description teste", address: "address teste", categories: []},
-        {id:"empatias", thumbnail:"/thumbnails/empatias.jpg", title: "Empatias", description: "description teste", address: "address teste", categories: []},
-        {id:"jazigo-afife", thumbnail:"/thumbnails/jazigo-afife.jpg", title: "Jazigo Afife", description: "description teste", address: "address teste", categories: []},
-        {id:"casa-dos-loios", thumbnail:"/thumbnails/casa-dos-loios.jpg", title: "Casa dos Lóios", description: "description teste", address: "address teste", categories: []},
-        {id:"casa-jovim", thumbnail:"/thumbnails/casa-jovim.jpg", title: "Casa Jovim", description: "description teste", address: "address teste", categories: []},
-        {id:"casa-da-baixa", thumbnail:"/thumbnails/casa-da-baixa.jpg", title: "Casa da Baixa", description: "description teste", address: "address teste", categories: []},
-        {id:"pizza-&-drinks", thumbnail:"/thumbnails/pizza-&-drinks.jpg", title: "Pizza & Drinks", description: "description teste", address: "address teste", categories: []},
-        {id:"casa-fvd", thumbnail:"/thumbnails/casa-fvd.jpg", title: "Casa FVD", description: "description teste", address: "address teste", categories: []},
-        {id:"ed-s-lazaro", thumbnail:"/thumbnails/ed-s-lazaro.jpg", title: "Ed. S. Lázaro", description: "description teste", address: "address teste", categories: []},
-        {id:"pizzaria-presto-cedofeita", thumbnail:"/thumbnails/pizzaria-presto-cedofeita.jpg", title: "Pizzaria Presto Cedofeita", description: "description teste", address: "address teste", categories: []},
-        {id:"casa-rua-das-flores", thumbnail:"/thumbnails/casa-rua-das-flores.jpg", title: "Casa Rua das Flores", description: "description teste", address: "address teste", categories: []},
-        {id:"ed-cedofeita-i", thumbnail:"/thumbnails/ed-cedofeita-i.jpg", title: "Ed. Cedofeita I", description: "description teste", address: "address teste", categories: []},
-        {id:"casa-no-douro", thumbnail:"/thumbnails/casa-no-douro.jpg", title: "Casa no Douro", description: "description teste", address: "address teste", categories: []},
-        {id:"restaurante-pateo-de-tanger", thumbnail:"/thumbnails/restaurante-pateo-de-tanger.jpg", title: "Restaurante Páteo de Tânger", description: "description teste", address: "address teste", categories: []},
-        {id:"casa-guerra-junqueiro", thumbnail:"/thumbnails/casa-guerra-junqueiro.jpg", title: "Casa Guerra Junqueiro", description: "description teste", address: "address teste", categories: []},
-        {id:"casa-nelas", thumbnail:"/thumbnails/casa-nelas.jpg", title: "Casa nelas", description: "description teste", address: "address teste", categories: []},
-        {id:"ed-cedofeita-ii", thumbnail:"/thumbnails/ed-cedofeita-ii.jpg", title: "Ed. Cedofeita II", description: "description teste", address: "address teste", categories: []},
-        {id:"ed-belomonte", thumbnail:"/thumbnails/ed-belomonte.jpg", title: "Ed. Belomonte", description: "description teste", address: "address teste", categories: []},
-        {id:"casa-caldeireiros", thumbnail:"/thumbnails/casa-caldeireiros.jpg", title: "Casa Caldeireiros", description: "description teste", address: "address teste", categories: []},
-        {id:"casa-esposende", thumbnail:"/thumbnails/casa-esposende.jpg", title: "Casa Esposende", description: "description teste", address: "address teste", categories: []},
-        {id:"casa-b-vilarinha", thumbnail:"/thumbnails/casa-b-vilarinha.jpg", title: "Casa B. Vilarinha", description: "description teste", address: "address teste", categories: []},
-        {id:"ed-clerigos", thumbnail:"/thumbnails/ed-clerigos.jpg", title: "Ed. Clérigos", description: "description teste", address: "address teste", categories: []},
-        {id:"casa-povoa", thumbnail:"/thumbnails/casa-povoa.jpg", title: "Casa Póvoa", description: "description teste", address: "address teste", categories: []},
-        {id:"restaurante-bocca", thumbnail:"/thumbnails/restaurante-bocca.jpg", title: "Restaurante Bocca", description: "description teste", address: "address teste", categories: []},
-        {id:"casa-gondarem", thumbnail:"/thumbnails/casa-gondarem.jpg", title: "Casa Gondarém", description: "description teste", address: "address teste", categories: []},
-        {id:"restaurante-cacau-wine-terrace", thumbnail:"/thumbnails/restaurante-cacau-wine-terrace.jpg", title: "Restaurante Ccau Wine Terrace", description: "description teste", address: "address teste", categories: []}
+        {id:"casa-murtinheira", thumbnail:"/thumbnails/casa-murtinheira.jpg", title: "Casa Murtinheira", description: "description teste", address: "address teste", categories: ["rehabilitation", "equipments_services"], order: 30},
+        {id:"palacete-av-boavista", thumbnail:"/thumbnails/palacete-av-boavista.jpg", title: "Palacete Av. Boavista", description: "description teste", address: "address teste", categories: [], order: 29},
+        {id:"edificio-sede-espaco-agros", thumbnail:"/thumbnails/edificio-sede-espaco-agros.jpg", title: "Edifício Sede, Espaço Agros", description: "description teste", address: "address teste", categories: ["rehabilitation", "equipments_services"], order: 28},
+        {id:"entrada-eventos-espaco-agros", thumbnail:"/thumbnails/entrada-eventos-espaco-agros.jpg", title: "Entrada Eventos, Espaço Agros", description: "description teste", address: "address teste", categories: ["rehabilitation"], order: 27},
+        {id:"casa-cadoucos", thumbnail:"/thumbnails/casa-cadoucos.jpg", title: "Casa Cadouços", description: "description teste", address: "address teste", categories: [], order: 26},
+        {id:"empatias", thumbnail:"/thumbnails/empatias.jpg", title: "Empatias", description: "description teste", address: "address teste", categories: [], order: 25},
+        {id:"jazigo-afife", thumbnail:"/thumbnails/jazigo-afife.jpg", title: "Jazigo Afife", description: "description teste", address: "address teste", categories: [], order: 24},
+        {id:"casa-dos-loios", thumbnail:"/thumbnails/casa-dos-loios.jpg", title: "Casa dos Lóios", description: "description teste", address: "address teste", categories: [], order: 23},
+        {id:"casa-jovim", thumbnail:"/thumbnails/casa-jovim.jpg", title: "Casa Jovim", description: "description teste", address: "address teste", categories: [], order: 22},
+        {id:"casa-da-baixa", thumbnail:"/thumbnails/casa-da-baixa.jpg", title: "Casa da Baixa", description: "description teste", address: "address teste", categories: [], order: 21},
+        {id:"pizza-&-drinks", thumbnail:"/thumbnails/pizza-&-drinks.jpg", title: "Pizza & Drinks", description: "description teste", address: "address teste", categories: [], order: 20},
+        {id:"casa-fvd", thumbnail:"/thumbnails/casa-fvd.jpg", title: "Casa FVD", description: "description teste", address: "address teste", categories: [], order: 19},
+        {id:"ed-s-lazaro", thumbnail:"/thumbnails/ed-s-lazaro.jpg", title: "Ed. S. Lázaro", description: "description teste", address: "address teste", categories: [], order: 18},
+        {id:"pizzaria-presto-cedofeita", thumbnail:"/thumbnails/pizzaria-presto-cedofeita.jpg", title: "Pizzaria Presto Cedofeita", description: "description teste", address: "address teste", categories: [], order: 17},
+        {id:"casa-rua-das-flores", thumbnail:"/thumbnails/casa-rua-das-flores.jpg", title: "Casa Rua das Flores", description: "description teste", address: "address teste", categories: [], order: 16},
+        {id:"ed-cedofeita-i", thumbnail:"/thumbnails/ed-cedofeita-i.jpg", title: "Ed. Cedofeita I", description: "description teste", address: "address teste", categories: [], order: 15},
+        {id:"casa-no-douro", thumbnail:"/thumbnails/casa-no-douro.jpg", title: "Casa no Douro", description: "description teste", address: "address teste", categories: [], order: 14},
+        {id:"restaurante-pateo-de-tanger", thumbnail:"/thumbnails/restaurante-pateo-de-tanger.jpg", title: "Restaurante Páteo de Tânger", description: "description teste", address: "address teste", categories: [], order: 13},
+        {id:"casa-guerra-junqueiro", thumbnail:"/thumbnails/casa-guerra-junqueiro.jpg", title: "Casa Guerra Junqueiro", description: "description teste", address: "address teste", categories: [], order: 12},
+        {id:"casa-nelas", thumbnail:"/thumbnails/casa-nelas.jpg", title: "Casa nelas", description: "description teste", address: "address teste", categories: [], order: 11},
+        {id:"ed-cedofeita-ii", thumbnail:"/thumbnails/ed-cedofeita-ii.jpg", title: "Ed. Cedofeita II", description: "description teste", address: "address teste", categories: [], order: 10},
+        {id:"ed-belomonte", thumbnail:"/thumbnails/ed-belomonte.jpg", title: "Ed. Belomonte", description: "description teste", address: "address teste", categories: [], order: 9},
+        {id:"casa-caldeireiros", thumbnail:"/thumbnails/casa-caldeireiros.jpg", title: "Casa Caldeireiros", description: "description teste", address: "address teste", categories: [], order: 8},
+        {id:"casa-esposende", thumbnail:"/thumbnails/casa-esposende.jpg", title: "Casa Esposende", description: "description teste", address: "address teste", categories: [], order: 7},
+        {id:"casa-b-vilarinha", thumbnail:"/thumbnails/casa-b-vilarinha.jpg", title: "Casa B. Vilarinha", description: "description teste", address: "address teste", categories: [], order: 6},
+        {id:"ed-clerigos", thumbnail:"/thumbnails/ed-clerigos.jpg", title: "Ed. Clérigos", description: "description teste", address: "address teste", categories: [], order: 5},
+        {id:"casa-povoa", thumbnail:"/thumbnails/casa-povoa.jpg", title: "Casa Póvoa", description: "description teste", address: "address teste", categories: [], order: 4},
+        {id:"restaurante-bocca", thumbnail:"/thumbnails/restaurante-bocca.jpg", title: "Restaurante Bocca", description: "description teste", address: "address teste", categories: [], order: 3},
+        {id:"casa-gondarem", thumbnail:"/thumbnails/casa-gondarem.jpg", title: "Casa Gondarém", description: "description teste", address: "address teste", categories: [], order: 2},
+        {id:"restaurante-cacau-wine-terrace", thumbnail:"/thumbnails/restaurante-cacau-wine-terrace.jpg", title: "Restaurante Ccau Wine Terrace", description: "description teste", address: "address teste", categories: [], order: 1}
         ];
 
 exports.getAll = function(done) {
@@ -47,6 +47,9 @@ exports.getAll = function(done) {
     if (err) return done(err);
     done(null, rows)
   })*/
+	projects.sort(function(a, b) {
+		return a.order - b.order;
+	});
     done(null, projects)
 };
 

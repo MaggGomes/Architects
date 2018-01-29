@@ -258,3 +258,23 @@ app.animation('.slide', [function() {
         }
     }
 }]);
+
+app.directive('niceScroll', function() {
+    return{
+        restrict: 'A',
+        link: function(scope, element, attribute) {
+
+            var nicescrolConf = {
+                "cursorcolor": "#bdbdbd",
+                "background": "#ffffff",
+                "cursorwidth": "10px",
+                "cursorborder": "none",
+                "cursorborderradius": "2px",
+                "zindex": 9999,
+                "autohidemode": false
+            };
+
+            element.niceScroll(nicescrolConf);
+        }
+    };
+});

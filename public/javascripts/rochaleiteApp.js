@@ -90,8 +90,8 @@ app.controller('translateCtrl', function($scope, $translate) {
 app.config(function($routeProvider,$locationProvider) {
     $routeProvider
         .when("/", {
-            templateUrl : "views/partials/projects.htm",
-            controller : "projectsCtrl"
+            templateUrl : "views/partials/index.htm",
+            controller : "indexCtrl"
         })
         .when("/projects", {
             templateUrl : "views/partials/projects.htm",
@@ -130,15 +130,16 @@ app.config(function($routeProvider,$locationProvider) {
 });
 
 // Views controllers
-app.controller('mainCtrl', function($scope, $http) { //TODO apagar (copia de projects) a menos que frontpage seja view a parte
-    $http.get("/api/projects")
-        .then(function(response) {
-            $scope.projects = response.data;
-            console.log("mainCTRL");
-        });
+app.controller('indexCtrl', function($scope, $http, $location) { //TODO apagar (copia de projects) a menos que frontpage seja view a parte
+	$("header").addClass("hidden");
+
+	$scope.go = function ( path ) {
+		$location.path( path );
+	};
 });
 
 app.controller('projectsCtrl', function($scope, $routeParams, $http, $location) {
+	$("header").removeClass("hidden");
 
     $http.get("/api/projects")
         .then(function(response) {
@@ -188,6 +189,7 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location) 
 });
 
 app.controller('projectCtrl', function($scope, $routeParams, $http) {
+	$("header").removeClass("hidden");
     $http.get("/api/projects/" + $routeParams.projectId)
         .then(function(response) {
             $scope.project = response.data;
@@ -195,6 +197,7 @@ app.controller('projectCtrl', function($scope, $routeParams, $http) {
 });
 
 app.controller('contactsCtrl', function($scope, $http, $translate) {
+	$("header").removeClass("hidden");
     // object to hold form information
     $scope.formData = {};
 

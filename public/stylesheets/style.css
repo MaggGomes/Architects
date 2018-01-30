@@ -121,6 +121,10 @@ footer .navbar {
   height: 115px;
 }
 
+.selectedProjects img {width: auto;
+  height: 69vh;
+}
+
 .project-portfolio-row .imgOverlay {
   position: absolute;
   top: 0;

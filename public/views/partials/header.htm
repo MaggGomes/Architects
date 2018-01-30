@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg" ng-controller="headerCtrl" ng-hide="path == '/'">
     <div class="container">
         <a class="navbar-brand" href="/projects"><img src="/images/logo.svg"></a>
         <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,40 +9,40 @@
         <div class="menu menu-top"> <!--class="collapse navbar-collapse" id="navbarResponsive"-->
             <ul class="nav-menu navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a id="projects" class="nav-link" href="/projects">{{ 'PROJECTOS' | translate }}</a>
+                    <a id="projects" class="nav-link" href="/projects" ng-class="{'font-weight-bold': path.substr(0,9) =='/projects'}">{{ 'PROJECTOS' | translate }}</a>
                 </li>
                 <li class="divider-vertical"></li>
                 <li class="nav-item">
-                    <a id="atelier" class="nav-link" href="" ng-model="clickede" ng-init="clickede=false" ng-click="clickede=!clickede">
+                    <a id="atelier" class="nav-link" href="" ng-model="clickede" ng-init="clickede=false" ng-click="clickede=!clickede" ng-class="{'font-weight-bold': clickede || ['/architects','/team','/curriculum','/distinctions','/links'].includes(path)}">
                         {{ 'ATELIER' | translate }}
                     </a>
                 </li>
                 <li id="atelier-menu" class="sub-menu" ng-show="clickede">
                     <ul class="nav-menu navbar-nav">
                         <li class="nav-item">
-                            <a id="rocha_leite_arquitectos" class="nav-link" href="/arquitectos">{{ 'ROCHA_LEITE_ARQUITECTOS' | translate }}</a>
+                            <a id="rocha_leite_arquitectos" class="nav-link" href="/architects" ng-class="{'font-weight-bold': path =='/architects'}">{{ 'ROCHA_LEITE_ARQUITECTOS' | translate }}</a>
                         </li>
                         <li class="nav-item">
-                            <a id="team" class="nav-link" href="/team">{{ 'EQUIPA' | translate }}</a>
+                            <a id="team" class="nav-link" href="/team" ng-class="{'font-weight-bold': path =='/team'}">{{ 'EQUIPA' | translate }}</a>
                         </li>
                         <li class="nav-item">
-                            <a id="curriculum" class="nav-link" href="/curriculum">{{ 'CURRICULUM' | translate }}</a>
+                            <a id="curriculum" class="nav-link" href="/curriculum" ng-class="{'font-weight-bold': path =='/curriculum'}">{{ 'CURRICULUM' | translate }}</a>
                         </li>
                         <li class="nav-item">
-                            <a id="distinctions" class="nav-link" href="/distinctions">{{ 'DISTINCOES' | translate }}</a>
+                            <a id="distinctions" class="nav-link" href="/distinctions" ng-class="{'font-weight-bold': path =='/distinctions'}" >{{ 'DISTINCOES' | translate }}</a>
                         </li>
                         <li class="nav-item">
-                            <a id="links" class="nav-link" href="/links">{{ 'LINKS' | translate }}</a>
+                            <a id="links" class="nav-link" href="/links" ng-class="{'font-weight-bold': path =='/links'}">{{ 'LINKS' | translate }}</a>
                         </li>
                     </ul>
                 </li>
                 <li class="divider-vertical"></li>
                 <li class="nav-item">
-                    <a id="contacts" class="nav-link" href="/contacts">{{ 'CONTACTOS' | translate }}</a>
+                    <a id="contacts" class="nav-link" href="/contacts" ng-class="{'font-weight-bold': path =='/contacts'}">{{ 'CONTACTOS' | translate }}</a>
                 </li>
                 <li class="divider-vertical"></li>
                 <li class="nav-item">
-                    <a id="highlights" class="nav-link" href="/highlights">{{ 'DESTAQUE' | translate }}</a>
+                    <a id="highlights" class="nav-link" href="/highlights" ng-class="{'font-weight-bold': path =='/highlights'}">{{ 'DESTAQUE' | translate }}</a>
                 </li>
             </ul>
         </div>

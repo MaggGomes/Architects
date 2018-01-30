@@ -26,8 +26,8 @@
 </section>
 
 <section class="container main-container" ng-if="selectedProjects">
-    <div class="row project-portfolio-row">
-        <div class="col-md-2 project" ng-repeat="project in selectedProjects">
+    <div class="selectedProjects">
+        <div class="selectedProject" ng-repeat="project in selectedProjects">
             <a href="/projects/{{project.id}}">
                 <div class="img-wrapper">
                     <div class="imgOverlay" ng-class="{imgOverlayColor: !hover}"

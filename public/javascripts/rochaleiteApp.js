@@ -102,8 +102,8 @@ app.config(function($routeProvider,$locationProvider) {
             templateUrl : "views/partials/project.htm",
             controller : "projectCtrl"
         })
-        .when("/arquitectos", {
-            templateUrl : "views/partials/arquitectos.htm"
+        .when("/architects", {
+            templateUrl : "views/partials/architects.htm"
         })
         .when("/team", {
             templateUrl : "views/partials/team.htm"
@@ -121,17 +121,28 @@ app.config(function($routeProvider,$locationProvider) {
             templateUrl : "views/partials/contacts.htm",
             controller : "contactsCtrl"
         })
+		.when("/highlights", {
+			templateUrl : "views/partials/highlights.htm"
+		})
         .otherwise({
-            redirectTo: '/' // TODO possivelmente mudar par /projects se a frontpage ficar numa view separas
+            redirectTo: '/projects'
         });
 
     // use the HTML5 History API (to remove hashbang[#!] from url)
     $locationProvider.html5Mode(true);
 });
 
+
+
+app.controller('headerCtrl', function($scope, $routeParams, $location) {
+	$scope.path = $location.path();
+	$scope.$on('$routeChangeSuccess', function($event, current, previous) {
+		$scope.path = $location.path();
+	});
+});
+
 // Views controllers
 app.controller('indexCtrl', function($scope, $http, $location) { //TODO apagar (copia de projects) a menos que frontpage seja view a parte
-	$("header").addClass("hidden");
 
 	$scope.go = function ( path ) {
 		$location.path( path );
@@ -139,8 +150,6 @@ app.controller('indexCtrl', function($scope, $http, $location) { //TODO apagar (
 });
 
 app.controller('projectsCtrl', function($scope, $routeParams, $http, $location) {
-	$("header").removeClass("hidden");
-
     $http.get("/api/projects")
         .then(function(response) {
 			$scope.projects = response.data;
@@ -189,7 +198,6 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location) 
 });
 
 app.controller('projectCtrl', function($scope, $routeParams, $http) {
-	$("header").removeClass("hidden");
     $http.get("/api/projects/" + $routeParams.projectId)
         .then(function(response) {
             $scope.project = response.data;
@@ -197,7 +205,6 @@ app.controller('projectCtrl', function($scope, $routeParams, $http) {
 });
 
 app.controller('contactsCtrl', function($scope, $http, $translate, NgMap) {
-	$("header").removeClass("hidden");
     // object to hold form information
     $scope.formData = {};
 

@@ -103,7 +103,8 @@ app.config(function($routeProvider,$locationProvider) {
             controller : "projectCtrl"
         })
         .when("/architects", {
-            templateUrl : "views/partials/architects.htm"
+            templateUrl : "views/partials/architects.htm",
+			controller : "architectsCtrl"
         })
         .when("/team", {
             templateUrl : "views/partials/team.htm"
@@ -156,8 +157,10 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, 
         cursorborder: 'none',
         cursorborderradius: '0px'
     });
+    $scope.loading=true;
     $http.get("/api/projects")
         .then(function(response) {
+			$scope.loading=false;
 			$scope.projects = response.data;
 			$scope.slicedProjects = $scope.chunkArray($scope.projects, 6);
 
@@ -171,9 +174,16 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, 
 			}
         });
 
+    // Used to detect when one category is selected and projects in header or logo is clicked
+	$scope.$on('$locationChangeSuccess', function($event, current, previous) {
+		if($location.url() == '/projects'){
+			$scope.clearSelectedProjects();
+		}
+	});
+
 	$scope.selectProjects = function(category) {
 		if($scope.selectedCategory == category){
-			$scope.clearSelectedProjects();
+			$location.url('/projects');
 		} else {
 			$scope.selectedProjectsConfigured = false;
 			$scope.selectedCategory = category;
@@ -245,6 +255,10 @@ app.controller('projectCtrl', function($scope, $routeParams, $http) {
         .then(function(response) {
             $scope.project = response.data;
         });
+});
+
+app.controller('architectsCtrl', function($scope) {
+	$scope.loading=true;
 });
 
 app.controller('contactsCtrl', function($scope, $http, $translate, NgMap) {

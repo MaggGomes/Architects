@@ -319,8 +319,8 @@ main.ng-enter.ng-enter-active {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 200px;
-  height: 200px;
-  margin-top: -100px;
-  margin-left: -100px;
+  width: 150px;
+  height: 150px;
+  margin-top: -75px;
+  margin-left: -75px;
 }

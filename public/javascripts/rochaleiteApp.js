@@ -150,6 +150,12 @@ app.controller('indexCtrl', function($scope, $http, $location) { //TODO apagar (
 });
 
 app.controller('projectsCtrl', function($scope, $routeParams, $http, $location) {
+    $('.main-container').niceScroll({
+        cursorcolor: '#7F0000',
+        cursorwidth: '5px',
+        cursorborder: 'none',
+        cursorborderradius: '0px'
+    });
     $http.get("/api/projects")
         .then(function(response) {
 			$scope.projects = response.data;
@@ -198,6 +204,18 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location) 
 });
 
 app.controller('projectCtrl', function($scope, $routeParams, $http) {
+
+    $('.main-container').niceScroll({
+        cursorcolor: '#7F0000',
+        cursorwidth: '5px',
+        cursorborder: 'none',
+        cursorborderradius: '0px'
+    });
+
+    var navHeight = $('header').height() + $('footer').height();
+
+    $(".main-container").css({'height':(navHeight+'px')});
+
     $http.get("/api/projects/" + $routeParams.projectId)
         .then(function(response) {
             $scope.project = response.data;
@@ -205,6 +223,19 @@ app.controller('projectCtrl', function($scope, $routeParams, $http) {
 });
 
 app.controller('contactsCtrl', function($scope, $http, $translate, NgMap) {
+	$("header").removeClass("hidden");
+
+    $('.main-container').niceScroll({
+        cursorcolor: '#7F0000',
+        cursorwidth: '5px',
+        cursorborder: 'none',
+        cursorborderradius: '0px'
+    });
+
+    var navHeight = $('header').height() + $('footer').height();
+
+    $(".main-container").css({'height':(navHeight+'px')});
+
     // object to hold form information
     $scope.formData = {};
 

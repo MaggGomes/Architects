@@ -9,11 +9,11 @@ $(document).ready(function () {
 
 
 
-    $("html").niceScroll({
+    /*$("html").niceScroll({
         cursorcolor: '#7F0000',
         cursorwidth: '5px',
         cursorborder: 'none',
         cursorborderradius: '0px'
-    });
+    });*/
 
 });

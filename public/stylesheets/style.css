@@ -44,27 +44,31 @@
   text-indent: 38px;
 }
 
-.hidden-container {
-  /*display: none;*/
-}
-
 /* min-width 992 px */
 
 header .navbar {
-  padding-top: 40px;
+  padding-top: 60px;
   padding-bottom: 20px;
 }
 
 footer .navbar {
+  padding-top: 20px;
   padding-bottom: 40px;
+}
+
+.main-container {
+  margin-top: 152px;
+  margin-bottom: 99px;
+  height: calc(100vh - 250px);
+}
+
+body {
+  overflow-y: hidden;
 }
 
 /* end */
 
-.main-container {
-  margin-top: 131px;
-  margin-bottom: 80px;
-}
+
 
 .navbar {
   background-color: white;

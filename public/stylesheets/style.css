@@ -125,10 +125,6 @@ body {
   height: 115px;
 }
 
-.selectedProjects img {width: auto;
-  height: 69vh;
-}
-
 .project-portfolio-row .imgOverlay {
   position: absolute;
   top: 0;
@@ -170,6 +166,42 @@ body {
 }
 
 /* end */
+.selectedProjects img{
+  height:100%;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.selectedProjects .img-wrapper {
+  position: relative;
+  width: auto;
+  height: 59vh;
+}
+
+.selectedProjects .imgOverlayColor {
+  background-color: rgba(127,0,0,0.65);
+}
+
+.selectedProjects .imgOverlay {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  right: 2px;
+  z-index: 2;
+  height: 100%;
+  padding-left: 2px;
+  padding-right: 2px;
+  -webkit-transition: all 0.75s ease-in-out;
+  -moz-transition: all 0.75s ease-in-out;
+  -ms-transition: all 0.75s ease-in-out;
+  -o-transition: all 0.75s ease-in-out;
+  transition: all 0.75s ease-in-out;
+}
+
+/* Hides overlay when image is in slide center*/
+.slick-active .imgOverlay{
+  display:none;
+}
 
 .project-details {
   background-color: var(--main-color);
@@ -280,5 +312,5 @@ main.ng-enter.ng-enter-active {
 }
 
 #map{
-  height:450px;
+  height:59vh;
 }

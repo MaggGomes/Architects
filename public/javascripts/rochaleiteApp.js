@@ -1,4 +1,4 @@
-var app = angular.module("rochaleiteApp", ["ngRoute","pascalprecht.translate","ngAnimate","ngMap"]);
+var app = angular.module("rochaleiteApp", ["ngRoute","pascalprecht.translate","ngAnimate","ngMap", "slickCarousel"]);
 
 // Translation configuration
 app.config(function ($translateProvider) {
@@ -149,7 +149,7 @@ app.controller('indexCtrl', function($scope, $http, $location) { //TODO apagar (
 	};
 });
 
-app.controller('projectsCtrl', function($scope, $routeParams, $http, $location) {
+app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, $timeout) {
     $('.main-container').niceScroll({
         cursorcolor: '#7F0000',
         cursorwidth: '5px',
@@ -175,6 +175,7 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location) 
 		if($scope.selectedCategory == category){
 			$scope.clearSelectedProjects();
 		} else {
+			$scope.selectedProjectsConfigured = false;
 			$scope.selectedCategory = category;
 			$scope.selectedProjects = $scope.projects.filter(function (project) {
 				return project.categories.indexOf(category) > -1;
@@ -182,6 +183,9 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location) 
 			$scope.selectedProject = $scope.selectedProjects[0];
 			$location.url('/projects?category=' + category);
 			console.log($scope.selectedProjects);
+			$timeout(function () {
+				$scope.selectedProjectsConfigured = true;
+			}, 5);
 		}
 	};
 
@@ -200,6 +204,27 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location) 
 		$scope.selectedCategory = null;
 		$scope.selectedProject = null;
 		$scope.selectedProjects = null;
+		$scope.selectedProjectsConfigured = false;
+	};
+
+	$scope.slickConfig = {
+		method: {},
+		infinite: true,
+		focusOnSelect:true,
+		speed: 300,
+		slidesToShow: 1,
+		centerMode: true,
+		variableWidth: true,
+		event: {
+			afterChange: function (event, slick, currentSlide, nextSlide) {
+				$scope.selectedProject = $scope.selectedProjects[currentSlide];
+			}
+		}
+	};
+
+
+	$scope.checkIsActiveSlide = function() {
+		return angular.element.parent().hasClass('img-wrapper');
 	};
 });
 

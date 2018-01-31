@@ -239,7 +239,7 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, 
 	};
 });
 
-app.controller('projectCtrl', function($scope, $routeParams, $http) {
+app.controller('projectCtrl', function($scope, $routeParams, $http, $translate) {
 
     $('.main-container').niceScroll({
         cursorcolor: '#7F0000',
@@ -252,7 +252,7 @@ app.controller('projectCtrl', function($scope, $routeParams, $http) {
 
     $(".main-container").css({'height':(navHeight+'px')});
 
-    $http.get("/api/projects/" + $routeParams.projectId + '?language=' + $translate.use())
+    $http.get("/api/projects/" + $routeParams.projectId + "?language=" + $translate.use())
         .then(function(response) {
             $scope.project = response.data;
         });

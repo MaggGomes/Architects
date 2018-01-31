@@ -252,7 +252,7 @@ app.controller('projectCtrl', function($scope, $routeParams, $http) {
 
     $(".main-container").css({'height':(navHeight+'px')});
 
-    $http.get("/api/projects/" + $routeParams.projectId)
+    $http.get("/api/projects/" + $routeParams.projectId + '?language=' + $translate.use())
         .then(function(response) {
             $scope.project = response.data;
         });

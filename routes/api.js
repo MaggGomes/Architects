@@ -14,7 +14,9 @@ router.get('/projects/', function(req, res, next) {
 
 /* GET project given id. */
 router.get('/projects/:projectId', function(req, res, next) {
-    project.getById(req.params.projectId, function(err, project){
+    var language = 'pt';
+    if(req.query.language) language = req.query.language;
+    project.getById(req.params.projectId, language, function(err, project){
         if(err) { res.status(400).send(err); }
         else { res.status(200).send(project); }
     });

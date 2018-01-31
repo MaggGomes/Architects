@@ -43,9 +43,9 @@ var projects = [
         ];
 
 exports.getAll = function(done) {
-  /*db.get().query('SELECT * FROM projects', function (err, rows) {
+  /*db.get().query('SELECT * FROM projects ORDER BY order_number', function (err, projects) {
     if (err) return done(err);
-    done(null, rows)
+    done(null, projects)
   })*/
 	projects.sort(function(a, b) {
 		return a.order - b.order;
@@ -53,10 +53,14 @@ exports.getAll = function(done) {
     done(null, projects)
 };
 
-exports.getById = function(id, done) {
-    /*db.get().query('SELECT * FROM projects WHERE id = ?', [id], function (err, row) {
+exports.getById = function(id, language, done) {
+    /*db.get().query(
+    'SELECT * FROM projects
+     INNER JOIN projects_details ON projects.project_id = projects_details.project_id
+     WHERE id = ? AND language = ?'
+     , [id, language], function (err, project) {
         if (err) return done(err);
-        done(null, row)
+        done(null, project)
     })*/
 	projects.forEach(function(project){
     if (id == project.id){

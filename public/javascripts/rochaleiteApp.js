@@ -151,22 +151,28 @@ app.config(function($routeProvider,$locationProvider) {
 			controller : "architectsCtrl"
 		})
 		.when("/team", {
-			templateUrl : "views/partials/team.htm"
+			templateUrl : "views/partials/team.htm",
+			controller : "teamCtrl"
 		})
 		.when("/equipa", {
-			templateUrl : "views/partials/team.htm"
+			templateUrl : "views/partials/team.htm",
+			controller : "teamCtrl"
 		})
 		.when("/curriculum", {
-			templateUrl : "views/partials/curriculum.htm"
+			templateUrl : "views/partials/curriculum.htm",
+			controller : "curriculumCtrl"
 		})
 		.when("/distinctions", {
-			templateUrl : "views/partials/distinctions.htm"
+			templateUrl : "views/partials/distinctions.htm",
+			controller : "distinctionsCtrl"
 		})
 		.when("/distincoes", {
-			templateUrl : "views/partials/distinctions.htm"
+			templateUrl : "views/partials/distinctions.htm",
+			controller : "distinctionsCtrl"
 		})
 		.when("/links", {
-			templateUrl : "views/partials/links.htm"
+			templateUrl : "views/partials/links.htm",
+			controller : "linksCtrl"
 		})
 		.when("/contacts", {
 			templateUrl : "views/partials/contacts.htm",
@@ -177,10 +183,12 @@ app.config(function($routeProvider,$locationProvider) {
 			controller : "contactsCtrl"
 		})
 		.when("/highlights", {
-			templateUrl : "views/partials/highlights.htm"
+			templateUrl : "views/partials/highlights.htm",
+			controller : "highlightsCtrl"
 		})
 		.when("/destaque", {
-			templateUrl : "views/partials/highlights.htm"
+			templateUrl : "views/partials/highlights.htm",
+			controller : "highlightsCtrl"
 		})
 		.otherwise({
 			redirectTo: '/'
@@ -200,14 +208,18 @@ app.controller('headerCtrl', function($scope, $routeParams, $location) {
 });
 
 // Views controllers
-app.controller('indexCtrl', function($scope, $http, $location) { //TODO apagar (copia de projects) a menos que frontpage seja view a parte
+app.controller('indexCtrl', function($scope, $http, $location, $translate) { //TODO apagar (copia de projects) a menos que frontpage seja view a parte
 
-	$scope.go = function ( path ) {
-		$location.path( path );
+	$scope.go = function () {
+		$location.path('/' + $translate.instant('PROJECTOS'));
 	};
 });
 
 app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, $timeout, $translate) {
+	if($location.url().substr(0,9) == '/projects'){
+		$translate.use('en');
+	}
+
 	$('.main-container').niceScroll({
 		cursorcolor: '#7F0000',
 		cursorwidth: '5px',
@@ -298,6 +310,9 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, 
 });
 
 app.controller('projectCtrl', function($scope, $routeParams, $http, $location, $translate) {
+	if($location.url().substr(0,9) == '/projects'){
+		$translate.use('en');
+	}
 
 	$('.main-container').niceScroll({
 		cursorcolor: '#7F0000',
@@ -321,12 +336,38 @@ app.controller('projectCtrl', function($scope, $routeParams, $http, $location, $
 	};
 });
 
-app.controller('architectsCtrl', function($scope) {
+app.controller('architectsCtrl', function($scope, $location, $translate) {
+	if($location.url() == '/architects'){
+		$translate.use('en');
+	}
 	$scope.loading=true;
 });
 
-app.controller('contactsCtrl', function($scope, $http, $translate, NgMap) {
-	$("header").removeClass("hidden");
+app.controller('teamCtrl', function($scope, $location, $translate) {
+	if($location.url() == '/team'){
+		$translate.use('en');
+	}
+});
+
+app.controller('curriculumCtrl', function($scope, $location, $translate) {
+	$scope.loading=true;
+});
+
+app.controller('distinctionsCtrl', function($scope, $location, $translate) {
+	if($location.url() == '/distinctions'){
+		$translate.use('en');
+	}
+	$scope.loading=true;
+});
+
+app.controller('linksCtrl', function($scope, $location, $translate) {
+	$scope.loading=true;
+});
+
+app.controller('contactsCtrl', function($scope, $http, $translate, NgMap, $location) {
+	if($location.url() == '/contacts'){
+		$translate.use('en');
+	}
 
 	$('.main-container').niceScroll({
 		cursorcolor: '#7F0000',
@@ -386,6 +427,14 @@ app.controller('contactsCtrl', function($scope, $http, $translate, NgMap) {
 	});
 
 });
+
+app.controller('highlightsCtrl', function($scope, $location, $translate) {
+	if($location.url() == '/highlights'){
+		$translate.use('en');
+	}
+	$scope.loading=true;
+});
+
 // Views controllers (end)
 
 app.animation('.slide', [function() {

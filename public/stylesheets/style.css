@@ -203,6 +203,11 @@ body {
   display:none;
 }
 
+.slick-active a{
+  pointer-events: none;
+  cursor: default;
+}
+
 .project-details {
   background-color: var(--main-color);
 }

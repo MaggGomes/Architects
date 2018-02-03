@@ -186,10 +186,11 @@ app.config(function($routeProvider,$locationProvider) {
 			templateUrl : "views/partials/highlights.htm",
 			controller : "highlightsCtrl"
 		})
-		.when("/destaque", {
+			// Route para a página Destaque
+		/*.when("/destaque", {
 			templateUrl : "views/partials/highlights.htm",
 			controller : "highlightsCtrl"
-		})
+		})*/
 		.otherwise({
 			redirectTo: '/'
 		});
@@ -230,7 +231,6 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, 
 	$scope.loading=true;
 	$http.get("/api/projects")
 		.then(function(response) {
-			$scope.loading=false;
 			$scope.projects = response.data;
 			$scope.slicedProjects = $scope.chunkArray($scope.projects, 6);
 
@@ -244,6 +244,8 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, 
 			} else {
 				$scope.clearSelectedProjects();
 			}
+
+            $scope.loading = false;
 		});
 
 	// Used to detect when one category is selected and projects in header or logo is clicked

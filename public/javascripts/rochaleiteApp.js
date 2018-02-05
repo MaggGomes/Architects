@@ -228,6 +228,7 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, 
 		cursorborder: 'none',
 		cursorborderradius: '0px'
 	});
+
 	$scope.loading=true;
 	$http.get("/api/projects")
 		.then(function(response) {
@@ -352,7 +353,15 @@ app.controller('teamCtrl', function($scope, $location, $translate) {
 });
 
 app.controller('curriculumCtrl', function($scope, $location, $translate) {
-	$scope.loading=true;
+
+    $('.main-container').niceScroll({
+        cursorcolor: '#7F0000',
+        cursorwidth: '5px',
+        cursorfixedheight: 115,
+        cursorborder: 'none',
+        cursorborderradius: '0px'
+    });
+
 });
 
 app.controller('distinctionsCtrl', function($scope, $location, $translate) {

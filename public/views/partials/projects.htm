@@ -1,6 +1,6 @@
 <img class="loading" src="/images/loading.svg" ng-show="loading" />
 
-<section class="container main-container projects-container" ng-show="!selectedProjects" ng-niceScroll>
+<section class="container main-container large-container projects-container" ng-show="!selectedProjects" ng-niceScroll>
     <div class="row gutter-4 project-portfolio-row" ng-repeat="rowProjects in slicedProjects">
         <div class="col-2 project" ng-repeat="project in rowProjects">
             <a href="/{{ 'PROJECTOS' | translate }}/{{project.id}}">

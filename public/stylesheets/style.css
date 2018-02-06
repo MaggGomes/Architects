@@ -3,7 +3,7 @@
   --hover-color: rgb(97, 0, 0);
   --menu-color: #494949;
   --text-color: rgb(100, 100, 100);
-  --menu-size: 0.875rem;
+  --standard-size: 0.875rem;
   --large-size: 0.8rem;
   --medium-size: 0.75rem;
   --small-size: 0.625rem;
@@ -87,63 +87,27 @@ body {
   max-width: 16.666667%;
 }
 
-.contact-form input, .contact-form textarea {
-  border-radius: 0;
-  margin-bottom: 5px;
+.contacts {
+  font-size: var(--large-size);
 }
 
-.contact-form input::-webkit-input-placeholder, .contact-form textarea::-webkit-input-placeholder {
-  color: var(--main-color);
+.contacts .contacts-text {
+  position: absolute;
+  bottom: 0;
 }
 
-.contact-form input:-moz-placeholder, .contact-form textarea:-moz-placeholder {
-  color: var(--main-color);
+.contacts .contact-mail {
+  color: var(--menu-color);
+  text-decoration: none;
 }
 
-.contact-form input::-moz-placeholder, .contact-form textarea::-moz-placeholder {
-  color: var(--main-color);
+.contacts .social {
+  padding-top: 20px;
 }
 
-.contact-form input:-ms-input-placeholder, .contact-form textarea:-ms-input-placeholder {
-  color: var(--main-color);
+.contacts .social img {
+  width: 20px
 }
-
-.contact-form .btn {
-  margin-bottom: 5px;
-}
-
-.btn {
-  border-radius: 0;
-  border: none;
-}
-
-.btn.focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.btn-primary {
-  background-color: var(--main-color);
-  box-shadow: none;
-}
-
-.btn-primary:hover {
-  background-color: var(--hover-color);
-  box-shadow: none;
-}
-
-.btn-primary:focus {
-  background-color: var(--hover-color);
-  outline: none;
-  box-shadow: none;
-}
-
-.btn-primary:active {
-  background-color: var(--hover-color);
-  outline: none;
-  box-shadow: none;
-}
-
 
 /* min-width 992px */
 
@@ -153,7 +117,7 @@ body {
 }
 
 .navbar-nav .nav-link {
-  font-size: var(--menu-size);
+  font-size: var(--standard-size);
 }
 
 .navbar .sub-menu .nav-link {
@@ -298,7 +262,7 @@ body {
 
 .curriculum-tabs ul li a {
   color: var(--main-color);
-  font-size: var(--menu-size);
+  font-size: var(--standard-size);
   padding-top: 0;
   padding-bottom: 0;
 }

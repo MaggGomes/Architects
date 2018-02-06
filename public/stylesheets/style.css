@@ -4,7 +4,6 @@
   --menu-color: #494949;
   --text-color: rgb(100, 100, 100);
   --menu-size: 0.875rem;
-  --submenu-size: 0.75rem;
   --large-size: 0.8rem;
   --medium-size: 0.75rem;
   --small-size: 0.625rem;
@@ -158,7 +157,7 @@ body {
 }
 
 .navbar .sub-menu .nav-link {
-  font-size: var(--submenu-size);
+  font-size: var(--medium-size);
   line-height: 21px;
 }
 
@@ -305,6 +304,10 @@ body {
 .curriculum-tabs .tab-content, .architects-content {
   color: var(--text-color);
   font-size: var(--medium-size);
+}
+
+.curriculum-tabs .tab-content .small-description {
+  font-size: var(--small-size);
 }
 
 /* Animations */

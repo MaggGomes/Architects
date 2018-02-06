@@ -232,7 +232,7 @@ body {
 .selectedProjects .img-wrapper {
   position: relative;
   width: auto;
-  height: 59vh;
+  height: calc(100vh - 230px);
 }
 
 .selectedProjects .imgOverlayColor {
@@ -302,7 +302,7 @@ body {
   color: var(--menu-color);
 }
 
-.curriculum-tabs .tab-content {
+.curriculum-tabs .tab-content, .architects-content {
   color: var(--text-color);
   font-size: var(--medium-size);
 }
@@ -410,7 +410,7 @@ main.ng-enter.ng-enter-active {
 }
 
 #map{
-  height:59vh;
+  height:calc(100vh - 230px);
 }
 
 .loading{

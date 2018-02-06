@@ -343,7 +343,16 @@ app.controller('architectsCtrl', function($scope, $location, $translate) {
 	if($location.url() == '/architects'){
 		$translate.use('en');
 	}
-	$scope.loading=true;
+
+	$('.main-container').niceScroll({
+		cursorcolor: '#7F0000',
+		cursorwidth: '5px',
+		cursorfixedheight: 275,
+		cursorborder: 'none',
+		cursorborderradius: '0px'
+	});
+
+	$scope.loading=false;
 });
 
 app.controller('teamCtrl', function($scope, $location, $translate) {
@@ -372,7 +381,7 @@ app.controller('distinctionsCtrl', function($scope, $location, $translate) {
 });
 
 app.controller('linksCtrl', function($scope, $location, $translate) {
-	$scope.loading=true;
+	$scope.loading=false;
 });
 
 app.controller('contactsCtrl', function($scope, $http, $translate, NgMap, $location) {

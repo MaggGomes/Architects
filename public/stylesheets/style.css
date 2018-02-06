@@ -307,7 +307,7 @@ body {
   color: var(--menu-color);
 }
 
-.curriculum-tabs .tab-content, .architects-content {
+.curriculum-tabs .tab-content, .architects-content, .link-text {
   color: var(--text-color);
   font-size: var(--medium-size);
 }
@@ -316,6 +316,15 @@ body {
   font-size: var(--small-size);
   color: var(--main-color);
 }
+.link-description {
+  color: var(--text-color);
+   font-size: var(--small-size);
+ }
+
+.links-content a{
+  text-decoration: none;
+}
+
 
 /* Animations */
 /* The starting CSS styles for the enter animation */

@@ -82,9 +82,17 @@ body {
   color: var(--menu-color);
 }
 
+.navbar-nav a:hover {
+  text-shadow: 1px 0 0 currentColor, 1px 0 0 currentColor;
+}
+
 .navbar .navbar-brand {
   flex: 0 0 16.666667%;
   max-width: 16.666667%;
+}
+
+.shadow-text {
+  text-shadow: 1px 0 0 currentColor, 1px 0 0 currentColor;
 }
 
 .contacts {

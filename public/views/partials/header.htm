@@ -9,41 +9,41 @@
         <div class="menu menu-top"> <!--class="collapse navbar-collapse" id="navbarResponsive"-->
             <ul class="nav-menu navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a id="projects" class="nav-link" href="/{{ 'PROJECTOS' | translate }}" ng-class="{'font-weight-bold': path.substr(0,9) =='/projects' || path.substr(0,10) =='/projectos'}">{{ 'PROJECTOS' | translate }}</a>
+                    <a id="projects" class="nav-link" href="/{{ 'PROJECTOS' | translate }}" ng-class="{'shadow-text': path.substr(0,9) =='/projects' || path.substr(0,10) =='/projectos'}">{{ 'PROJECTOS' | translate }}</a>
                 </li>
                 <li class="divider-vertical"></li>
                 <li class="nav-item">
-                    <a id="atelier" class="nav-link" href="" ng-model="clickede" ng-init="clickede=false" ng-click="clickede=!clickede" ng-class="{'font-weight-bold': clickede || ['/architects','/arquitectos','/team','/equipa','/curriculum','/distinctions','distincoes','/links'].includes(path)}">
+                    <a id="atelier" class="nav-link" href="" ng-model="clickede" ng-init="clickede=false" ng-click="clickede=!clickede" ng-class="{'shadow-text': clickede || ['/architects','/arquitectos','/team','/equipa','/curriculum','/distinctions','distincoes','/links'].includes(path)}">
                         {{ 'ATELIER' | translate }}
                     </a>
                 </li>
                 <li id="atelier-menu" class="sub-menu" ng-show="clickede">
                     <ul class="nav-menu navbar-nav">
                         <li class="nav-item">
-                            <a id="rocha_leite_arquitectos" class="nav-link" href="/{{ 'ARQUITECTOS' | translate }}" ng-class="{'font-weight-bold': path =='/architects' || path =='/arquitectos'}">{{ 'ROCHA_LEITE_ARQUITECTOS' | translate }}</a>
+                            <a id="rocha_leite_arquitectos" class="nav-link" href="/{{ 'ARQUITECTOS' | translate }}" ng-class="{'shadow-text': path =='/architects' || path =='/arquitectos'}"><div>{{ 'ROCHA_LEITE_ARQUITECTOS' | translate }}</div></a>
                         </li>
                         <li class="nav-item">
-                            <a id="team" class="nav-link" href="/{{ 'EQUIPA' | translate }}" ng-class="{'font-weight-bold': path =='/team' || path =='/equipa'}">{{ 'EQUIPA' | translate }}</a>
+                            <a id="team" class="nav-link" href="/{{ 'EQUIPA' | translate }}" ng-class="{'shadow-text': path =='/team' || path =='/equipa'}">{{ 'EQUIPA' | translate }}</a>
                         </li>
                         <li class="nav-item">
-                            <a id="curriculum" class="nav-link" href="/{{ 'CURRICULUM' | translate }}" ng-class="{'font-weight-bold': path =='/curriculum'}">{{ 'CURRICULUM' | translate }}</a>
+                            <a id="curriculum" class="nav-link" href="/{{ 'CURRICULUM' | translate }}" ng-class="{'shadow-text': path =='/curriculum'}">{{ 'CURRICULUM' | translate }}</a>
                         </li>
                         <li class="nav-item">
-                            <a id="distinctions" class="nav-link" href="/{{ 'DISTINCOES_URL' | translate }}" ng-class="{'font-weight-bold': path =='/distinctions' || path =='/distincoes'}" >{{ 'DISTINCOES' | translate }}</a>
+                            <a id="distinctions" class="nav-link" href="/{{ 'DISTINCOES_URL' | translate }}" ng-class="{'shadow-text': path =='/distinctions' || path =='/distincoes'}" >{{ 'DISTINCOES' | translate }}</a>
                         </li>
                         <li class="nav-item">
-                            <a id="links" class="nav-link" href="/links" ng-class="{'font-weight-bold': path =='/links'}">{{ 'LINKS' | translate }}</a>
+                            <a id="links" class="nav-link" href="/links" ng-class="{'shadow-text': path =='/links'}">{{ 'LINKS' | translate }}</a>
                         </li>
                     </ul>
                 </li>
                 <li class="divider-vertical"></li>
                 <li class="nav-item">
-                    <a id="contacts" class="nav-link" href="/{{ 'CONTACTOS' | translate }}" ng-class="{'font-weight-bold': path =='/contacts' || path =='/contactos'}">{{ 'CONTACTOS' | translate }}</a>
+                    <a id="contacts" class="nav-link" href="/{{ 'CONTACTOS' | translate }}" ng-class="{'shadow-text': path =='/contacts' || path =='/contactos'}">{{ 'CONTACTOS' | translate }}</a>
                 </li>
                 <!-- Tirar comentários quando página Destaque for ativa -->
                 <!--<li class="divider-vertical"></li>
                 <li class="nav-item">
-                    <a id="highlights" class="nav-link" href="/{{ 'DESTAQUE' | translate }}" ng-class="{'font-weight-bold': path =='/highlights' || path =='/destaque'}">{{ 'DESTAQUE' | translate }}</a>
+                    <a id="highlights" class="nav-link" href="/{{ 'DESTAQUE' | translate }}" ng-class="{'shadow-text': path =='/highlights' || path =='/destaque'}">{{ 'DESTAQUE' | translate }}</a>
                 </li>-->
             </ul>
         </div>

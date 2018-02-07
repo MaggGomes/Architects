@@ -82,10 +82,6 @@ body {
   color: var(--menu-color);
 }
 
-.navbar-nav a:hover {
-  text-shadow: 1px 0 0 currentColor, 1px 0 0 currentColor;
-}
-
 .navbar .navbar-brand {
   flex: 0 0 16.666667%;
   max-width: 16.666667%;
@@ -145,6 +141,15 @@ body {
 .navbar ul li.divider-vertical:after {
   content: "|";
   vertical-align: -25%;
+}
+
+.curriculum-tabs ul li.divider-vertical {
+  position: relative;
+  bottom: 2px;
+}
+
+.curriculum-tabs ul li.divider-vertical:after {
+  content: "|";
 }
 
 /* end */

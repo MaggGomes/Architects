@@ -401,57 +401,6 @@ app.controller('contactsCtrl', function($scope, $http, $translate, NgMap, $locat
 		cursorborder: 'none',
 		cursorborderradius: '0px'
 	});
-
-	var navHeight = $('header').height() + $('footer').height();
-
-	$(".main-container").css({'height':(navHeight+'px')});
-
-	// object to hold form information
-	$scope.formData = {};
-
-	// function to process the form
-	$scope.contactForm = function() {
-		// variables reseting to future submits
-		$scope.success_message = '';
-		$scope.error_message = '';
-		$scope.errors = {};
-		$http.post("/api/contact", $scope.formData)
-			.then(function(response) {
-				// clean form inputs
-				$scope.formData = {};
-				$scope.success_message = 'ENVIO_SUCESSO';
-			})
-			.catch(function(response) {
-				console.log(response);
-				angular.forEach(response.data.errors, function(error, i) {
-					switch (error.param) {
-						case 'name':
-							$scope.errors.name = error.msg;
-							break;
-						case 'email':
-							$scope.errors.email = error.msg;
-							break;
-						case 'subject':
-							$scope.errors.subject = error.msg;
-							break;
-						case 'message':
-							$scope.errors.message = error.msg;
-							break;
-						default:
-					}
-				});
-				if(response.data.errorMailSend == true){
-					$scope.error_message = 'ENVIO_ERRO';
-				}
-			});
-	};
-
-	NgMap.getMap().then(function(map) {
-		console.log(map.getCenter());
-		console.log('markers', map.markers);
-		console.log('shapes', map.shapes);
-	});
-
 });
 
 app.controller('highlightsCtrl', function($scope, $location, $translate) {

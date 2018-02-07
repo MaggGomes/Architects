@@ -32,12 +32,12 @@ exports.get = function() {
 
 // Mail config
 
-exports.mail = {
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
-    auth: {
-        user: '', // preencher user e password
-        pass: ''
-    }
-};
+// exports.mail = {
+//     host: 'smtp.gmail.com',
+//     port: 587,
+//     secure: false,
+//     auth: {
+//         user: '', // preencher user e password
+//         pass: ''
+//     }
+// };

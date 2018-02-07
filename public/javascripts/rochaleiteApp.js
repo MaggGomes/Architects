@@ -381,6 +381,13 @@ app.controller('distinctionsCtrl', function($scope, $location, $translate) {
 
 app.controller('linksCtrl', function($scope, $location, $translate) {
 	$scope.loading=false;
+
+	$('.main-container').niceScroll({
+		cursorcolor: '#7F0000',
+		cursorwidth: '5px',
+		cursorborder: 'none',
+		cursorborderradius: '0px'
+	});
 });
 
 app.controller('contactsCtrl', function($scope, $http, $translate, NgMap, $location) {

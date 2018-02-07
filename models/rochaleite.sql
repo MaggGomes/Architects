@@ -4,10 +4,10 @@ CREATE DATABASE IF NOT EXISTS rochaleite;
 
 USE rochaleite;
 
-DROP TABLE IF EXISTS projects, projects_details, users, images;
+DROP TABLE IF EXISTS projects, projects_details, images, curriculum, distinctions, links, users;
 CREATE TABLE IF NOT EXISTS projects (
 	project_id    INT UNSIGNED  NOT NULL AUTO_INCREMENT,
-	id            TEXT					NOT NULL,
+	id            VARCHAR(255)	NOT NULL UNIQUE,
 	thumbnail     TEXT          NOT NULL DEFAULT '',
 	image					TEXT          NOT NULL DEFAULT '',
 	categories    TEXT          NOT NULL DEFAULT '',
@@ -27,6 +27,33 @@ CREATE TABLE IF NOT EXISTS projects_details (
 CREATE TABLE IF NOT EXISTS images (
 	project_id    INT UNSIGNED	NOT NULL,
 	path          TEXT			    NOT NULL DEFAULT '',
+	FOREIGN KEY (project_id) REFERENCES projects(project_id)
+);
+
+CREATE TABLE IF NOT EXISTS curriculum (
+	description   TEXT			    NOT NULL DEFAULT '',
+	address       TEXT			    NOT NULL DEFAULT '',
+	year          TEXT			    NOT NULL DEFAULT '',
+	state         TEXT			    NOT NULL DEFAULT '',
+	language      ENUM('pt', 'en') NOT NULL DEFAULT 'pt',
+	order_number	INT UNSIGNED	NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS distinctions (
+	project_id    INT UNSIGNED	,
+	distinction   TEXT			    NOT NULL DEFAULT '',
+	path          TEXT			    NOT NULL DEFAULT '',
+	language      ENUM('pt', 'en') NOT NULL DEFAULT 'pt',
+	order_number	INT UNSIGNED	NOT NULL,
+	FOREIGN KEY (project_id) REFERENCES projects(project_id)
+);
+
+CREATE TABLE IF NOT EXISTS links (
+	project_id    INT UNSIGNED	NOT NULL,
+	description   TEXT			    NOT NULL DEFAULT '',
+	link          TEXT			    NOT NULL DEFAULT '',
+	language      ENUM('pt', 'en') NOT NULL DEFAULT 'pt',
+	order_number	INT UNSIGNED	NOT NULL,
 	FOREIGN KEY (project_id) REFERENCES projects(project_id)
 );
 
@@ -184,3 +211,48 @@ INSERT INTO images (project_id, path) VALUES (12, '/images/projects/casa-fvd/4.j
 INSERT INTO images (project_id, path) VALUES (12, '/images/projects/casa-fvd/5.jpg');
 INSERT INTO images (project_id, path) VALUES (12, '/images/projects/casa-fvd/6.jpg');
 INSERT INTO images (project_id, path) VALUES (12, '/images/projects/casa-fvd/7.jpg');
+
+
+-- CURRICULUM PT
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('RECUPERAÇÃO E AMPLIAÇÃO DE HABITAÇÃO', 'Rua de Tânger, Porto', '2015', 'Em construção', 'pt', 1);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('REMODELAÇÃO DE MORADIA UNIFAMILIAR', 'RUA PEDRO TEIXEIRA, ANTAS, PORTO', '2012-2013', 'Construída', 'pt', 2);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('MORADIA UNIFAMILIAR', 'QUINTA DO MONDEGO, NELAS', '2014', 'Projecto de Execução concluído', 'pt', 3);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('MORADIA UNIFAMILIAR', 'FRENTE MARÍTIMA DE VALADARES – VILA NOVA DE GAIA', '2012-2013', 'Projecto de Licenciamento', 'pt', 4);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('REMODELAÇÃO DE MORADIA UNIFAMILIAR', 'RUA FERNÃO VAZ DOURADO, FOZ DO DOURO PORTO', '2012', 'Construída', 'pt', 5);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('MORADIA UNIFAMILIAR', 'QUINTA DAS LUZES, JOVIM - GONDOMAR', '2011', 'Construída', 'pt', 6);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('MORADIA UNIFAMILIAR PARA FÉRIAS', 'SÃO COSMADO, ARMAMAR', '2010', 'Construída', 'pt', 7);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIO DE HABITAÇÃO COLECTIVA', 'RUA DE PEREIRÓ, PORTO', '2009', 'Estudo Prévio', 'pt', 8);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIO DE HABITAÇÃO COLECTIVA (42 Apart.)', 'TRAVESSA JOSÉ FONTANA, VILA NOVA DE GAIA', '2005', 'Construído', 'pt', 9);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIO DE HABITAÇÃO COLECTIVA (10 Apart-Moradia)', 'AZURARA, VILA DO CONDE', '2005', 'Projecto de Execução concluído', 'pt', 10);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIO DE HABITAÇÃO COLECTIVA (100 Apart.)', 'RUA DO RIO DA FONTE, VILA NOVA DE GAIA', '2004', 'Construído', 'pt', 11);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('REMODELAÇÃO E AMPLIAÇÃO DE MORADIA', 'BAIRRO MARECHAL GOMES DA COSTA, PORTO', '2003', 'Construída', 'pt', 12);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('MORADIA UNIFAMILIAR', 'TOUGUINHÓ, VILA DO CONDE', '2003', 'Projecto de Execução concluído', 'pt', 13);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('MORADIA UNIFAMILIAR', 'MODIVAS, VILA DO CONDE', '2002', 'Projecto de Execução concluído', 'pt', 14);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIO MULTIFAMILIAR', 'MODIVAS, VILA DO CONDE', '2002', 'Construído', 'pt', 15);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIO DE HABITAÇÃO COLECTIVA (16 fogos)', 'AZURARA - VILA DO CONDE', '2002', 'Projecto de Licenciamento', 'pt', 16);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIOS DE HABITAÇÃO, COMÉRCIO E SERVIÇOS – EMPREENDIMENTOS V8 E PARCAUTO', 'VILA NOVA DE GAIA', '2002', 'Estudo sem continuidade', 'pt', 17);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIO DE HABITAÇÃO COLECTIVA COM (24 fogos)', 'AZURARA - VILA DO CONDE', '2002', 'Projecto de Licenciamento', 'pt', 18);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIO DE HABITAÇÃO COLECTIVA (110 fogos)', 'RUA DA FONTE, V N GAIA', '2001', 'Construído', 'pt', 19);
+INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('MORADIA UNIFAMILIAR', 'PALHEIRA – COIMBRA',  '', '', 'pt', 20);
+
+
+-- DISTINCTIONS PT
+INSERT INTO distinctions (project_id, distinction, path, language, order_number) VALUES (3, 'painel 1 de apresentação para o Prémio Secil, edição de 2014', '/images/distinctions/1.jpg', 'pt', 1);
+INSERT INTO distinctions (project_id, distinction, path, language, order_number) VALUES (3, 'painel 2 de apresentação para o Prémio Secil, edição de 2014', '/images/distinctions/2.jpg', 'pt', 2);
+INSERT INTO distinctions (project_id, distinction, path, language, order_number) VALUES (NULL, 'exposição Câmara Municipal do Porto do Prémio João de Almada, edição de 2014', '/images/distinctions/3.jpg', 'pt', 3);
+INSERT INTO distinctions (project_id, distinction, path, language, order_number) VALUES (8, 'painel 1 de apresentação para o Prémio João de Almada, edição de 2014', '/images/distinctions/4.jpg', 'pt', 4);
+INSERT INTO distinctions (project_id, distinction, path, language, order_number) VALUES (8, 'painel 2 de apresentação para o Prémio João de Almada, edição de 2014', '/images/distinctions/5.jpg', 'pt', 5);
+INSERT INTO distinctions (project_id, distinction, path, language, order_number) VALUES (NULL, 'roteiro referente à distinção Respect for Architecture 2012 Porto', '/images/distinctions/6.jpg', 'pt', 6);
+-- INSERT INTO distinctions (project_id, distinction, path, language, order_number) VALUES (3, 'painel 1 de apresentação para o Prémio Secil, edição de 2014', '/images/distinctions/4.jpg', 'pt', 4); -- MOVIE
+INSERT INTO distinctions (project_id, distinction, path, language, order_number) VALUES (10, 'cartaz referente à distinção Respect for Architecture 2012 Porto', '/images/distinctions/8.jpg', 'pt', 8);
+
+
+-- LINKS PT
+INSERT INTO links (project_id, description, link, language, order_number) VALUES (3, 'https://www.archdaily.com.br/br/704139/sede-agros-slash-rocha-leite-arquitectos-associados', 'https://www.archdaily.com.br/br/704139/sede-agros-slash-rocha-leite-arquitectos-associados', 'pt', 1);
+INSERT INTO links (project_id, description, link, language, order_number) VALUES (10, 'Respect for Architecture 2012 Porto', 'http://www.norte41.oasrn.org/pt-pt/content/casa-da-baixa', 'pt', 2);
+INSERT INTO links (project_id, description, link, language, order_number) VALUES (10, 'Respect for Architecture 2012 Porto', 'http://p3.publico.pt/cultura/arquitectura/4418/respect-architecture-20-espacos-do-porto-em-exposicao', 'pt', 3);
+INSERT INTO links (project_id, description, link, language, order_number) VALUES (10, 'https://www.archdaily.com.br/br/01-98920/casa-da-baixa-slash-rocha-leite-arquitectos-associados', 'https://www.archdaily.com.br/br/01-98920/casa-da-baixa-slash-rocha-leite-arquitectos-associados', 'pt', 4);
+-- LINKS EN
+INSERT INTO links (project_id, description, link, language, order_number) VALUES (3, '652 - Rocha Leite Arquitectos Associados | Sede Agros | Póvoa do Varzim, Pt (182 img)', 'http://ultimasreportagens.com/ultimas.php', 'en', 1);
+INSERT INTO links (project_id, description, link, language, order_number) VALUES (3, 'https://www.archdaily.com/324138/agros-headquarters-rocha-leite-arquitectos-associados', 'https://www.archdaily.com/324138/agros-headquarters-rocha-leite-arquitectos-associados', 'en', 2);
+INSERT INTO links (project_id, description, link, language, order_number) VALUES (10, 'https://www.archdaily.com/333063/casa-da-baixa-rocha-leite-arquitectos-associados', 'https://www.archdaily.com/333063/casa-da-baixa-rocha-leite-arquitectos-associados', 'en', 3);

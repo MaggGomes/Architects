@@ -432,7 +432,6 @@ app.directive('niceScroll', function() {
             scrollsize: '='
 		},
 		link: function(scope, element, attribute) {
-
 			var size;
 
 			if(scope.scrollsize == undefined)

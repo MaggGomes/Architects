@@ -249,6 +249,10 @@ body {
   resize: none;
 }
 
+.architects .architects-content {
+  padding-top: 20px;
+}
+
 .team {
   font-size: var(--large-size);
   text-align: center;

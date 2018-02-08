@@ -126,7 +126,8 @@ body {
 
 .navbar .sub-menu .nav-link {
   font-size: var(--medium-size);
-  line-height: 21px;
+  position: relative;
+  top: 3px;
 }
 
 .navbar-nav .nav-link {

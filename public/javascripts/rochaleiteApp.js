@@ -221,14 +221,6 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, 
 		$translate.use('en');
 	}
 
-	$('.main-container').niceScroll({
-		cursorcolor: '#7F0000',
-		cursorwidth: '5px',
-		cursorfixedheight: 115,
-		cursorborder: 'none',
-		cursorborderradius: '0px'
-	});
-
 	$scope.loading=true;
 	$http.get("/api/projects")
 		.then(function(response) {
@@ -436,19 +428,26 @@ app.animation('.slide', [function() {
 app.directive('niceScroll', function() {
 	return{
 		restrict: 'A',
+		scope: {
+            scrollsize: '='
+		},
 		link: function(scope, element, attribute) {
 
-			var nicescrolConf = {
-				"cursorcolor": "#bdbdbd",
-				"background": "#ffffff",
-				"cursorwidth": "10px",
-				"cursorborder": "none",
-				"cursorborderradius": "2px",
-				"zindex": 9999,
-				"autohidemode": false
-			};
+			var size;
 
-			element.niceScroll(nicescrolConf);
+			if(scope.scrollsize == undefined)
+				size = 115;
+			else
+				size = scope.scrollsize;
+
+            element.niceScroll({
+                cursorcolor: '#7F0000',
+                cursorwidth: '5px',
+                cursorfixedheight: size,
+                cursorborder: 'none',
+                cursorborderradius: '0px'
+            });
 		}
 	};
 });
+

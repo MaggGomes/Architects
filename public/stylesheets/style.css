@@ -130,11 +130,6 @@ body {
   top: 3px;
 }
 
-.navbar-nav .nav-link {
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
-}
-
 .menu > .navbar-nav > .nav-item:last-child .nav-link {
   padding-right: 0;
 }
@@ -151,6 +146,11 @@ body {
 
 .curriculum-tabs ul li.divider-vertical:after {
   content: "|";
+}
+
+.curriculum-tabs .nav-link {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 /* end */

@@ -320,6 +320,16 @@ main.ng-enter.ng-enter-active {
   opacity: 1;
 }
 
+@media (min-width: 576px) {
+
+  /* APAGAR - RESPONSIVO */
+  .container {
+    max-width: 100%;
+  }
+
+  /* end */
+}
+
 /* Small devices (tablets, 768px and up) @screen-sm-min */
 @media (min-width: 768px) {
 
@@ -340,7 +350,6 @@ main.ng-enter.ng-enter-active {
 /* end */
 
 
-
 @media screen and (max-width: 992px) {
   /* APAGAR - RESPONSIVO */
   .menu .navbar-nav {
@@ -359,16 +368,6 @@ main.ng-enter.ng-enter-active {
   .large-container {
     margin-top: 10px;
     margin-bottom: 10px;
-  }
-
-  /* end */
-}
-
-@media (min-width: 576px) {
-
-  /* APAGAR - RESPONSIVO */
-  .container {
-    max-width: 1200px;
   }
 
   /* end */
@@ -396,12 +395,22 @@ main.ng-enter.ng-enter-active {
     z-index: 1030;
   }
 
+  .container {
+    max-width: 960px;
+  }
+
   /*end */
 }
 
 /* Medium devices (desktops, 1200px and up) @screen-md-min */
 @media (min-width: 1200px) {
+  /* APAGAR - RESPONSIVO */
+  .container {
+    max-width: 1140px;
+  }
 
+
+  /* end */
 
 }
 

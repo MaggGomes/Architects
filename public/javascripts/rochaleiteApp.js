@@ -364,11 +364,37 @@ app.controller('curriculumCtrl', function($scope, $location, $translate) {
 
 });
 
-app.controller('distinctionsCtrl', function($scope, $location, $translate) {
+app.controller('distinctionsCtrl', function($scope, $http, $location, $translate, $timeout) {
 	if($location.url() == '/distinctions'){
 		$translate.use('en');
 	}
 	$scope.loading=true;
+	$scope.distinctionsConfigured = false;
+	$http.get("/api/distinctions")
+		.then(function(response) {
+			$scope.distinctions = response.data;
+			console.log($scope.distinctions);
+
+			$timeout(function () {
+				$scope.distinctionsConfigured = true;
+			}, 5);
+			$scope.loading = false;
+		});
+
+	$scope.slickConfig = {
+		method: {},
+		infinite: true,
+		focusOnSelect:true,
+		speed: 300,
+		slidesToShow: 1,
+		centerMode: true,
+		variableWidth: true,
+		event: {
+			afterChange: function (event, slick, currentSlide, nextSlide) {
+				$scope.selectedDistinction = $scope.distinctions[currentSlide];
+			}
+		}
+	};
 });
 
 app.controller('linksCtrl', function($scope, $location, $translate) {

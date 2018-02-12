@@ -30,6 +30,11 @@ CREATE TABLE IF NOT EXISTS images (
 	FOREIGN KEY (project_id) REFERENCES projects(project_id)
 );
 
+CREATE TABLE IF NOT EXISTS team (
+	name  				VARCHAR(50)		NOT NULL DEFAULT '',
+	order_number	INT UNSIGNED	NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS curriculum (
 	description   TEXT			    NOT NULL DEFAULT '',
 	address       TEXT			    NOT NULL DEFAULT '',
@@ -211,6 +216,39 @@ INSERT INTO images (project_id, path) VALUES (12, '/images/projects/casa-fvd/4.j
 INSERT INTO images (project_id, path) VALUES (12, '/images/projects/casa-fvd/5.jpg');
 INSERT INTO images (project_id, path) VALUES (12, '/images/projects/casa-fvd/6.jpg');
 INSERT INTO images (project_id, path) VALUES (12, '/images/projects/casa-fvd/7.jpg');
+
+
+-- TEAM
+INSERT INTO team (name, order_number) VALUES ('Jorge Alves', 1);
+INSERT INTO team (name, order_number) VALUES ('Filipa Russell Alves', 2);
+INSERT INTO team (name, order_number) VALUES ('Ivo Machado', 3);
+INSERT INTO team (name, order_number) VALUES ('Vânia Simões', 4);
+INSERT INTO team (name, order_number) VALUES ('Artur Soares', 5);
+INSERT INTO team (name, order_number) VALUES ('Rita Cunha', 6);
+INSERT INTO team (name, order_number) VALUES ('Alexandra Ferreira', 7);
+INSERT INTO team (name, order_number) VALUES ('Açucena Magano', 8);
+INSERT INTO team (name, order_number) VALUES ('António Miguel Monteiro', 9);
+INSERT INTO team (name, order_number) VALUES ('Cátia Meirinhos', 10);
+INSERT INTO team (name, order_number) VALUES ('Susana Ferraz', 11);
+INSERT INTO team (name, order_number) VALUES ('Inês Pimentel', 12);
+INSERT INTO team (name, order_number) VALUES ('Ana Simões', 13);
+INSERT INTO team (name, order_number) VALUES ('Lara Rodrigues', 14);
+INSERT INTO team (name, order_number) VALUES ('João Tomás Braga', 15);
+INSERT INTO team (name, order_number) VALUES ('Fernando Ferrão', 16);
+INSERT INTO team (name, order_number) VALUES ('Pedro Figueiredo', 17);
+INSERT INTO team (name, order_number) VALUES ('Pedro Carvalho', 18);
+INSERT INTO team (name, order_number) VALUES ('Rui Lamas', 19);
+INSERT INTO team (name, order_number) VALUES ('Marta Gomes', 20);
+INSERT INTO team (name, order_number) VALUES ('Sofia Jordão', 21);
+INSERT INTO team (name, order_number) VALUES ('Nuno Marques', 22);
+INSERT INTO team (name, order_number) VALUES ('Luís Almeida', 23);
+INSERT INTO team (name, order_number) VALUES ('Manuela Braga', 24);
+INSERT INTO team (name, order_number) VALUES ('Pedro Aguiar', 25);
+INSERT INTO team (name, order_number) VALUES ('Eduardo Azevedo', 26);
+INSERT INTO team (name, order_number) VALUES ('João Paulo Oliveira', 27);
+INSERT INTO team (name, order_number) VALUES ('Edgar Soares', 28);
+INSERT INTO team (name, order_number) VALUES ('Alice Prata', 29);
+INSERT INTO team (name, order_number) VALUES ('Jorge Silva', 30);
 
 
 -- CURRICULUM PT

@@ -9,7 +9,7 @@ exports.create = function(title, description, address, done) {
 	})
 };
 
-var projects = [
+/*var projects = [
 	{id:"casa-murtinheira", thumbnail:"/images/projects/casa-murtinheira/1.jpg", title: "Casa Murtinheira", description: "description teste", address: "address teste", categories: ["rehabilitation", "equipments_services"], order: 30},
 	{id:"palacete-av-boavista", thumbnail:"/images/projects/palacete-av-boavista/1.jpg", title: "Palacete Av. Boavista", description: "description teste", address: "address teste", categories: [], order: 29},
 	{id:"edificio-sede-espaco-agros", thumbnail:"/images/projects/edificio-sede-espaco-agros/1.jpg", title: "Edifício Sede, Espaço Agros", description: "description teste", address: "address teste", categories: ["rehabilitation", "equipments_services"], order: 28},
@@ -40,7 +40,7 @@ var projects = [
 	{id:"restaurante-bocca", thumbnail:"/images/projects/restaurante-bocca/1.jpg", title: "Restaurante Bocca", description: "description teste", address: "address teste", categories: [], order: 3},
 	{id:"casa-gondarem", thumbnail:"/images/projects/casa-gondarem/1.jpg", title: "Casa Gondarém", description: "description teste", address: "address teste", categories: [], order: 2},
 	{id:"restaurante-cacau-wine-terrace", thumbnail:"/images/projects/restaurante-cacau-wine-terrace/1.jpg", title: "Restaurante Ccau Wine Terrace", description: "description teste", address: "address teste", categories: [], order: 1}
-];
+];*/
 
 exports.getAll = function(done) {
 	db.get().query('SELECT * FROM projects ORDER BY order_number', function (err, projects) {
@@ -54,34 +54,20 @@ exports.getAll = function(done) {
 };
 
 exports.getById = function(id, language, done) {
-	db.get().query(
-	'SELECT * FROM projects' +
-	 'INNER JOIN projects_details ON projects.project_id = projects_details.project_id' +
-	 'WHERE id = ? AND language = ?'
-	 , [id, language], function (err, project) {
-		if (err) return done(err);
-		done(null, project)
-	});
+	db.get().query('SELECT projects.*, projects_details.* , GROUP_CONCAT(images.path) as images ' +
+		'FROM projects ' +
+		'LEFT JOIN projects_details ON projects.project_id = projects_details.project_id ' +
+		'LEFT JOIN images ON projects.project_id = images.project_id ' +
+		'WHERE id = ? AND language = ? ' +
+		'GROUP BY projects.project_id'
+		, [id, language], function (err, project) {
+			if (err) return done(err);
+			done(null, project)
+		});
 	/*projects.forEach(function(project){
 		if (id == project.id){
 			console.log(project);
 			done(null, project);
 		}
 	});*/
-
-	/*for(var i = 0; i < projects.size(); i++){
-		if (id == projects[i].id){
-			done(null, projects[i]);
-		}
-	}*/
-	/*done(null, [{
-		id:1,
-		title: "teste1",
-		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae volutpat est. Etiam lobortis ultricies elit sit amet ornare. Etiam imperdiet placerat ipsum, ut porta nulla congue id. Donec ut arcu iaculis, tristique dui sit amet, ornare lorem. Fusce non libero eu tellus elementum viverra eu sed felis. Praesent tellus metus, molestie at gravida sed, blandit eget leo. In sed ornare magna. Phasellus volutpat ornare pharetra. Nunc eu eros quis turpis dapibus accumsan. Vivamus fringilla, arcu id viverra pharetra, lacus erat ornare nisi, vel pretium nunc felis vitae odio. Integer semper eget augue nec ultricies. Duis efficitur, ipsum id interdum auctor, ex nunc auctor ante, et sollicitudin enim urna ut nisi. Proin ultricies tristique justo nec elementum.\n" +
-		"\n" +
-		"Vivamus pulvinar eleifend nibh. Mauris justo massa, porta nec accumsan dictum, ornare quis nibh. Praesent consectetur elit ante, id tincidunt sem rhoncus at. Mauris nec nulla diam. Nullam sagittis, mauris non mattis porttitor, orci ante bibendum ligula, interdum interdum urna magna ac metus. Phasellus ligula ipsum, tempus ut dui ultricies, luctus tristique erat. Duis faucibus et libero nec maximus. Suspendisse nulla eros, condimentum eget cursus non, porttitor in lacus. Phasellus commodo tincidunt enim id laoreet. Phasellus cursus placerat sapien, sed viverra dui ultricies sed. Donec non vehicula purus. Etiam suscipit, eros at porttitor laoreet, neque felis venenatis ante, malesuada viverra sem nulla in augue. Vivamus suscipit lorem vel dolor facilisis, dignissim posuere quam viverra. In hac habitasse platea dictumst. Sed imperdiet euismod ligula. Donec euismod gravida velit ut consectetur.\n" +
-		"\n" +
-		"Sed a auctor velit. Morbi iaculis blandit enim ut auctor. Nullam velit nulla, interdum vitae interdum eu, auctor a libero. Integer eros eros, aliquam sed lacinia non, malesuada a erat. Aenean finibus, arcu et egestas euismod, nunc tortor tincidunt ex, maximus tristique eros enim facilisis massa. Sed tincidunt elementum ornare. Fusce facilisis justo nulla, sit amet mollis leo consectetur et. Vivamus tristique leo mauris, a rutrum risus ullamcorper vel. Donec laoreet pulvinar pulvinar.",
-		address: "address teste"
-	}])*/
 };

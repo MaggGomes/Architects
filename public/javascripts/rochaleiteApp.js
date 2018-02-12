@@ -6,7 +6,7 @@ app.factory('arrayUtils', function() {
 		chunk: function(arr, size){
 			var newArr = [];
 
-			console.log(arr.length);
+			console.log(arr.length); // TODO debug
 			for(var i = 0; i < arr.length; i+=size){
 				newArr.push(arr.slice(i, i+size));
 			}
@@ -319,10 +319,44 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, 
 	};
 });
 
-app.controller('projectCtrl', function($scope, $routeParams, $http, $location, $translate) {
+app.controller('projectCtrl', function($scope, $routeParams, $http, $location, $timeout, $translate, arrayUtils) {
 	if($location.url().substr(0,9) == '/projects'){
 		$translate.use('en');
 	}
+	var navHeight = $('header').height() + $('footer').height();
+
+	$(".main-container").css({'height':(navHeight+'px')});
+
+	$http.get("/api/projects/" + $routeParams.projectId + "?language=" + $translate.use())
+		.then(function(response) {
+			$scope.slickConfigured = false;
+			$scope.project = response.data[0];
+			$scope.project.images = $scope.project.images.split(','); //splits images string into array
+			console.log($scope.project); // TODO debug
+			$scope.selectedImage = $scope.project.images[0];
+			$timeout(function () {
+				$scope.slickConfigured = true;
+			}, 5);
+		});
+
+	$scope.selectProjects = function(category) {
+		$location.url('/' + $translate.instant('PROJECTOS') + '?' + $translate.instant('CATEGORIA') + '=' + $translate.instant(category));
+	};
+
+	$scope.slickConfig = {
+		method: {},
+		infinite: true,
+		focusOnSelect:true,
+		speed: 300,
+		slidesToShow: 1,
+		centerMode: true,
+		variableWidth: true,
+		event: {
+			afterChange: function (event, slick, currentSlide, nextSlide) {
+				$scope.selectedImage = $scope.project.images[currentSlide];
+			}
+		}
+	};
 
 	$('.main-container').niceScroll({
 		cursorcolor: '#7F0000',
@@ -330,20 +364,6 @@ app.controller('projectCtrl', function($scope, $routeParams, $http, $location, $
 		cursorborder: 'none',
 		cursorborderradius: '0px'
 	});
-
-	var navHeight = $('header').height() + $('footer').height();
-
-	$(".main-container").css({'height':(navHeight+'px')});
-
-	$http.get("/api/projects/" + $routeParams.projectId + "?language=" + $translate.use())
-		.then(function(response) {
-			$scope.project = response.data;
-			$scope.selectedProject = response.data;
-		});
-
-	$scope.selectProjects = function(category) {
-		$location.url('/' + $translate.instant('PROJECTOS') + '?' + $translate.instant('CATEGORIA') + '=' + $translate.instant(category));
-	};
 });
 
 app.controller('architectsCtrl', function($scope, $location, $translate) {
@@ -372,8 +392,8 @@ app.controller('teamCtrl', function($scope, $http, $location, $translate, arrayU
 			$scope.members = response.data;
 			$scope.slicedMembers = arrayUtils.chunk($scope.members, 6);
 
-			console.log($scope.members);
-			console.log($scope.slicedMembers);
+			console.log($scope.members); // TODO debug
+			console.log($scope.slicedMembers); // TODO debug
 			$scope.loading = false;
 		});
 
@@ -388,7 +408,7 @@ app.controller('curriculumCtrl', function($scope, $http, $location, $translate) 
 	$http.get("/api/curriculum" + "?language=" + $translate.use())
 		.then(function(response) {
 			$scope.curriculums = response.data;
-			console.log($scope.curriculums);
+			console.log($scope.curriculums); // TODO debug
 			$scope.loading = false;
 		});
 
@@ -410,7 +430,7 @@ app.controller('distinctionsCtrl', function($scope, $http, $location, $translate
 	$http.get("/api/distinctions" + "?language=" + $translate.use())
 		.then(function(response) {
 			$scope.distinctions = response.data;
-			console.log($scope.distinctions);
+			console.log($scope.distinctions); // TODO debug
 
 			$timeout(function () {
 				$scope.distinctionsConfigured = true;
@@ -442,7 +462,7 @@ app.controller('linksCtrl', function($scope, $http, $location, $translate) {
 	$http.get("/api/links" + "?language=" + $translate.use())
 		.then(function(response) {
 			$scope.links = response.data;
-			console.log($scope.links);
+			console.log($scope.links); // TODO debug
 			$scope.loading = false;
 		});
 

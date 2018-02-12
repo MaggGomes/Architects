@@ -7,8 +7,12 @@
                 <div class="imgOverlay" ng-class="{imgOverlayColor: !hover}"
                      ng-mouseenter="hover = true"
                      ng-mouseleave="hover = false"></div>
-                <img src="{{distinction.path}}">
+                <img src="{{distinction.path}}" ng-if="distinction.path.substr(distinction.path.length - 3) == 'jpg'">
+                <video autoplay loop ng-if="distinction.path.substr(distinction.path.length - 3) == 'mp4'">
+                    <source ng-src="{{distinction.path | trustUrl}}" type="video/mp4" />
+                </video>
             </div>
+        </div>
         </div>
     </slick>
 </section>

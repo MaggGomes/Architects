@@ -200,7 +200,7 @@ body {
 }
 
 /* end */
-.selectedProjects img{
+.selectedProjects img,.selectedProjects video{
   height:100%;
   padding-left: 2px;
   padding-right: 2px;

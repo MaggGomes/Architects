@@ -314,7 +314,7 @@ INSERT INTO distinctions (project_id, distinction, path, language, order_number)
 INSERT INTO distinctions (project_id, distinction, path, language, order_number) VALUES (8, 'painel 1 de apresentação para o Prémio João de Almada, edição de 2014', '/images/distinctions/4.jpg', 'pt', 4);
 INSERT INTO distinctions (project_id, distinction, path, language, order_number) VALUES (8, 'painel 2 de apresentação para o Prémio João de Almada, edição de 2014', '/images/distinctions/5.jpg', 'pt', 5);
 INSERT INTO distinctions (project_id, distinction, path, language, order_number) VALUES (NULL, 'roteiro referente à distinção Respect for Architecture 2012 Porto', '/images/distinctions/6.jpg', 'pt', 6);
--- INSERT INTO distinctions (project_id, distinction, path, language, order_number) VALUES (3, 'painel 1 de apresentação para o Prémio Secil, edição de 2014', '/images/distinctions/4.jpg', 'pt', 4); -- MOVIE
+INSERT INTO distinctions (project_id, distinction, path, language, order_number) VALUES (NULL, 'FALTA DESCRICAO', '/images/distinctions/7.mp4', 'pt', 7); -- MOVIE
 INSERT INTO distinctions (project_id, distinction, path, language, order_number) VALUES (10, 'cartaz referente à distinção Respect for Architecture 2012 Porto', '/images/distinctions/8.jpg', 'pt', 8);
 
 

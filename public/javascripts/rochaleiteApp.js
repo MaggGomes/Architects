@@ -16,6 +16,12 @@ app.factory('arrayUtils', function() {
 });
 /* CUSTOM SERVICES START */
 
+app.filter("trustUrl", function($sce) {
+	return function(Url) {
+		return $sce.trustAsResourceUrl(Url);
+	};
+});
+
 /* TRANSLATION CONFIGURATION START */
 app.config(function ($translateProvider) {
 	$translateProvider.translations('pt', {
@@ -278,44 +284,28 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, 
 		if($scope.selectedCategory == category){
 			$location.url('/' + $translate.instant('PROJECTOS'));
 		} else {
-			$scope.selectedProjectsConfigured = false;
 			$scope.selectedCategory = category;
-			$scope.selectedProjects = $scope.projects.filter(function (project) {
-				return project.categories.indexOf(category) > -1;
+			$scope.slicedProjects.forEach(function(rowProjects){
+				rowProjects.forEach(function(project){
+					if (project.categories.indexOf(category) > -1){
+						project.hasSelectedCategory = true;
+					} else {
+						project.hasSelectedCategory = false;
+					}
+				})
 			});
-			$scope.selectedProject = $scope.selectedProjects[0];
+			console.log($scope.slicedProjects);
 			$location.url('/' + $translate.instant('PROJECTOS') + '?' + $translate.instant('CATEGORIA') + '=' + $translate.instant(category));
-			console.log($scope.selectedProjects);
-			$timeout(function () {
-				$scope.selectedProjectsConfigured = true;
-			}, 5);
 		}
 	};
 
 	$scope.clearSelectedProjects = function() {
 		$scope.selectedCategory = null;
-		$scope.selectedProject = null;
-		$scope.selectedProjects = null;
-		$scope.selectedProjectsConfigured = false;
-	};
-
-	$scope.slickConfig = {
-		method: {},
-		infinite: true,
-		focusOnSelect:true,
-		speed: 300,
-		slidesToShow: 1,
-		centerMode: true,
-		variableWidth: true,
-		event: {
-			afterChange: function (event, slick, currentSlide, nextSlide) {
-				$scope.selectedProject = $scope.selectedProjects[currentSlide];
-			}
-		}
-	};
-
-	$scope.checkIsActiveSlide = function() {
-		return angular.element.parent().hasClass('img-wrapper');
+		$scope.slicedProjects.forEach(function(rowProjects){
+			rowProjects.forEach(function(project){
+				project.hasSelectedCategory = false;
+			})
+		});
 	};
 });
 
@@ -449,6 +439,7 @@ app.controller('distinctionsCtrl', function($scope, $http, $location, $translate
 		event: {
 			afterChange: function (event, slick, currentSlide, nextSlide) {
 				$scope.selectedDistinction = $scope.distinctions[currentSlide];
+				var video = $('.slick-active').find('video').get(0).play();
 			}
 		}
 	};

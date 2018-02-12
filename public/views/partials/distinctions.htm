@@ -1,1 +1,14 @@
 <img class="loading" src="/images/loading.svg" ng-show="loading" />
+
+<section class="container main-container large-container" nice-scroll>
+    <slick class="selectedProjects" settings="slickConfig" ng-if="distinctionsConfigured">
+        <div ng-repeat="distinction in distinctions">
+            <div class="img-wrapper">
+                <div class="imgOverlay" ng-class="{imgOverlayColor: !hover}"
+                     ng-mouseenter="hover = true"
+                     ng-mouseleave="hover = false"></div>
+                <img src="{{distinction.path}}">
+            </div>
+        </div>
+    </slick>
+</section>

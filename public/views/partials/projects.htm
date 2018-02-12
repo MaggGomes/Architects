@@ -14,18 +14,6 @@
                 </a>
             </div>
         </div>
-        <div class="row gutter-4 project-portfolio-row" ng-repeat="rowProjects in slicedProjects">
-            <div class="col-2 project" ng-repeat="project in rowProjects">
-                <a href="/{{ 'PROJECTOS' | translate }}/{{project.id}}">
-                    <div class="img-wrapper">
-                        <div class="imgOverlay" ng-class="{imgOverlayColor: !hover}"
-                             ng-mouseenter="hover = true"
-                             ng-mouseleave="hover = false"></div>
-                        <img src="{{project.thumbnail}}">
-                    </div>
-                </a>
-            </div>
-        </div>
     </div>
 
 </section>

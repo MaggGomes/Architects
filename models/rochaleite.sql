@@ -112,6 +112,7 @@ INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('c
 INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('habitacao-paranhos', '/images/projects/habitacao-paranhos/thumbnail.svg', '/images/projects/habitacao-paranhos/1.svg', '', 38);
 INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('casa-mgc', '/images/projects/casa-mgc/thumbnail.svg', '/images/projects/casa-mgc/1.svg', '', 39);
 
+-- PROJECTS DETAILS PT
 INSERT INTO projects_details (project_id, title, description, address, language) VALUES (1, 'Casa Murtinheira', '', '', 'pt');
 INSERT INTO projects_details (project_id, title, description, address, language) VALUES (2, 'Palacete Av. Boavista', '', '', 'pt');
 INSERT INTO projects_details (project_id, title, description, address, language) VALUES (3, 'Edifício Sede, Espaço Agros', '', '', 'pt');
@@ -142,6 +143,38 @@ INSERT INTO projects_details (project_id, title, description, address, language)
 INSERT INTO projects_details (project_id, title, description, address, language) VALUES (28, 'Restaurante Bocca', '', '', 'pt');
 INSERT INTO projects_details (project_id, title, description, address, language) VALUES (29, 'Casa Gondarém', '', '', 'pt');
 INSERT INTO projects_details (project_id, title, description, address, language) VALUES (30, 'Restaurante Cacau Wine Terrace', '', '', 'pt');
+
+-- PROJECTS DETAILS EN
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (1, 'Casa Murtinheira', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (2, 'Palacete Av. Boavista', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (3, 'Edifício Sede, Espaço Agros', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (4, 'Entrada Eventos, Espaço Agros', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (5, 'Casa Cadouços', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (6, 'Empatias', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (7, 'Jazigo Afife', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (8, 'Casa dos Lóios', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (9, 'Casa Jovim', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (10, 'Casa da Baixa', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (11, 'Pizza & Drinks', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (12, 'Casa FVD', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (13, 'Ed. S. Lázaro', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (14, 'Pizzaria Presto Cedofeita', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (15, 'Casa Rua das Flores', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (16, 'Ed. Cedofeita I', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (17, 'Casa no Douro', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (18, 'Restaurante Páteo de Tânger', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (19, 'Casa Guerra Junqueiro', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (20, 'Casa nelas', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (21, 'Ed. Cedofeita II', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (22, 'Ed. Belomonte', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (23, 'Casa Caldeireiros', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (24, 'Casa Esposende', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (25, 'Casa B. Vilarinha', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (26, 'Ed. Clérigos', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (27, 'Casa Póvoa', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (28, 'Restaurante Bocca', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (29, 'Casa Gondarém', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (30, 'Restaurante Cacau Wine Terrace', '', '', 'en');
 
 INSERT INTO images (project_id, path) VALUES (1, '/images/projects/casa-murtinheira/1.jpg');
 INSERT INTO images (project_id, path) VALUES (1, '/images/projects/casa-murtinheira/2.jpg');

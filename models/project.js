@@ -43,31 +43,31 @@ var projects = [
 ];
 
 exports.getAll = function(done) {
-	/*db.get().query('SELECT * FROM projects ORDER BY order_number', function (err, projects) {
+	db.get().query('SELECT * FROM projects ORDER BY order_number', function (err, projects) {
 		if (err) return done(err);
 		done(null, projects)
-	})*/
-	projects.sort(function(a, b) {
+	});
+	/*projects.sort(function(a, b) {
 		return a.order - b.order;
 	});
-    done(null, projects)
+    done(null, projects)*/
 };
 
 exports.getById = function(id, language, done) {
-	/*db.get().query(
-	'SELECT * FROM projects
-	 INNER JOIN projects_details ON projects.project_id = projects_details.project_id
-	 WHERE id = ? AND language = ?'
+	db.get().query(
+	'SELECT * FROM projects' +
+	 'INNER JOIN projects_details ON projects.project_id = projects_details.project_id' +
+	 'WHERE id = ? AND language = ?'
 	 , [id, language], function (err, project) {
 		if (err) return done(err);
 		done(null, project)
-	})*/
-	projects.forEach(function(project){
+	});
+	/*projects.forEach(function(project){
 		if (id == project.id){
 			console.log(project);
 			done(null, project);
 		}
-	});
+	});*/
 
 	/*for(var i = 0; i < projects.size(); i++){
 		if (id == projects[i].id){

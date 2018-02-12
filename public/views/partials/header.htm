@@ -13,7 +13,7 @@
                 </li>
                 <li class="divider-vertical"></li>
                 <li class="nav-item">
-                    <a id="atelier" class="nav-link" href="" ng-model="clickede" ng-init="clickede=false" ng-click="clickede=!clickede" ng-class="{'shadow-text': clickede || ['/architects','/arquitectos','/team','/equipa','/curriculum','/distinctions','/distincoes','/links'].includes(path)}">
+                    <a id="atelier" class="nav-link" href="" ng-model="clickede" ng-init="clickede=false" ng-click="clickede=!clickede" ng-class="{'shadow-text': clickede || ['/architects','/arquitectos','/team','/equipa','/curriculum','/curriculo','/distinctions','/distincoes','/links','/ligacoes'].includes(path)}">
                         {{ 'ATELIER' | translate }}
                     </a>
                 </li>
@@ -26,13 +26,13 @@
                             <a id="team" class="nav-link" href="/{{ 'EQUIPA' | translate }}" ng-class="{'shadow-text': path =='/team' || path =='/equipa'}">{{ 'EQUIPA' | translate }}</a>
                         </li>
                         <li class="nav-item">
-                            <a id="curriculum" class="nav-link" href="/{{ 'CURRICULUM' | translate }}" ng-class="{'shadow-text': path =='/curriculum'}">{{ 'CURRICULUM' | translate }}</a>
+                            <a id="curriculum" class="nav-link" href="/{{ 'CURRICULUM' | translate }}" ng-class="{'shadow-text': path =='/curriculum' || path =='/curriculo'}">curriculum</a>
                         </li>
                         <li class="nav-item">
                             <a id="distinctions" class="nav-link" href="/{{ 'DISTINCOES_URL' | translate }}" ng-class="{'shadow-text': path =='/distinctions' || path =='/distincoes'}" >{{ 'DISTINCOES' | translate }}</a>
                         </li>
                         <li class="nav-item">
-                            <a id="links" class="nav-link" href="/links" ng-class="{'shadow-text': path =='/links'}">{{ 'LINKS' | translate }}</a>
+                            <a id="links" class="nav-link" href="/{{ 'LINKS' | translate }}" ng-class="{'shadow-text': path =='/links' || path =='/ligacoes'}">links</a>
                         </li>
                     </ul>
                 </li>

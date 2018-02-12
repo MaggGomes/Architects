@@ -1,6 +1,22 @@
 var app = angular.module("rochaleiteApp", ["ngRoute","pascalprecht.translate","ngAnimate","ngMap", "slickCarousel"]);
 
-// Translation configuration
+/* CUSTOM SERVICES START */
+app.factory('arrayUtils', function() {
+	return {
+		chunk: function(arr, size){
+			var newArr = [];
+
+			console.log(arr.length);
+			for(var i = 0; i < arr.length; i+=size){
+				newArr.push(arr.slice(i, i+size));
+			}
+			return newArr;
+		}
+	};
+});
+/* CUSTOM SERVICES START */
+
+/* TRANSLATION CONFIGURATION START */
 app.config(function ($translateProvider) {
 	$translateProvider.translations('pt', {
 		'PROJECTOS': 'projectos',
@@ -8,10 +24,10 @@ app.config(function ($translateProvider) {
 		'ARQUITECTOS': 'arquitectos',
 		'ROCHA_LEITE_ARQUITECTOS': 'rocha leite arquitectos',
 		'EQUIPA': 'equipa',
-		'CURRICULUM': 'curriculum',
+		'CURRICULUM': 'curriculo',
 		'DISTINCOES_URL': 'distincoes',
 		'DISTINCOES': 'distinções',
-		'LINKS': 'links',
+		'LINKS': 'ligacoes',
 		'CONTACTOS': 'contactos',
 		'DESTAQUE': 'destaque',
 
@@ -43,7 +59,7 @@ app.config(function ($translateProvider) {
 		'restauracao_comercio': 'restoration_commerce',
 		'etudos_urbanisticos': 'urban_studies',
 
-		'NOME': 'nome',
+		/*'NOME': 'nome',
 		'E-MAIL': 'e-mail',
 		'ASSUNTO': 'assunto',
 		'MENSAGEM': 'mensagem',
@@ -57,7 +73,7 @@ app.config(function ($translateProvider) {
 		'EMAIL_MAU' : 'O e-mail não tem um formato válido',
 		'ASSUNTO_VAZIO' : 'O assunto tem de ser preenchido',
 		'ASSUNTO_GRANDE' : 'O assunto não pode exceder 70 caracteres',
-		'MENSAGEM_VAZIO' : 'A mensagem tem de ser preenchido'
+		'MENSAGEM_VAZIO' : 'A mensagem tem de ser preenchido'*/
 	});
 	$translateProvider.translations('en', {
 		'PROJECTOS': 'projects',
@@ -92,7 +108,7 @@ app.config(function ($translateProvider) {
 		'restoration_commerce': 'restoration_commerce',
 		'urban_studies': 'urban_studies',
 
-		'NOME': 'name',
+		/*'NOME': 'name',
 		'E-MAIL': 'e-mail',
 		'ASSUNTO': 'subject',
 		'MENSAGEM': 'message',
@@ -106,18 +122,13 @@ app.config(function ($translateProvider) {
 		'EMAIL_MAU' : 'E-mail is not in a valid format',
 		'ASSUNTO_VAZIO' : 'Subject must be filled',
 		'ASSUNTO_GRANDE' : 'Subject must not exceed 70 characters',
-		'MENSAGEM_VAZIO' : 'Message must be filled'
+		'MENSAGEM_VAZIO' : 'Message must be filled'*/
 	});
 	$translateProvider.preferredLanguage('pt');
 });
+/* TRANSLATION CONFIGURATION END */
 
-app.controller('translateCtrl', function($scope, $translate) {
-	$scope.changeLanguage = function (key) {
-		$translate.use(key);
-	};
-});
-
-// Routes configuration
+/* ROUTES CONFIGURATION START */
 app.config(function($routeProvider,$locationProvider) {
 	$routeProvider
 		.when("/", {
@@ -162,6 +173,10 @@ app.config(function($routeProvider,$locationProvider) {
 			templateUrl : "views/partials/curriculum.htm",
 			controller : "curriculumCtrl"
 		})
+		.when("/curriculo", {
+			templateUrl : "views/partials/curriculum.htm",
+			controller : "curriculumCtrl"
+		})
 		.when("/distinctions", {
 			templateUrl : "views/partials/distinctions.htm",
 			controller : "distinctionsCtrl"
@@ -171,6 +186,10 @@ app.config(function($routeProvider,$locationProvider) {
 			controller : "distinctionsCtrl"
 		})
 		.when("/links", {
+			templateUrl : "views/partials/links.htm",
+			controller : "linksCtrl"
+		})
+		.when("/ligacoes", {
 			templateUrl : "views/partials/links.htm",
 			controller : "linksCtrl"
 		})
@@ -186,7 +205,7 @@ app.config(function($routeProvider,$locationProvider) {
 			templateUrl : "views/partials/highlights.htm",
 			controller : "highlightsCtrl"
 		})
-			// Route para a página Destaque
+		// Route para a página Destaque
 		/*.when("/destaque", {
 			templateUrl : "views/partials/highlights.htm",
 			controller : "highlightsCtrl"
@@ -198,8 +217,15 @@ app.config(function($routeProvider,$locationProvider) {
 	// use the HTML5 History API (to remove hashbang[#!] from url)
 	$locationProvider.html5Mode(true);
 });
+/* ROUTES CONFIGURATION END */
 
 
+/* CONTROLLERS START */
+app.controller('translateCtrl', function($scope, $translate) {
+	$scope.changeLanguage = function (key) {
+		$translate.use(key);
+	};
+});
 
 app.controller('headerCtrl', function($scope, $routeParams, $location) {
 	$scope.path = $location.path();
@@ -216,7 +242,7 @@ app.controller('indexCtrl', function($scope, $http, $location, $translate) { //T
 	};
 });
 
-app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, $timeout, $translate) {
+app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, $timeout, $translate, arrayUtils) {
 	if($location.url().substr(0,9) == '/projects'){
 		$translate.use('en');
 	}
@@ -225,7 +251,7 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, 
 	$http.get("/api/projects")
 		.then(function(response) {
 			$scope.projects = response.data;
-			$scope.slicedProjects = $scope.chunkArray($scope.projects, 6);
+			$scope.slicedProjects = arrayUtils.chunk($scope.projects, 6);
 
 			console.log($scope.projects);
 			console.log($scope.slicedProjects);
@@ -238,7 +264,7 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, 
 				$scope.clearSelectedProjects();
 			}
 
-            $scope.loading = false;
+			$scope.loading = false;
 		});
 
 	// Used to detect when one category is selected and projects in header or logo is clicked
@@ -264,17 +290,6 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, 
 				$scope.selectedProjectsConfigured = true;
 			}, 5);
 		}
-	};
-
-	$scope.chunkArray = function(arr, size){
-		var newArr = [];
-
-		console.log(arr.length);
-		for(var i = 0; i < arr.length; i+=size){
-			newArr.push(arr.slice(i, i+size));
-		}
-
-		return newArr;
 	};
 
 	$scope.clearSelectedProjects = function() {
@@ -347,20 +362,42 @@ app.controller('architectsCtrl', function($scope, $location, $translate) {
 	$scope.loading=false;
 });
 
-app.controller('teamCtrl', function($scope, $location, $translate) {
+app.controller('teamCtrl', function($scope, $http, $location, $translate, arrayUtils) {
 	if($location.url() == '/team'){
 		$translate.use('en');
 	}
+	$scope.loading=true;
+	$http.get("/api/team" + "?language=" + $translate.use())
+		.then(function(response) {
+			$scope.members = response.data;
+			$scope.slicedMembers = arrayUtils.chunk($scope.members, 6);
+
+			console.log($scope.members);
+			console.log($scope.slicedMembers);
+			$scope.loading = false;
+		});
+
+
 });
 
-app.controller('curriculumCtrl', function($scope, $location, $translate) {
+app.controller('curriculumCtrl', function($scope, $http, $location, $translate) {
+	if($location.url() == '/curriculum'){
+		$translate.use('en');
+	}
+	$scope.loading=true;
+	$http.get("/api/curriculum" + "?language=" + $translate.use())
+		.then(function(response) {
+			$scope.curriculums = response.data;
+			console.log($scope.curriculums);
+			$scope.loading = false;
+		});
 
-    $('.main-container').niceScroll({
-        cursorcolor: '#7F0000',
-        cursorwidth: '5px',
-        cursorborder: 'none',
-        cursorborderradius: '0px'
-    });
+	$('.main-container').niceScroll({
+		cursorcolor: '#7F0000',
+		cursorwidth: '5px',
+		cursorborder: 'none',
+		cursorborderradius: '0px'
+	});
 
 });
 
@@ -370,7 +407,7 @@ app.controller('distinctionsCtrl', function($scope, $http, $location, $translate
 	}
 	$scope.loading=true;
 	$scope.distinctionsConfigured = false;
-	$http.get("/api/distinctions")
+	$http.get("/api/distinctions" + "?language=" + $translate.use())
 		.then(function(response) {
 			$scope.distinctions = response.data;
 			console.log($scope.distinctions);
@@ -397,8 +434,17 @@ app.controller('distinctionsCtrl', function($scope, $http, $location, $translate
 	};
 });
 
-app.controller('linksCtrl', function($scope, $location, $translate) {
-	$scope.loading=false;
+app.controller('linksCtrl', function($scope, $http, $location, $translate) {
+	if($location.url() == '/links'){
+		$translate.use('en');
+	}
+	$scope.loading=true;
+	$http.get("/api/links" + "?language=" + $translate.use())
+		.then(function(response) {
+			$scope.links = response.data;
+			console.log($scope.links);
+			$scope.loading = false;
+		});
 
 	$('.main-container').niceScroll({
 		cursorcolor: '#7F0000',
@@ -428,7 +474,7 @@ app.controller('highlightsCtrl', function($scope, $location, $translate) {
 	$scope.loading=true;
 });
 
-// Views controllers (end)
+/* CONTROLLERS END */
 
 app.animation('.slide', [function() {
 	return {
@@ -455,7 +501,7 @@ app.directive('niceScroll', function() {
 	return{
 		restrict: 'A',
 		scope: {
-            scrollsize: '='
+			scrollsize: '='
 		},
 		link: function(scope, element, attribute) {
 			var size;
@@ -465,13 +511,13 @@ app.directive('niceScroll', function() {
 			else
 				size = scope.scrollsize;
 
-            element.niceScroll({
-                cursorcolor: '#7F0000',
-                cursorwidth: '5px',
-                cursorfixedheight: size,
-                cursorborder: 'none',
-                cursorborderradius: '0px'
-            });
+			element.niceScroll({
+				cursorcolor: '#7F0000',
+				cursorwidth: '5px',
+				cursorfixedheight: size,
+				cursorborder: 'none',
+				cursorborderradius: '0px'
+			});
 		}
 	};
 });

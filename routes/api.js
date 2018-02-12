@@ -29,6 +29,7 @@ router.get('/projects/:projectId', function(req, res, next) {
 /* GET team listing. */
 router.get('/team/', function(req, res, next) {
 	var language = 'pt';
+	if(req.query.language) language = req.query.language;
 	team.getAll(language, function(err, members){
 		if(err) { res.status(400).send(err); }
 		else { res.status(200).send(members); }
@@ -38,6 +39,7 @@ router.get('/team/', function(req, res, next) {
 /* GET curriculum listing. */
 router.get('/curriculum/', function(req, res, next) {
 	var language = 'pt';
+	if(req.query.language) language = req.query.language;
 	curriculum.getAll(language, function(err, curriculums){
 		if(err) { res.status(400).send(err); }
 		else { res.status(200).send(curriculums); }
@@ -47,9 +49,20 @@ router.get('/curriculum/', function(req, res, next) {
 /* GET distinctions listing. */
 router.get('/distinctions/', function(req, res, next) {
 	var language = 'pt';
+	if(req.query.language) language = req.query.language;
 	distinction.getAll(language, function(err, distinctions){
 		if(err) { res.status(400).send(err); }
 		else { res.status(200).send(distinctions); }
+	});
+});
+
+/* GET links listing. */
+router.get('/links/', function(req, res, next) {
+	var language = 'pt';
+	if(req.query.language) language = req.query.language;
+	link.getAll(language, function(err, links){
+		if(err) { res.status(400).send(err); }
+		else { res.status(200).send(links); }
 	});
 });
 

@@ -226,7 +226,6 @@ app.config(function($routeProvider,$locationProvider) {
 });
 /* ROUTES CONFIGURATION END */
 
-
 /* CONTROLLERS START */
 app.controller('translateCtrl', function($scope, $translate) {
 	$scope.changeLanguage = function (key) {
@@ -236,6 +235,7 @@ app.controller('translateCtrl', function($scope, $translate) {
 
 app.controller('headerCtrl', function($scope, $routeParams, $location) {
 	$scope.path = $location.path();
+
 	$scope.$on('$routeChangeSuccess', function($event, current, previous) {
 		$scope.path = $location.path();
 	});
@@ -243,7 +243,7 @@ app.controller('headerCtrl', function($scope, $routeParams, $location) {
 
 // Views controllers
 app.controller('indexCtrl', function($scope, $http, $location, $translate) { //TODO apagar (copia de projects) a menos que frontpage seja view a parte
-	$scope.languageselected = 'pt';
+	$scope.languageselected = $translate.use();
 
 	$scope.go = function () {
 		$location.path('/' + $translate.instant('PROJECTOS'));
@@ -353,14 +353,6 @@ app.controller('architectsCtrl', function($scope, $location, $translate) {
 		$translate.use('en');
 	}
 
-	$('.main-container').niceScroll({
-		cursorcolor: '#7F0000',
-		cursorwidth: '5px',
-		cursorfixedheight: 275,
-		cursorborder: 'none',
-		cursorborderradius: '0px'
-	});
-
 	$scope.loading=false;
 });
 
@@ -369,6 +361,7 @@ app.controller('teamCtrl', function($scope, $http, $location, $translate, arrayU
 		$translate.use('en');
 	}
 	$scope.loading=true;
+
 	$http.get("/api/team" + "?language=" + $translate.use())
 		.then(function(response) {
 			$scope.members = response.data;
@@ -378,8 +371,6 @@ app.controller('teamCtrl', function($scope, $http, $location, $translate, arrayU
 			console.log($scope.slicedMembers); // TODO debug
 			$scope.loading = false;
 		});
-
-
 });
 
 app.controller('curriculumCtrl', function($scope, $http, $location, $translate) {
@@ -393,20 +384,13 @@ app.controller('curriculumCtrl', function($scope, $http, $location, $translate) 
 			console.log($scope.curriculums); // TODO debug
 			$scope.loading = false;
 		});
-
-	$('.main-container').niceScroll({
-		cursorcolor: '#7F0000',
-		cursorwidth: '5px',
-		cursorborder: 'none',
-		cursorborderradius: '0px'
-	});
-
 });
 
 app.controller('distinctionsCtrl', function($scope, $http, $location, $translate, $timeout) {
 	if($location.url() == '/distinctions'){
 		$translate.use('en');
 	}
+
 	$scope.loading=true;
 	$scope.distinctionsConfigured = false;
 	$http.get("/api/distinctions" + "?language=" + $translate.use())
@@ -441,6 +425,7 @@ app.controller('linksCtrl', function($scope, $http, $location, $translate) {
 	if($location.url() == '/links'){
 		$translate.use('en');
 	}
+
 	$scope.loading=true;
 	$http.get("/api/links" + "?language=" + $translate.use())
 		.then(function(response) {
@@ -448,37 +433,24 @@ app.controller('linksCtrl', function($scope, $http, $location, $translate) {
 			console.log($scope.links); // TODO debug
 			$scope.loading = false;
 		});
-
-	$('.main-container').niceScroll({
-		cursorcolor: '#7F0000',
-		cursorwidth: '5px',
-		cursorborder: 'none',
-		cursorborderradius: '0px'
-	});
 });
 
 app.controller('contactsCtrl', function($scope, $http, $translate, NgMap, $location) {
 	if($location.url() == '/contacts'){
 		$translate.use('en');
 	}
-
-	$('.main-container').niceScroll({
-		cursorcolor: '#7F0000',
-		cursorwidth: '5px',
-		cursorborder: 'none',
-		cursorborderradius: '0px'
-	});
 });
 
 app.controller('highlightsCtrl', function($scope, $location, $translate) {
 	if($location.url() == '/highlights'){
 		$translate.use('en');
 	}
+
 	$scope.loading=true;
 });
 
 /* CONTROLLERS END */
-
+// TODO - EXEMPLO - APAGAR
 app.animation('.slide', [function() {
 	return {
 		// make note that other events (like addClass/removeClass)

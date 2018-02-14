@@ -14,40 +14,24 @@
 }
 
 #main-screen-display {
-  display: table;
   position: absolute;
-  background: white;
+  display: table;
+  background-color: white;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: 5;
+  text-align: center;
 }
 
 #main-screen-display .main-screen-center {
-  padding: 0;
   display: table-cell;
-  text-align: center;
   vertical-align: middle;
 }
 
-#main-screen-display .main-screen-name {
-  color: var(--main-color);
-  font-size: 100px;
-}
-
-.arquitectos, .associados {
-  font-size: 34px;
-}
-
-#main-screen-display .arquitectos {
-  letter-spacing: 33px;
-  text-indent: 34px;
-}
-
-#main-screen-display .associados {
-  letter-spacing: 37px;
-  text-indent: 38px;
+#main-screen-display .main-screen-center img {
+  height: 200px;
+  cursor: pointer;
 }
 
 /* min-width 992 px */
@@ -139,18 +123,45 @@ body {
   vertical-align: -25%;
 }
 
+.curriculum-tabs .nav-link {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.curriculum-tabs ul li:first-child a {
+  padding-left: 0;
+}
+
+.curriculum-tabs ul li a {
+  color: var(--main-color);
+  font-size: var(--small-size);
+  line-height: 1.5rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.curriculum-tabs ul li a.active {
+  color: var(--menu-color);
+  font-size: var(--standard-size);
+}
+
+.curriculum-tabs .tab-content, .architects-content, .link-text {
+  color: var(--text-color);
+  font-size: var(--medium-size);
+}
+
+.curriculum-tabs .tab-content .small-description {
+  font-size: var(--small-size);
+  color: var(--main-color);
+}
+
 .curriculum-tabs ul li.divider-vertical {
   position: relative;
-  bottom: 2px;
+  bottom: 1px;
 }
 
 .curriculum-tabs ul li.divider-vertical:after {
   content: "|";
-}
-
-.curriculum-tabs .nav-link {
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
 }
 
 /* end */
@@ -232,9 +243,9 @@ body {
   transition: all 0.75s ease-in-out;
 }
 
-/* Hides overlay when image is in slide center*/
+/* Hides overlay when image is in slide center */
 .slick-active .imgOverlay{
-  display:none;
+  display: none;
 }
 
 .slick-active a{
@@ -246,10 +257,6 @@ body {
   background-color: var(--main-color);
 }
 
-#message {
-  resize: none;
-}
-
 .architects .architects-content {
   padding-top: 20px;
 }
@@ -257,7 +264,6 @@ body {
 .team {
   font-size: var(--large-size);
   text-align: center;
-  margin-top: 170px;
 }
 
 .team .row:not(:last-child):not(:first-child) {
@@ -274,39 +280,14 @@ body {
   padding-bottom: 40px;
 }
 
-.curriculum-tabs ul li:first-child a {
-  padding-left: 0;
-}
-
-.curriculum-tabs ul li a {
-  color: var(--main-color);
-  font-size: var(--standard-size);
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.curriculum-tabs ul li a.active {
-  color: var(--menu-color);
-}
-
-.curriculum-tabs .tab-content, .architects-content, .link-text {
-  color: var(--text-color);
-  font-size: var(--medium-size);
-}
-
-.curriculum-tabs .tab-content .small-description {
-  font-size: var(--small-size);
-  color: var(--main-color);
-}
 .link-description {
   color: var(--text-color);
-   font-size: var(--small-size);
- }
+  font-size: var(--small-size);
+}
 
 .links-content a{
   text-decoration: none;
 }
-
 
 /* Animations */
 /* The starting CSS styles for the enter animation */
@@ -335,25 +316,15 @@ main.ng-enter.ng-enter-active {
 
 }
 
-/* APAGAR - RESPONSIVO */
-/*@media (min-width: 768px){
-  .container {
-    max-width: 1200px;
-  }
-}
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 1200px;
-  }
-}*/
-/* end */
-
-
 @media screen and (max-width: 992px) {
   /* APAGAR - RESPONSIVO */
   .menu .navbar-nav {
     display: inline-block;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: .5rem;
+    padding-left: .5rem;
   }
 
   .menu .navbar-nav li {
@@ -367,6 +338,11 @@ main.ng-enter.ng-enter-active {
 
   .large-container {
     margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .small-container {
+    margin-top: 30px;
     margin-bottom: 10px;
   }
 

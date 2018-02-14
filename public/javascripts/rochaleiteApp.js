@@ -63,7 +63,7 @@ app.config(function ($translateProvider) {
 		'turismo': 'tourism',
 		'interiores': 'interior',
 		'restauracao_comercio': 'restoration_commerce',
-		'etudos_urbanisticos': 'urban_studies',
+		'etudos_urbanisticos': 'urban_studies'
 
 		/*'NOME': 'nome',
 		'E-MAIL': 'e-mail',
@@ -112,7 +112,7 @@ app.config(function ($translateProvider) {
 		'tourism': 'tourism',
 		'interior': 'interior',
 		'restoration_commerce': 'restoration_commerce',
-		'urban_studies': 'urban_studies',
+		'urban_studies': 'urban_studies'
 
 		/*'NOME': 'name',
 		'E-MAIL': 'e-mail',
@@ -130,6 +130,7 @@ app.config(function ($translateProvider) {
 		'ASSUNTO_GRANDE' : 'Subject must not exceed 70 characters',
 		'MENSAGEM_VAZIO' : 'Message must be filled'*/
 	});
+
 	$translateProvider.preferredLanguage('pt');
 });
 /* TRANSLATION CONFIGURATION END */
@@ -242,6 +243,7 @@ app.controller('headerCtrl', function($scope, $routeParams, $location) {
 
 // Views controllers
 app.controller('indexCtrl', function($scope, $http, $location, $translate) { //TODO apagar (copia de projects) a menos que frontpage seja view a parte
+	$scope.languageselected = 'pt';
 
 	$scope.go = function () {
 		$location.path('/' + $translate.instant('PROJECTOS'));
@@ -313,9 +315,6 @@ app.controller('projectCtrl', function($scope, $routeParams, $http, $location, $
 	if($location.url().substr(0,9) == '/projects'){
 		$translate.use('en');
 	}
-	var navHeight = $('header').height() + $('footer').height();
-
-	$(".main-container").css({'height':(navHeight+'px')});
 
 	$http.get("/api/projects/" + $routeParams.projectId + "?language=" + $translate.use())
 		.then(function(response) {
@@ -347,13 +346,6 @@ app.controller('projectCtrl', function($scope, $routeParams, $http, $location, $
 			}
 		}
 	};
-
-	$('.main-container').niceScroll({
-		cursorcolor: '#7F0000',
-		cursorwidth: '5px',
-		cursorborder: 'none',
-		cursorborderradius: '0px'
-	});
 });
 
 app.controller('architectsCtrl', function($scope, $location, $translate) {
@@ -515,17 +507,11 @@ app.directive('niceScroll', function() {
 			scrollsize: '='
 		},
 		link: function(scope, element, attribute) {
-			var size;
-
-			if(scope.scrollsize == undefined)
-				size = 115;
-			else
-				size = scope.scrollsize;
 
 			element.niceScroll({
 				cursorcolor: '#7F0000',
 				cursorwidth: '5px',
-				cursorfixedheight: size,
+				cursorfixedheight: scope.scrollsize,
 				cursorborder: 'none',
 				cursorborderradius: '0px'
 			});

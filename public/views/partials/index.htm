@@ -1,17 +1,20 @@
-<div id="main-screen-display" ng-click="go()">
-    <!--<a class="nav-link" href="/projects"> -->
-    <div class="main-screen-center container" >
-        <p class="main-screen-name">Rocha Leite</p>
-        <p class="arquitectos">arquitectos</p>
-        <p class="associados">associados</p>
+<div id="main-screen-display">
+    <div class="main-screen-center container">
+        <img src="/images/logo.svg" ng-click="go()">
     </div>
-    <nav class="navbar navbar-expand-lg fixed-bottom">
-        <div class="container">
-            <div ng-controller="translateCtrl" class="navbar-nav">
-                <a class="nav-link" href="#" ng-click="changeLanguage('pt')">pt</a>
-                <a class="nav-link" href="#" ng-click="changeLanguage('en')">en</a>
+    <footer>
+        <nav class="navbar navbar-expand-lg fixed-bottom">
+            <div class="container menu">
+                <ul ng-controller="translateCtrl" class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" ng-class="{'shadow-text': languageselected == 'pt' }" ng-click="changeLanguage('pt'); languageselected = 'pt'">pt</a>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" ng-class="{'shadow-text': languageselected == 'en' }" ng-click="changeLanguage('en'); languageselected = 'en'">en</a>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </nav>
-    <!--</a> -->
+        </nav>
+    </footer>
 </div>

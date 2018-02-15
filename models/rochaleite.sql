@@ -145,6 +145,18 @@ INSERT INTO projects_details (project_id, title, description, address, language)
 INSERT INTO projects_details (project_id, title, description, address, language) VALUES (28, 'Restaurante Bocca', '', '', 'pt');
 INSERT INTO projects_details (project_id, title, description, address, language) VALUES (29, 'Casa Gondarém', '', '', 'pt');
 INSERT INTO projects_details (project_id, title, description, address, language) VALUES (30, 'Restaurante Cacau Wine Terrace', '', '', 'pt');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (31, 'Bancada Espaço Agros', '', '', 'pt');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (32, 'Edifício Cantina Espaço Agros', '', '', 'pt');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (33, 'Reabilitação Anexos Agrícolas', '', '', 'pt');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (34, 'Edifício Exposições Espaço Agros', '', '', 'pt');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (35, 'Sede Ucanorte XXI', '', '', 'pt');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (36, 'Escritórios V. N. Gaia', '', '', 'pt');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (37, 'Casa Grande Arouca', '', '', 'pt');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (38, 'Estudo Urbanístico Espaço Agros', '', '', 'pt');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (39, 'Quinta Santana', '', '', 'pt');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (40, 'Casa Antas', '', '', 'pt');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (41, 'Habitação Paranhos', '', '', 'pt');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (42, 'Casa MGC', '', '', 'pt');
 
 -- PROJECTS DETAILS EN
 INSERT INTO projects_details (project_id, title, description, address, language) VALUES (1, 'Casa Murtinheira', '', '', 'en');
@@ -177,6 +189,18 @@ INSERT INTO projects_details (project_id, title, description, address, language)
 INSERT INTO projects_details (project_id, title, description, address, language) VALUES (28, 'Restaurante Bocca', '', '', 'en');
 INSERT INTO projects_details (project_id, title, description, address, language) VALUES (29, 'Casa Gondarém', '', '', 'en');
 INSERT INTO projects_details (project_id, title, description, address, language) VALUES (30, 'Restaurante Cacau Wine Terrace', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (31, 'Bancada Espaço Agros', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (32, 'Edifício Cantina Espaço Agros', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (33, 'Reabilitação Anexos Agrícolas', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (34, 'Edifício Exposições Espaço Agros', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (35, 'Sede Ucanorte XXI', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (36, 'Escritórios V. N. Gaia', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (37, 'Casa Grande Arouca', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (38, 'Estudo Urbanístico Espaço Agros', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (39, 'Quinta Santana', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (40, 'Casa Antas', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (41, 'Habitação Paranhos', '', '', 'en');
+INSERT INTO projects_details (project_id, title, description, address, language) VALUES (42, 'Casa MGC', '', '', 'en');
 
 INSERT INTO images (project_id, path) VALUES (1, '/images/projects/casa-murtinheira/1.jpg');
 INSERT INTO images (project_id, path) VALUES (1, '/images/projects/casa-murtinheira/2.jpg');

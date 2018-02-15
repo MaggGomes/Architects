@@ -4,19 +4,19 @@
     <div class="curriculum-tabs">
         <ul class="nav" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" href="" data-toggle="tab" data-target="#habitacao" role="tab">HABITAÇÃO</a>
+                <a class="nav-link active" href="" data-toggle="tab" data-target="#habitacao" role="tab">{{ ('HABITACAO' | translate).toUpperCase() }}</a>
             </li>
             <li class="divider-vertical"></li>
             <li class="nav-item">
-                <a class="nav-link" href="" data-toggle="tab" data-target="#reabilitacao" role="tab">REABILITAÇÃO</a>
+                <a class="nav-link" href="" data-toggle="tab" data-target="#reabilitacao" role="tab">{{ ('REABILITACAO' | translate).toUpperCase() }}</a>
             </li>
         </ul>
 
         <!-- Tab panes -->
         <div class="tab-content">
             <div class="tab-pane active" id="habitacao" role="tabpanel">
-                <div ng-repeat="curriculum in curriculums">
-                    {{curriculum.description}} / {{curriculum.address}} ({{curriculum.year}}) <span class="small-description">{{curriculum.state}}</span>
+                <div class="curriculum-content" ng-repeat="curriculum in curriculums">
+                    <a href="/{{ 'ATELIER' | translate }}/{{curriculum.id}}">{{curriculum.description}} / {{curriculum.address}} ({{curriculum.year}}) <span class="small-description">{{curriculum.state}}</span></a>
                     <br>
                     <br>
                 </div>

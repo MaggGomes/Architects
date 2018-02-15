@@ -36,12 +36,14 @@ CREATE TABLE IF NOT EXISTS team (
 );
 
 CREATE TABLE IF NOT EXISTS curriculum (
+	project_id    INT UNSIGNED	,
 	description   TEXT			    NOT NULL DEFAULT '',
 	address       TEXT			    NOT NULL DEFAULT '',
 	year          TEXT			    NOT NULL DEFAULT '',
 	state         TEXT			    NOT NULL DEFAULT '',
 	language      ENUM('pt', 'en') NOT NULL DEFAULT 'pt',
-	order_number	INT UNSIGNED	NOT NULL
+	order_number	INT UNSIGNED	NOT NULL,
+	FOREIGN KEY (project_id) REFERENCES projects(project_id)
 );
 
 CREATE TABLE IF NOT EXISTS distinctions (
@@ -285,26 +287,26 @@ INSERT INTO team (name, order_number) VALUES ('Jorge Silva', 30);
 
 
 -- CURRICULUM PT
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('RECUPERAÇÃO E AMPLIAÇÃO DE HABITAÇÃO', 'Rua de Tânger, Porto', '2015', 'Em construção', 'pt', 1);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('REMODELAÇÃO DE MORADIA UNIFAMILIAR', 'RUA PEDRO TEIXEIRA, ANTAS, PORTO', '2012-2013', 'Construída', 'pt', 2);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('MORADIA UNIFAMILIAR', 'QUINTA DO MONDEGO, NELAS', '2014', 'Projecto de Execução concluído', 'pt', 3);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('MORADIA UNIFAMILIAR', 'FRENTE MARÍTIMA DE VALADARES – VILA NOVA DE GAIA', '2012-2013', 'Projecto de Licenciamento', 'pt', 4);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('REMODELAÇÃO DE MORADIA UNIFAMILIAR', 'RUA FERNÃO VAZ DOURADO, FOZ DO DOURO PORTO', '2012', 'Construída', 'pt', 5);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('MORADIA UNIFAMILIAR', 'QUINTA DAS LUZES, JOVIM - GONDOMAR', '2011', 'Construída', 'pt', 6);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('MORADIA UNIFAMILIAR PARA FÉRIAS', 'SÃO COSMADO, ARMAMAR', '2010', 'Construída', 'pt', 7);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIO DE HABITAÇÃO COLECTIVA', 'RUA DE PEREIRÓ, PORTO', '2009', 'Estudo Prévio', 'pt', 8);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIO DE HABITAÇÃO COLECTIVA (42 Apart.)', 'TRAVESSA JOSÉ FONTANA, VILA NOVA DE GAIA', '2005', 'Construído', 'pt', 9);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIO DE HABITAÇÃO COLECTIVA (10 Apart-Moradia)', 'AZURARA, VILA DO CONDE', '2005', 'Projecto de Execução concluído', 'pt', 10);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIO DE HABITAÇÃO COLECTIVA (100 Apart.)', 'RUA DO RIO DA FONTE, VILA NOVA DE GAIA', '2004', 'Construído', 'pt', 11);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('REMODELAÇÃO E AMPLIAÇÃO DE MORADIA', 'BAIRRO MARECHAL GOMES DA COSTA, PORTO', '2003', 'Construída', 'pt', 12);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('MORADIA UNIFAMILIAR', 'TOUGUINHÓ, VILA DO CONDE', '2003', 'Projecto de Execução concluído', 'pt', 13);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('MORADIA UNIFAMILIAR', 'MODIVAS, VILA DO CONDE', '2002', 'Projecto de Execução concluído', 'pt', 14);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIO MULTIFAMILIAR', 'MODIVAS, VILA DO CONDE', '2002', 'Construído', 'pt', 15);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIO DE HABITAÇÃO COLECTIVA (16 fogos)', 'AZURARA - VILA DO CONDE', '2002', 'Projecto de Licenciamento', 'pt', 16);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIOS DE HABITAÇÃO, COMÉRCIO E SERVIÇOS – EMPREENDIMENTOS V8 E PARCAUTO', 'VILA NOVA DE GAIA', '2002', 'Estudo sem continuidade', 'pt', 17);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIO DE HABITAÇÃO COLECTIVA COM (24 fogos)', 'AZURARA - VILA DO CONDE', '2002', 'Projecto de Licenciamento', 'pt', 18);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('EDIFÍCIO DE HABITAÇÃO COLECTIVA (110 fogos)', 'RUA DA FONTE, V N GAIA', '2001', 'Construído', 'pt', 19);
-INSERT INTO curriculum (description, address, year, state, language, order_number) VALUES ('MORADIA UNIFAMILIAR', 'PALHEIRA – COIMBRA',  '', '', 'pt', 20);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'RECUPERAÇÃO E AMPLIAÇÃO DE HABITAÇÃO', 'Rua de Tânger, Porto', '2015', 'Em construção', 'pt', 1);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'REMODELAÇÃO DE MORADIA UNIFAMILIAR', 'RUA PEDRO TEIXEIRA, ANTAS, PORTO', '2012-2013', 'Construída', 'pt', 2);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'MORADIA UNIFAMILIAR', 'QUINTA DO MONDEGO, NELAS', '2014', 'Projecto de Execução concluído', 'pt', 3);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'MORADIA UNIFAMILIAR', 'FRENTE MARÍTIMA DE VALADARES – VILA NOVA DE GAIA', '2012-2013', 'Projecto de Licenciamento', 'pt', 4);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'REMODELAÇÃO DE MORADIA UNIFAMILIAR', 'RUA FERNÃO VAZ DOURADO, FOZ DO DOURO PORTO', '2012', 'Construída', 'pt', 5);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'MORADIA UNIFAMILIAR', 'QUINTA DAS LUZES, JOVIM - GONDOMAR', '2011', 'Construída', 'pt', 6);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'MORADIA UNIFAMILIAR PARA FÉRIAS', 'SÃO COSMADO, ARMAMAR', '2010', 'Construída', 'pt', 7);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'EDIFÍCIO DE HABITAÇÃO COLECTIVA', 'RUA DE PEREIRÓ, PORTO', '2009', 'Estudo Prévio', 'pt', 8);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'EDIFÍCIO DE HABITAÇÃO COLECTIVA (42 Apart.)', 'TRAVESSA JOSÉ FONTANA, VILA NOVA DE GAIA', '2005', 'Construído', 'pt', 9);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'EDIFÍCIO DE HABITAÇÃO COLECTIVA (10 Apart-Moradia)', 'AZURARA, VILA DO CONDE', '2005', 'Projecto de Execução concluído', 'pt', 10);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'EDIFÍCIO DE HABITAÇÃO COLECTIVA (100 Apart.)', 'RUA DO RIO DA FONTE, VILA NOVA DE GAIA', '2004', 'Construído', 'pt', 11);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'REMODELAÇÃO E AMPLIAÇÃO DE MORADIA', 'BAIRRO MARECHAL GOMES DA COSTA, PORTO', '2003', 'Construída', 'pt', 12);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'MORADIA UNIFAMILIAR', 'TOUGUINHÓ, VILA DO CONDE', '2003', 'Projecto de Execução concluído', 'pt', 13);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'MORADIA UNIFAMILIAR', 'MODIVAS, VILA DO CONDE', '2002', 'Projecto de Execução concluído', 'pt', 14);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'EDIFÍCIO MULTIFAMILIAR', 'MODIVAS, VILA DO CONDE', '2002', 'Construído', 'pt', 15);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'EDIFÍCIO DE HABITAÇÃO COLECTIVA (16 fogos)', 'AZURARA - VILA DO CONDE', '2002', 'Projecto de Licenciamento', 'pt', 16);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'EDIFÍCIOS DE HABITAÇÃO, COMÉRCIO E SERVIÇOS – EMPREENDIMENTOS V8 E PARCAUTO', 'VILA NOVA DE GAIA', '2002', 'Estudo sem continuidade', 'pt', 17);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'EDIFÍCIO DE HABITAÇÃO COLECTIVA COM (24 fogos)', 'AZURARA - VILA DO CONDE', '2002', 'Projecto de Licenciamento', 'pt', 18);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'EDIFÍCIO DE HABITAÇÃO COLECTIVA (110 fogos)', 'RUA DA FONTE, V N GAIA', '2001', 'Construído', 'pt', 19);
+INSERT INTO curriculum (project_id, description, address, year, state, language, order_number) VALUES (NULL, 'MORADIA UNIFAMILIAR', 'PALHEIRA – COIMBRA',  '', '', 'pt', 20);
 
 
 -- DISTINCTIONS PT

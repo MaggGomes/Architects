@@ -305,8 +305,9 @@ body {
   font-size: var(--small-size);
 }
 
-.links-content a{
+.links-content a, .curriculum-content a{
   text-decoration: none;
+  color: var(--text-color);
 }
 
 /* Animations */

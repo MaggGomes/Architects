@@ -11,8 +11,9 @@ exports.create = function(description, address, year, state, language, order_num
 
 exports.getAll = function(language, done) {
 	db.get().query('SELECT * FROM curriculum ' +
+		'LEFT JOIN projects ON curriculum.project_id = projects.project_id ' +
 		'WHERE curriculum.language = ? ' +
-		'ORDER BY order_number', [language], function (err, curriculum) {
+		'ORDER BY curriculum.order_number', [language], function (err, curriculum) {
 		if (err) return done(err);
 		done(null, curriculum)
 	})

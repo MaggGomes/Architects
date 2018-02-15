@@ -1,29 +1,12 @@
 <img class="loading" src="/images/loading.svg" ng-show="loading" />
 
-<section class="container main-container small-container" nice-scroll>
-    <div class="curriculum-tabs">
-        <ul class="nav" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" href="" data-toggle="tab" data-target="#habitacao" role="tab">{{ ('HABITACAO' | translate).toUpperCase() }}</a>
-            </li>
-            <li class="divider-vertical"></li>
-            <li class="nav-item">
-                <a class="nav-link" href="" data-toggle="tab" data-target="#reabilitacao" role="tab">{{ ('REABILITACAO' | translate).toUpperCase() }}</a>
-            </li>
-        </ul>
-
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <div class="tab-pane active" id="habitacao" role="tabpanel">
-                <div class="curriculum-content" ng-repeat="curriculum in curriculums">
-                    <a href="/{{ 'PROJECTOS' | translate }}/{{curriculum.id}}">{{curriculum.description}} / {{curriculum.address}} ({{curriculum.year}}) <span class="small-description">{{curriculum.state}}</span></a>
-                    <br>
-                    <br>
-                </div>
-            </div>
-            <div class="tab-pane" id="reabilitacao" role="tabpanel">
-                dsadsadas
-            </div>
-        </div>
+<section class="container main-container small-container curriculum" nice-scroll>
+    <div class="curriculum-category">
+        <p><span class="big-category">{{ ('HABITACAO' | translate).toUpperCase() }}</span> | <span class="small-category">{{ ('REABILITACAO' | translate).toUpperCase() }}</span></p>
+    </div>
+    <div class="curriculum-content" ng-repeat="curriculum in curriculums">
+        <a href="/{{ 'PROJECTOS' | translate }}/{{curriculum.id}}">{{curriculum.description}} / {{curriculum.address}} ({{curriculum.year}}) <span class="small-description">{{curriculum.state}}</span></a>
+        <br>
+        <br>
     </div>
 </section>

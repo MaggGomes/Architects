@@ -42,11 +42,16 @@ exports.create = function(title, description, address, done) {
 	{id:"restaurante-cacau-wine-terrace", thumbnail:"/images/projects/restaurante-cacau-wine-terrace/1.jpg", title: "Restaurante Ccau Wine Terrace", description: "description teste", address: "address teste", categories: [], order: 1}
 ];*/
 
-exports.getAll = function(done) {
-	db.get().query('SELECT * FROM projects ORDER BY order_number', function (err, projects) {
-		if (err) return done(err);
-		done(null, projects)
-	});
+exports.getAll = function(language, done) {
+	db.get().query('SELECT * FROM projects ' +
+		'LEFT JOIN projects_details ON projects.project_id = projects_details.project_id ' +
+		'WHERE language = ? ' +
+		'ORDER BY order_number',
+		[language],
+		function (err, projects) {
+			if (err) return done(err);
+			done(null, projects)
+		});
 	/*projects.sort(function(a, b) {
 		return a.order - b.order;
 	});
@@ -59,8 +64,9 @@ exports.getById = function(id, language, done) {
 		'LEFT JOIN projects_details ON projects.project_id = projects_details.project_id ' +
 		'LEFT JOIN images ON projects.project_id = images.project_id ' +
 		'WHERE id = ? AND language = ? ' +
-		'GROUP BY projects.project_id'
-		, [id, language], function (err, project) {
+		'GROUP BY projects.project_id',
+		[id, language],
+		function (err, project) {
 			if (err) return done(err);
 			done(null, project)
 		});

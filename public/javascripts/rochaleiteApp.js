@@ -256,7 +256,7 @@ app.controller('projectsCtrl', function($scope, $routeParams, $http, $location, 
 	}
 
 	$scope.loading=true;
-	$http.get("/api/projects")
+	$http.get("/api/projects" + "?language=" + $translate.use())
 		.then(function(response) {
 			$scope.projects = response.data;
 			$scope.slicedProjects = arrayUtils.chunk($scope.projects, 6);

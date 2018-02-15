@@ -10,7 +10,9 @@ var express = require('express'),
 
 /* GET projects listing. */
 router.get('/projects/', function(req, res, next) {
-    project.getAll(function(err, projects){
+	var language = 'pt';
+	if(req.query.language) language = req.query.language;
+    project.getAll(language, function(err, projects){
         if(err) { res.status(400).send(err); }
         else { res.status(200).send(projects); }
     });

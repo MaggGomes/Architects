@@ -176,41 +176,47 @@ body {
   z-index: 2;
   width: 100%;
   height: 100%;
-  /*-webkit-transition: all 0.75s ease-in-out;
+  -webkit-transition: all 0.75s ease-in-out;
   -moz-transition: all 0.75s ease-in-out;
   -ms-transition: all 0.75s ease-in-out;
   -o-transition: all 0.75s ease-in-out;
-  transition: all 0.75s ease-in-out;*/
+  transition: all 0.75s ease-in-out;
 }
 
 .project-portfolio-row .imgOverlayColor {
   background-color: rgba(127,0,0,0.55);
-
 }
 
-.project-portfolio-row .imgOverlayTitle {
+.project-portfolio-row .titleOverlay {
   position: absolute;
   bottom: 0;
   left: 0;
   z-index: 2;
+  padding-left: 5px;
+  padding-right: 5px;
   width: 100%;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: var(--medium-size);
+  color: rgba(255,255,255,0.85);
+  opacity: 0;
+  font-weight: bold;
+  overflow: hidden;
+  -webkit-transition: all 0.75s ease-out;
+  -moz-transition: all 0.75s ease-out;
+  -ms-transition: all 0.75s ease-out;
+  -o-transition: all 0.75s ease-out;
+  transition: all 0.75s ease-out;
+}
+
+.project-portfolio-row a:hover .titleOverlay{
   height: 100%;
-  /*-webkit-transition: all 0.75s ease-in-out;
-  -moz-transition: all 0.75s ease-in-out;
-  -ms-transition: all 0.75s ease-in-out;
-  -o-transition: all 0.75s ease-in-out;
-  transition: all 0.75s ease-in-out;*/
+  opacity: 1;
 }
 
-.project-portfolio-row .imgOverlayTitle {
-
-}
-
-.project-portfolio-row .imgOverlayTitle .title{
-  position: relative;
-  bottom: 0;
-  left: 0;
-  color: rgba(127,0,0,0.55);
+.project-portfolio-row .titleOverlay .title {
+  position: absolute;
+  padding-top: 70px;
 }
 
 /* min-width 992 px */

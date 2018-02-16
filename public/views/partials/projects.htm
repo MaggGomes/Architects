@@ -4,16 +4,13 @@
     <div>
         <div class="row gutter-4 project-portfolio-row" ng-repeat="rowProjects in slicedProjects">
             <div class="col-2 project" ng-repeat="project in rowProjects">
-                <a href="/{{ 'PROJECTOS' | translate }}/{{project.id}}">
+                <a href="/{{ 'PROJECTOS' | translate }}/{{project.id}}" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
                     <div class="img-wrapper">
-                        <div class="imgOverlay" ng-class="{imgOverlayColor: !hover}" ng-hide="project.hasSelectedCategory"
-                             ng-mouseenter="hover = true"
-                             ng-mouseleave="hover = false"></div>
-                        <div class="imgOverlayTitle">
-                            <!--<div class="text">{{ project.title }}</div> TODO - NÃO ESTÁ A FUNCIONAR project.title-->
+                        <div class="imgOverlay" ng-class="{ imgOverlayColor: !hover }" ng-hide="project.hasSelectedCategory"></div>
+                        <div class="titleOverlay">
                             <div class="title">{{ project.title }}</div>
                         </div>
-                        <img src="{{project.thumbnail}}">
+                        <img src="{{ project.thumbnail }}">
                     </div>
                 </a>
             </div>

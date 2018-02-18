@@ -485,7 +485,8 @@ app.directive('niceScroll', function() {
 				cursorwidth: '5px',
 				cursorfixedheight: scope.scrollsize,
 				cursorborder: 'none',
-				cursorborderradius: '0px'
+				cursorborderradius: '0px',
+				horizrailenabled:false
 			});
 		}
 	};

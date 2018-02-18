@@ -114,6 +114,24 @@ body {
   top: 3px;
 }
 
+.sub-menu{
+  width:0;
+  overflow:hidden;
+  webkit-transition: all 0.75s ease-out;
+  -moz-transition: all 0.75s ease-out;
+  -ms-transition: all 0.75s ease-out;
+  -o-transition: all 0.75s ease-out;
+  transition: all 0.75s ease-out;
+}
+
+.sub-menu.sub-menu-navbar-open {
+  width:100%;
+}
+
+.sub-menu.sub-menu-footer-open {
+  width:146px;
+}
+
 .menu > .navbar-nav > .nav-item:last-child .nav-link {
   padding-right: 0;
 }
@@ -183,10 +201,6 @@ body {
   transition: all 0.75s ease-in-out;
 }
 
-.imgOverlay.ng-hide.imgOverlayColor {
-  background-color: rgba(127,0,0,0);
-}
-
 .project-portfolio-row .imgOverlayColor {
   background-color: rgba(127,0,0,0.55);
 }
@@ -239,23 +253,27 @@ body {
 }
 
 /* end */
-.selectedProjects img,.selectedProjects video{
+.slideshow img,.slideshow video{
   height:100%;
   padding-left: 2px;
   padding-right: 2px;
 }
 
-.selectedProjects .img-wrapper {
+.slideshow .img-wrapper {
   position: relative;
   width: auto;
-  height: calc(100vh - 230px);
+  min-height: 450px;
+  height: calc(100vh - 240px);
 }
 
-.selectedProjects .imgOverlayColor {
+.slideshow .imgOverlayColor {
   background-color: rgba(127,0,0,0.65);
 }
+.slideshow{
+  overflow-x:hidden;
+}
 
-.selectedProjects .imgOverlay {
+.slideshow .imgOverlay {
   position: absolute;
   top: 0;
   left: 2px;

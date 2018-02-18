@@ -5,7 +5,7 @@
             <div class="col-2 project" ng-repeat="project in rowProjects">
                 <a href="/{{ 'PROJECTOS' | translate }}/{{project.id}}" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
                     <div class="img-wrapper">
-                        <div class="imgOverlay" ng-class="{ imgOverlayColor: !hover }" ng-hide="project.hasSelectedCategory"></div>
+                        <div class="imgOverlay" ng-class="{ imgOverlayColor: !hover && !project.hasSelectedCategory }"></div>
                         <div class="titleOverlay">
                             <div class="title">{{ project.title }}</div>
                         </div>

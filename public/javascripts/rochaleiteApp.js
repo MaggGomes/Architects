@@ -55,7 +55,7 @@ app.config(function ($translateProvider) {
 		'tourism': 'turismo',
 		'interior': 'interiores',
 		'restoration_commerce': 'restauracao_comercio',
-		'urban_studies': 'etudos_urbanisticos',
+		'urban_studies': 'estudos_urbanisticos',
 		'reabilitacao': 'rehabilitation',
 		'equipamentos_servicos': 'equipments_services',
 		'unifamiliar': 'single_family',
@@ -63,7 +63,7 @@ app.config(function ($translateProvider) {
 		'turismo': 'tourism',
 		'interiores': 'interior',
 		'restauracao_comercio': 'restoration_commerce',
-		'etudos_urbanisticos': 'urban_studies'
+		'estudos_urbanisticos': 'urban_studies'
 
 		/*'NOME': 'nome',
 		'E-MAIL': 'e-mail',

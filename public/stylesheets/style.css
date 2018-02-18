@@ -183,6 +183,10 @@ body {
   transition: all 0.75s ease-in-out;
 }
 
+.imgOverlay.ng-hide.imgOverlayColor {
+  background-color: rgba(127,0,0,0);
+}
+
 .project-portfolio-row .imgOverlayColor {
   background-color: rgba(127,0,0,0.55);
 }
@@ -420,11 +424,8 @@ main.ng-enter.ng-enter-active {
 }
 
 .loading{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 150px;
-  height: 150px;
-  margin-top: -75px;
-  margin-left: -75px;
+  position: relative;
+  top: calc(100vh - 250px);
+  margin-right: -2px;
+  margin-left: -2px;
 }

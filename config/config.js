@@ -16,9 +16,9 @@ var state = {
 
 exports.connect = function(mode, done) {
     state.pool = mysql.createPool({
-        host: 'localhost',
-        user: 'rochaleite',
-        password: 'izuy0aQO4du7i63a',
+        host: '',
+        user: '',
+        password: '',
         database: mode === exports.MODE_PRODUCTION ? PRODUCTION_DB : TEST_DB
     });
 
@@ -29,15 +29,3 @@ exports.connect = function(mode, done) {
 exports.get = function() {
     return state.pool
 };
-
-// Mail config
-
-// exports.mail = {
-//     host: 'smtp.gmail.com',
-//     port: 587,
-//     secure: false,
-//     auth: {
-//         user: '', // preencher user e password
-//         pass: ''
-//     }
-// };

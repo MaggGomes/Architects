@@ -168,7 +168,7 @@ body {
   color: var(--text-color);
 }
 
-.curriculum .curriculum-content, .architects-content, .link-text {
+.curriculum .curriculum-content, .architects-content, .architects-images, .link-text {
   color: var(--text-color);
   font-size: var(--medium-size);
 }

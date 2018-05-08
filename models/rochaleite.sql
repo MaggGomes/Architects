@@ -93,7 +93,7 @@ INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('c
 INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('casa-nelas', '/images/projects/casa-nelas/thumbnail.jpg', '/images/projects/casa-nelas/1.svg', 'single_family', 40);
 INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('ed-cedofeita-ii', '/images/projects/ed-cedofeita-ii/thumbnail.jpg', '/images/projects/ed-cedofeita-ii/1.svg', 'collective,tourism', 42);
 INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('ed-belomonte', '/images/projects/ed-belomonte/thumbnail.jpg', '/images/projects/ed-belomonte/1.svg', 'tourism', 24);
-INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('casa-caldeireiros', '/images/projects/casa-caldeireiros/thumbnail.jpg', '/images/projects/casa-caldeireiros/1.svg', 'rehabilitation', 14);
+INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('casa-caldeireiros', '/images/projects/casa-caldeireiros/thumbnail.jpg', '/images/projects/casa-caldeireiros/1.svg', 'rehabilitation,tourism', 14);
 INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('casa-esposende', '/images/projects/casa-esposende/thumbnail.jpg', '/images/projects/casa-esposende/1.svg', 'rehabilitation,single_family', 21);
 INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('casa-b-vilarinha', '/images/projects/casa-b-vilarinha/thumbnail.jpg', '/images/projects/casa-b-vilarinha/1.svg', 'rehabilitation,single_family', 9);
 INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('ed-clerigos', '/images/projects/ed-clerigos/thumbnail.jpg', '/images/projects/ed-clerigos/1.svg', 'rehabilitation,collective,tourism', 29);
@@ -101,18 +101,18 @@ INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('c
 INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('restaurante-bocca', '/images/projects/restaurante-bocca/thumbnail.jpg', '/images/projects/restaurante-bocca/1.svg', 'interior,restoration_commerce', 4);
 INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('casa-gondarem', '/images/projects/casa-gondarem/thumbnail.jpg', '/images/projects/casa-gondarem/1.svg', 'rehabilitation,single_family', 41);
 INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('restaurante-cacau-wine-terrace', '/images/projects/restaurante-cacau-wine-terrace/thumbnail.jpg', '/images/projects/restaurante-cacau-wine-terrace/1.svg', 'restoration_commerce', 11);
-INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('bancada-espaco-agros', '/images/projects/bancada-espaco-agros/thumbnail.jpg', '/images/projects/bancada-espaco-agros/1.svg', '', 5);
-INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('edificio-cantina-espaco-agros', '/images/projects/edificio-cantina-espaco-agros/thumbnail.jpg', '/images/projects/edificio-cantina-espaco-agros/1.svg', '', 7);
-INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('reab-anexos-agricolas', '/images/projects/reab-anexos-agricolas/thumbnail.jpg', '/images/projects/reab-anexos-agricolas/1.svg', '', 17);
-INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('edificio-exposicoes-espaco-agros', '/images/projects/edificio-exposicoes-espaco-agros/thumbnail.jpg', '/images/projects/edificio-exposicoes-espaco-agros/1.svg', '', 18);
-INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('sede-ucanorte-xxi', '/images/projects/sede-ucanorte-xxi/thumbnail.jpg', '/images/projects/sede-ucanorte-xxi/1.svg', '', 19);
-INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('escritorios-gaia', '/images/projects/escritorios-gaia/thumbnail.jpg', '/images/projects/escritorios-gaia/1.svg', '', 20);
-INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('casa-grande-arouca', '/images/projects/casa-grande-arouca/thumbnail.jpg', '/images/projects/casa-grande-arouca/1.svg', '', 25);
-INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('estudo-urbanistico-espaco-agros', '/images/projects/estudo-urbanistico-espaco-agros/thumbnail.jpg', '/images/projects/estudo-urbanistico-espaco-agros/1.svg', '', 28);
-INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('quinta-santana', '/images/projects/quinta-santana/thumbnail.jpg', '/images/projects/quinta-santana/1.svg', '', 30);
-INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('casa-antas', '/images/projects/casa-antas/thumbnail.jpg', '/images/projects/casa-antas/1.svg', '', 36);
-INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('habitacao-paranhos', '/images/projects/habitacao-paranhos/thumbnail.jpg', '/images/projects/habitacao-paranhos/1.svg', '', 38);
-INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('casa-mgc', '/images/projects/casa-mgc/thumbnail.jpg', '/images/projects/casa-mgc/1.svg', '', 39);
+INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('bancada-espaco-agros', '/images/projects/bancada-espaco-agros/thumbnail.jpg', '/images/projects/bancada-espaco-agros/1.svg', 'equipments_services', 5);
+INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('edificio-cantina-espaco-agros', '/images/projects/edificio-cantina-espaco-agros/thumbnail.jpg', '/images/projects/edificio-cantina-espaco-agros/1.svg', 'equipments_services', 7);
+INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('reab-anexos-agricolas', '/images/projects/reab-anexos-agricolas/thumbnail.jpg', '/images/projects/reab-anexos-agricolas/1.svg', 'rehabilitation,equipments_services,tourism', 17);
+INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('edificio-exposicoes-espaco-agros', '/images/projects/edificio-exposicoes-espaco-agros/thumbnail.jpg', '/images/projects/edificio-exposicoes-espaco-agros/1.svg', 'equipments_services', 18);
+INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('sede-ucanorte-xxi', '/images/projects/sede-ucanorte-xxi/thumbnail.jpg', '/images/projects/sede-ucanorte-xxi/1.svg', 'equipments_services', 19);
+INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('escritorios-gaia', '/images/projects/escritorios-gaia/thumbnail.jpg', '/images/projects/escritorios-gaia/1.svg', 'interior,equipments_services', 20);
+INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('casa-grande-arouca', '/images/projects/casa-grande-arouca/thumbnail.jpg', '/images/projects/casa-grande-arouca/1.svg', 'rehabilitation,single_family', 25);
+INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('estudo-urbanistico-espaco-agros', '/images/projects/estudo-urbanistico-espaco-agros/thumbnail.jpg', '/images/projects/estudo-urbanistico-espaco-agros/1.svg', 'urban_studies', 28);
+INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('quinta-santana', '/images/projects/quinta-santana/thumbnail.jpg', '/images/projects/quinta-santana/1.svg', 'single_family', 30);
+INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('casa-antas', '/images/projects/casa-antas/thumbnail.jpg', '/images/projects/casa-antas/1.svg', 'rehabilitation,single_family', 36);
+INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('habitacao-paranhos', '/images/projects/habitacao-paranhos/thumbnail.jpg', '/images/projects/habitacao-paranhos/1.svg', 'rehabilitation,interior,single_family', 38);
+INSERT INTO projects (id, thumbnail, image, categories, order_number) VALUES ('casa-mgc', '/images/projects/casa-mgc/thumbnail.jpg', '/images/projects/casa-mgc/1.svg', 'rehabilitation,single_family', 39);
 
 -- PROJECTS DETAILS PT
 INSERT INTO projects_details (project_id, title, description, address, language) VALUES (1, 'Casa Murtinheira', '', '', 'pt');
@@ -209,6 +209,17 @@ INSERT INTO images (project_id, path) VALUES (1, '/images/projects/casa-murtinhe
 INSERT INTO images (project_id, path) VALUES (1, '/images/projects/casa-murtinheira/5.jpg');
 INSERT INTO images (project_id, path) VALUES (1, '/images/projects/casa-murtinheira/6.jpg');
 
+INSERT INTO images (project_id, path) VALUES (4, '/images/projects/entrada-eventos-espaco-agros/1.jpg');
+INSERT INTO images (project_id, path) VALUES (4, '/images/projects/entrada-eventos-espaco-agros/2.jpg');
+INSERT INTO images (project_id, path) VALUES (4, '/images/projects/entrada-eventos-espaco-agros/3.jpg');
+INSERT INTO images (project_id, path) VALUES (4, '/images/projects/entrada-eventos-espaco-agros/4.jpg');
+INSERT INTO images (project_id, path) VALUES (4, '/images/projects/entrada-eventos-espaco-agros/5.jpg');
+INSERT INTO images (project_id, path) VALUES (4, '/images/projects/entrada-eventos-espaco-agros/6.jpg');
+INSERT INTO images (project_id, path) VALUES (4, '/images/projects/entrada-eventos-espaco-agros/7.jpg');
+INSERT INTO images (project_id, path) VALUES (4, '/images/projects/entrada-eventos-espaco-agros/8.jpg');
+INSERT INTO images (project_id, path) VALUES (4, '/images/projects/entrada-eventos-espaco-agros/9.jpg');
+INSERT INTO images (project_id, path) VALUES (4, '/images/projects/entrada-eventos-espaco-agros/10.jpg');
+INSERT INTO images (project_id, path) VALUES (4, '/images/projects/entrada-eventos-espaco-agros/11.jpg');
 INSERT INTO images (project_id, path) VALUES (5, '/images/projects/casa-cadoucos/1.jpg');
 INSERT INTO images (project_id, path) VALUES (5, '/images/projects/casa-cadoucos/2.jpg');
 INSERT INTO images (project_id, path) VALUES (5, '/images/projects/casa-cadoucos/3.jpg');
@@ -238,6 +249,11 @@ INSERT INTO images (project_id, path) VALUES (8, '/images/projects/casa-dos-loio
 INSERT INTO images (project_id, path) VALUES (8, '/images/projects/casa-dos-loios/11.jpg');
 INSERT INTO images (project_id, path) VALUES (8, '/images/projects/casa-dos-loios/12.jpg');
 INSERT INTO images (project_id, path) VALUES (8, '/images/projects/casa-dos-loios/13.jpg');
+INSERT INTO images (project_id, path) VALUES (8, '/images/projects/casa-dos-loios/14.jpg');
+INSERT INTO images (project_id, path) VALUES (8, '/images/projects/casa-dos-loios/15.jpg');
+INSERT INTO images (project_id, path) VALUES (8, '/images/projects/casa-dos-loios/16.jpg');
+INSERT INTO images (project_id, path) VALUES (8, '/images/projects/casa-dos-loios/17.jpg');
+INSERT INTO images (project_id, path) VALUES (8, '/images/projects/casa-dos-loios/18.jpg');
 INSERT INTO images (project_id, path) VALUES (9, '/images/projects/casa-jovim/1.jpg');
 INSERT INTO images (project_id, path) VALUES (9, '/images/projects/casa-jovim/2.jpg');
 INSERT INTO images (project_id, path) VALUES (9, '/images/projects/casa-jovim/3.jpg');
@@ -258,6 +274,12 @@ INSERT INTO images (project_id, path) VALUES (10, '/images/projects/casa-da-baix
 INSERT INTO images (project_id, path) VALUES (10, '/images/projects/casa-da-baixa/7.jpg');
 INSERT INTO images (project_id, path) VALUES (10, '/images/projects/casa-da-baixa/8.jpg');
 INSERT INTO images (project_id, path) VALUES (10, '/images/projects/casa-da-baixa/9.jpg');
+INSERT INTO images (project_id, path) VALUES (10, '/images/projects/casa-da-baixa/10.jpg');
+INSERT INTO images (project_id, path) VALUES (10, '/images/projects/casa-da-baixa/11.jpg');
+INSERT INTO images (project_id, path) VALUES (10, '/images/projects/casa-da-baixa/12.jpg');
+INSERT INTO images (project_id, path) VALUES (10, '/images/projects/casa-da-baixa/13.jpg');
+INSERT INTO images (project_id, path) VALUES (10, '/images/projects/casa-da-baixa/14.jpg');
+INSERT INTO images (project_id, path) VALUES (10, '/images/projects/casa-da-baixa/15.jpg');
 INSERT INTO images (project_id, path) VALUES (11, '/images/projects/pizza-&-drinks/1.jpg');
 INSERT INTO images (project_id, path) VALUES (11, '/images/projects/pizza-&-drinks/2.jpg');
 INSERT INTO images (project_id, path) VALUES (11, '/images/projects/pizza-&-drinks/3.jpg');
@@ -268,6 +290,10 @@ INSERT INTO images (project_id, path) VALUES (11, '/images/projects/pizza-&-drin
 INSERT INTO images (project_id, path) VALUES (11, '/images/projects/pizza-&-drinks/8.jpg');
 INSERT INTO images (project_id, path) VALUES (11, '/images/projects/pizza-&-drinks/9.jpg');
 INSERT INTO images (project_id, path) VALUES (11, '/images/projects/pizza-&-drinks/10.jpg');
+INSERT INTO images (project_id, path) VALUES (11, '/images/projects/pizza-&-drinks/11.jpg');
+INSERT INTO images (project_id, path) VALUES (11, '/images/projects/pizza-&-drinks/12.jpg');
+INSERT INTO images (project_id, path) VALUES (11, '/images/projects/pizza-&-drinks/13.jpg');
+INSERT INTO images (project_id, path) VALUES (11, '/images/projects/pizza-&-drinks/14.jpg');
 INSERT INTO images (project_id, path) VALUES (12, '/images/projects/casa-fvd/1.jpg');
 INSERT INTO images (project_id, path) VALUES (12, '/images/projects/casa-fvd/2.jpg');
 INSERT INTO images (project_id, path) VALUES (12, '/images/projects/casa-fvd/3.jpg');
@@ -276,6 +302,47 @@ INSERT INTO images (project_id, path) VALUES (12, '/images/projects/casa-fvd/5.j
 INSERT INTO images (project_id, path) VALUES (12, '/images/projects/casa-fvd/6.jpg');
 INSERT INTO images (project_id, path) VALUES (12, '/images/projects/casa-fvd/7.jpg');
 
+INSERT INTO images (project_id, path) VALUES (31, '/images/projects/bancada-espaco-agros/1.jpg');
+INSERT INTO images (project_id, path) VALUES (31, '/images/projects/bancada-espaco-agros/2.jpg');
+INSERT INTO images (project_id, path) VALUES (31, '/images/projects/bancada-espaco-agros/3.jpg');
+INSERT INTO images (project_id, path) VALUES (31, '/images/projects/bancada-espaco-agros/4.jpg');
+INSERT INTO images (project_id, path) VALUES (31, '/images/projects/bancada-espaco-agros/5.jpg');
+INSERT INTO images (project_id, path) VALUES (31, '/images/projects/bancada-espaco-agros/6.jpg');
+INSERT INTO images (project_id, path) VALUES (31, '/images/projects/bancada-espaco-agros/7.jpg');
+INSERT INTO images (project_id, path) VALUES (31, '/images/projects/bancada-espaco-agros/8.jpg');
+INSERT INTO images (project_id, path) VALUES (31, '/images/projects/bancada-espaco-agros/9.jpg');
+INSERT INTO images (project_id, path) VALUES (31, '/images/projects/bancada-espaco-agros/10.jpg');
+INSERT INTO images (project_id, path) VALUES (32, '/images/projects/edificio-cantina-espaco-agros/1.jpg');
+INSERT INTO images (project_id, path) VALUES (32, '/images/projects/edificio-cantina-espaco-agros/2.jpg');
+INSERT INTO images (project_id, path) VALUES (32, '/images/projects/edificio-cantina-espaco-agros/3.jpg');
+INSERT INTO images (project_id, path) VALUES (32, '/images/projects/edificio-cantina-espaco-agros/4.jpg');
+INSERT INTO images (project_id, path) VALUES (32, '/images/projects/edificio-cantina-espaco-agros/5.jpg');
+INSERT INTO images (project_id, path) VALUES (32, '/images/projects/edificio-cantina-espaco-agros/6.jpg');
+INSERT INTO images (project_id, path) VALUES (32, '/images/projects/edificio-cantina-espaco-agros/7.jpg');
+INSERT INTO images (project_id, path) VALUES (32, '/images/projects/edificio-cantina-espaco-agros/8.jpg');
+INSERT INTO images (project_id, path) VALUES (32, '/images/projects/edificio-cantina-espaco-agros/9.jpg');
+INSERT INTO images (project_id, path) VALUES (32, '/images/projects/edificio-cantina-espaco-agros/10.jpg');
+INSERT INTO images (project_id, path) VALUES (32, '/images/projects/edificio-cantina-espaco-agros/11.jpg');
+INSERT INTO images (project_id, path) VALUES (32, '/images/projects/edificio-cantina-espaco-agros/12.jpg');
+INSERT INTO images (project_id, path) VALUES (32, '/images/projects/edificio-cantina-espaco-agros/13.jpg');
+
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/1.jpg');
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/2.jpg');
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/3.jpg');
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/4.jpg');
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/5.jpg');
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/6.jpg');
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/7.jpg');
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/8.jpg');
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/9.jpg');
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/10.jpg');
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/11.jpg');
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/12.jpg');
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/13.jpg');
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/14.jpg');
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/15.jpg');
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/16.jpg');
+INSERT INTO images (project_id, path) VALUES (34, '/images/projects/edificio-exposicoes-espaco-agros/17.jpg');
 
 -- TEAM
 INSERT INTO team (name, order_number) VALUES ('Jorge Alves', 1);
